@@ -1,0 +1,687 @@
+---
+layout: default
+title: Luke Tait | Brain Modelling
+---
+
+<div class="rescontainer">
+
+    <h1>Simulating the brain</h1>
+
+    <h2>Why simulate the brain?</h2>
+    <p>
+        Using a virtual, simulated brain has two main advantages over a real brain. 
+        Firstly, with a simulated brain, there are very few limitations on experiments which can be performed. 
+        A simulated brain has no cost limitations to run (beyond the cost of a computer), whereas experiments on real brains (either human or animal) can often be costly. 
+        There are far fewer ethical limitations as no living beings are involved, meaning experiments which cannot be performed in humans or animals can be performed on a simulated brain to help understand how the brain works. 
+        Furthermore, a simulated brain can be manipulated in ways that are difficult or impossible in a real brain, meaning a wider range of experiments can be performed. 
+    </p>
+    <p>
+        A second advantage of a simulated brain is that is relies on mathematical equations. 
+        Studying the equations that underpin the simulated brain activity allows us to gain deep insight into the mechanisms of how the brain functions.  
+    </p>
+    <p>
+        Of course, there is a major disavantage to a simulated brain - it isn't a real brain! 
+        In reality we can never build a perfect model of the brain, so we can never no for certain whether our simulated experiments match what we would observe in a real brain. 
+        Therefore brain simulations should be rigorously tested against experimental data and should serve as a method to inform new experiments or understand results of experiments where the outcome is known.     
+    </p>
+
+    <div style="max-width:1000px; margin: auto;">
+        <img src="images/modelling_guide.png" style="max-height:500px">
+        <p style="font-size: 9pt;">
+            <b>Using models to understand brain data.</b>
+            In this figure, we show an example of how models of the brain can be used to understand the results of experiments. 
+            (<b>A</b>) Booth et al. (2016) found that in a rodent model of dementia, neurons in a part of the brain called the entorinhal cortex (responsible for navigation) stopped spiking in "clusters" (multiple spikes then a break). 
+            Here, "WT" refers to "wild-type" (i.e. healthy mice), and "rTg4510" are the dementia mice. 
+            (<b>B</b>) To understand why these neurons changed their spiking pattern in dementia, we built a model of entorhinal neurons (Tait et al. 2018) and identified two currents ("h" and "AHP") which could change how much the simulated cell spiked in clusters. 
+            (<b>C</b>) The model was then compared to the data. In the experiments (Booth et al. 2016), a change in "AHP" was found, but no change in "h" was found (not shown). The model suggests that the increase in AHP observed in the dementia rodents could explain the change in spiking patterns. 
+            (<b>D</b>) An advantage of models is that the equations can be analysed to gain a deeper understanding of the mechanisms. In Tait et al. (2018), we studied the equations to understand why the neurons clustered and why changing the AHP alters this. 
+            *Figures were modified from Tait et al. (2019) and Booth et al. (2016) under the CC-BY licence. 
+        </p>
+
+    </div>
+
+    <h2>Multi-scale modelling of the brain</h2>
+    <p>
+        The figure above shows an example of modelling a single neuron. 
+        I am interested in modelling the brain at multiple scales, from the single cell to whole brain modelling (see the figure below).
+        In fact, the title of my PhD thesis was <a href="https://doi.org/10871/38986">"Multi-Scale Mathematical Modelling of Brain Networks in Alzheimer's Disease"</a><br>.
+    </p>
+
+    <div style="max-width:1000px;  margin: auto;">
+        <img src="images/multiscale_modelling.png" style="max-height:500px">
+        <p style="font-size: 9pt;">
+            <b>Modelling the brain at different scales.</b>
+            In this figure, we show examples of the brain modelled at each scale. For each subfigure, on the left shows an example model output, whilst on the right shows the spatial scale (corresponding to descriptions on the <a href="brainnetworks.html">brain networks</a> page). 
+            (<b>A</b>) Modelling a single neuron, as presented in Tait et al. (2018)
+            (<b>B</b>) Modelling a network of 21 neurons as described by Wulff et al. (2009) and replicated in Tait (2019, Doctoral Thesis). This model shows how oscillatory behaviour can arise from a network of spiking neurons, and can even couple different frequencies of oscillation (left). On the right spike times of individual neurons are shown as black dots. 
+            (<b>C</b>) Modelling a neural mass. Instead of modelling many neurons wired up, equations modelling the average firing rate of the population of neurons are used instead. Whilst the model in B consisted of over 140 equations, the model in C can generate similar oscillatory behaviour yet consisted of 6 equations, making it more tractable for analysis and faster to simulate.
+            (<b>D</b>) Whole brain modelling, as presented in Tait et al. (2019). The brain is split into a number of regions, and each region is simulated as a neural mass. Neural masses are connected to generate realistic patterns of synchrony between regions.
+        </p>
+
+    </div>
+
+    <p>
+        There are 86 billion neurons in the human brain. Does whole brain modelling mean simulating all of these neurons? 
+        Whilst <a href="https://doi.org/10.1073/pnas.0712231105">this has been attempted</a>, it takes a lot of computing power and can lead to difficult to interpret results. 
+        Instead, we often directly build models at the spatial scale of interest. 
+        For example, to study how groups of neurons interact, we can use a network of many simulated neurons ("B" in the figure above), or we could simulate a population of neurons as a single lumped model ("C" in the figure above). This latter case is known as a neural mass model.
+        It is a similar idea to measuring the temperature of a room using a thermometer - we are taking one value for the whole room instead of measuring the energy of each atom in the room individually. The thermometer still gives us information about the state of the atoms on average however; in a higher temperature room, the atoms in the air are moving more quickly on average.
+        Which you choose depends on the hypothesis you want to test.
+    </p>
+    <p>
+        Some examples of brain simulations at the scales shown in the figure above can be found in the "brain simulator" section below. 
+        You can simulate everything from a single neuron to whole brain recordings.
+    </p>
+    <p>
+        Finally, a key interest of mine is how different scales affect each other. How does chaning the spiking pattern of neurons alter the oscillatory dynamics of the network? How does changing coupling between populations alter whole brain synchrony?
+        In neurodegenerative disorders such as dementia, the altered large-scale dynamics (such as recorded by EEG) may be due to breakdown of synapses (connections between neurons) at a much smaller scale. 
+        The figure below shows examples of two studies I have performed to test this using modelling. 
+    </p>
+
+    <div style="max-width:1000px;  margin: auto;">
+        <img src="images/CHMP_multiscale.png" style="max-height:500px">
+        <p style="font-size: 9pt;">
+            <b>Interactions between spatial scales.</b>
+            (<b>A-B</b>) How does connectivity between neurons within a region of the brain and between regions of the brain alter the ability of regions to synchronize? In a rodent model of dementia, spiking activity of neurons within a brain region becomes more synchronous, but synchrony between regions decreases. In A, we vary local coupling ("a") and long-range coupling ("G") in a model of the rodent brain, and calculate the synchrony between regions of the brain. B shows example simulations of a possible explanation for the changes in dementia, marked "P2". Figure modified from Tait (Doctoral Thesis, Chapter 3; 2019).
+            (<b>C</b>) In humans with Alzheimer's disease, breakdown of local connections leads to oscillations slowing down. Synchrony between regions of the brain is also disrupted. By realistically changing the local frequency of neural oscillations at each region in our model of the human brain to reflect changes in Alzheimer's disease, we can test to what degree local frequency alterations affect whole brain synchrony. Figure modified from Tait et al. (2019).
+            </p>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- SIMULATOR -->
+
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" asynch></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="javascript_codes/Izhikevich_model.js"></script>
+<script src="javascript_codes/entorhinal_gamma.js"></script>
+<script src="javascript_codes/JR_simulator.js"></script>
+<script src="javascript_codes/hopf_simulator.js"></script>
+<script src="./javascript_codes/jquery.knob.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/simulator.css">
+
+
+<div>
+    <h1>Brain simulator</h1>
+    <p>
+        This page contains some toy examples of simulations of the brain at different scales, 
+        from single neurons to the whole brain. 
+        The purpose of this page is to show examples of the types of simulations I perform in my research in action, 
+        but it should be noted that these simulations are toy examples and simulation speed has been 
+        prioritised over quality and accuracy; these simulations are not intended for research purposes. 
+        On the right there is an icon showing the neural scale. 
+        This icon is intended to inform you what you are simulating - from single neurons to many regions of the brain interacting. 
+        For more information, the icon corresponds to the descriptions on the <a href="brainnetworks.html">brain networks</a> page.
+        Additionally, each simulation will have a button containing a question mark. 
+        Clicking on this button will give information explaining what you see on the screen, 
+        the different options available,
+        the biological experiment being simulated,
+        and technical details of the simulation (including references). 
+    </p>
+</div>
+
+
+<div class="simulator_grid">
+
+
+
+<!-- PATCH CLAMP SIMULATOR -->
+<div class="patch_clamp_simulator"> <!-- Grid for patch clamp simulator -->
+
+    <div class="patch_clamp_description">
+        <h2>Patch clamp</h2>
+    </div>
+
+    <!-- SELECT CURRENT -->
+    <div class="current_selector"> 
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Input current [\(\mu\)A]</span><br>
+        <input type="text" value="0" class="dial" data-min="-100" data-max="100" data-step=0.1 data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width=150 id="inputCurrent" style="float:left;">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+
+            <br>
+            <div style="height: 60pt; float:left;margin-left:10pt">
+                <button onclick=simulateFunction() style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+            </div>
+            <div style="height: 60pt; float:right;margin-right:10pt">
+                <button id="neuronsim_help-button" style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:48px;color:rgb(118,208,237)">?</button>
+            </div>
+    </div>
+
+    <!-- OUTPUT THE CURRENT -->
+    <div class="output_current_monitor"></div>
+    <div id="output_current"></div>
+
+    <!-- SELECT NEURON TYPE -->
+    <script>
+        Irange=100;
+        C=100; 
+        k=0.7;
+        vr=-60; 
+        vp=-40;
+        a=0.03;
+        b=-2;
+        vpeak=35;
+        c=-50;
+        d=100;
+    </script>
+    <div class="neuron_selector">
+        <form id="selectneuronform">
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Select neuron type:</span><br>
+        <input type="radio" name="neurontype" value="RS" onClick="makeParameters()" checked="checked">Regular Spiking<br>
+        <input type="radio" name="neurontype" value="IB" onClick="makeParameters()">Intrinsically Bursting<br>
+        <input type="radio" name="neurontype" value="CH" onClick="makeParameters()">Chattering<br>  
+        <input type="radio" name="neurontype" value="FS" onClick="makeParameters()">Fast Spiking<br>
+        <input type="radio" name="neurontype" value="LTS" onClick="makeParameters()">Low Threshold Spiking<br>
+        <input type="radio" name="neurontype" value="TC" onClick="makeParameters()">Thalamocortical Relay<br> 
+        <input type="radio" name="neurontype" value="ECSC" onClick="makeParameters()">Entorhinal Stellate<br> 
+        </form>
+    </div>
+
+    <!-- OUTPUT THE VOLTAGE -->
+    <div class="simulated_voltage_monitor"></div>
+    <div id="simulated_voltage"></div>
+<!--</div>-->
+
+    <div id="neuronsim_help-modal" class="modal">
+        <div class="help-modal-content">
+            <button id="neuronsim_help-cancel" class="cancelbutton" style="float: right;">X</button>
+            <img src="./images/neuron_sim_help.png" height=100% width=100%>
+        </div>
+    </div>
+
+    <script>
+        function makeParameters() {
+            
+            var form = document.getElementById("selectneuronform");
+            var data = new FormData(form);
+            
+            for (const entry of data){
+                neurontype=entry[1];
+                console.log(neurontype)
+            };
+
+            switch (neurontype) {
+                case "RS":
+                     Irange=100;
+                     C=100; 
+                     k=0.7;
+                     vr=-60; 
+                     vp=-40;
+                     a=0.03;
+                     b=-2;
+                     vpeak=35;
+                     c=-50;
+                     d=100;
+                    break
+                case "IB":
+                     Irange=600;
+                     C=150; 
+                     k=1.2;
+                     vr=-75; 
+                     vp=-45;
+                     a=0.01;
+                     b=5;
+                     vpeak=50;
+                     c=-56;
+                     d=130;
+                    break
+                case "CH":
+                     Irange=600;
+                     C=50; 
+                     k=1.5;
+                     vr=-60; 
+                     vp=-40;
+                     a=0.03;
+                     b=1;
+                     vpeak=25;
+                     c=-40;
+                     d=150;
+                    break
+                case "FS":
+                     Irange=30;
+                     C=1; 
+                     k=0.04;
+                     vr=-82.6556;//(-5-sqrt(5^2-4*0.04*140))/(2*0.04); 
+                     vp=-42.3444;//(-5+sqrt(5^2-4*0.04*140))/(2*0.04);
+                     a=0.1;
+                     b=0.2;
+                     vpeak=30;
+                     c=-65;
+                     d=2;
+                    break
+                case "LTS":
+                     Irange=30;
+                     C=1; 
+                     k=0.04;
+                     vr=-82.6556;//(-5-sqrt(5^2-4*0.04*140))/(2*0.04); 
+                     vp=-42.3444;//(-5+sqrt(5^2-4*0.04*140))/(2*0.04);
+                     a=0.02;
+                     b=0.25;
+                     vpeak=30;
+                     c=-65;
+                     d=2;
+                    break
+                case "TC":
+                     Irange=30;
+                     C=1; 
+                     k=0.04;
+                     vr=-82.6556;//(-5-sqrt(5^2-4*0.04*140))/(2*0.04); 
+                     vp=-42.3444;//(-5+sqrt(5^2-4*0.04*140))/(2*0.04);
+                     a=0.02;
+                     b=0.25;
+                     vpeak=30;
+                     c=-65;
+                     d=0.05;
+                    break
+                case "ECSC":
+                     Irange=200;
+                     C=160; 
+                     k=0.75;
+                     vr=-60; 
+                     vp=-45;
+                     a=0.025;
+                     b=15;
+                     vpeak=30;
+                     c=-50;
+                     d=100;
+                    break
+            }
+
+            $('#inputCurrent').trigger('configure', {
+                max: Irange,
+                min: -Irange
+            });
+          
+        }
+        function simulateFunction() {
+            
+            console.log(C)
+            const I=Number(document.getElementById("inputCurrent").value);
+            const validinputs=C&&k&&vr&&vp&&a&&b&&vpeak&&c&&d;
+            /*
+            if (!validinputs) {
+                document.getElementById("simulated_voltage").innerHTML = "Warning: At least one input is not valid.";
+                document.getElementById("simulated_voltage").style.color = "red";
+                document.getElementById("simulated_voltage").style.textAlign = "center";
+            } else {
+                document.getElementById("simulated_voltage").innerHTML = [];
+            }
+            */
+        if (!validinputs) {
+            window.alert("Warning: At least one input is not valid");
+            return
+        }
+
+            runIzhikevichModel(I,C,k,vr,vp,a,b,vpeak,c,d);
+        }
+    </script>
+
+
+
+
+
+
+<!---------- ENTORHINAL CORTEX SIMULATOR ----------------->
+
+
+    <div class="entorhinal_gamma_description">
+        <h2>Entorhinal theta-gamma</h2>
+    </div>
+    <!-- SELECT DV LOCATION -->
+    <div class="DV_selector"> 
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Electrode location</span><br>
+        <input type="range" value="0" class="slider" min="0" max="1" step=0.1 id="dvaxis">
+        <div style="width:75%; margin:auto; margin-top:-15px; color:white;">
+            <p style="float:left">Dorsal</p>
+            <p style="float:right">Ventral</p>
+        </div>
+
+        <br>
+        <div style="height: 60pt; float:left;margin-left:10pt;margin-top:50pt;">
+            <button onclick=simulateECFunction() style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+        </div>
+        <div style="height: 60pt; float:right;margin-right:10pt;margin-top:50pt;">
+            <button id="networksim_help-button" style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:48px;color:rgb(118,208,237)">?</button>
+        </div>
+    </div>
+
+    <div id="networksim_help-modal" class="modal">
+        <div class="help-modal-content">
+            <button id="networksim_help-cancel" class="cancelbutton" style="float: right;">X</button>
+            <img src="./images/network_sim_help.png" height=100% width=100%>
+        </div>
+    </div>
+
+    <!-- SELECT THETA -->
+    <div class="theta_selector"> 
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white; margin:auto;">Theta selection</span><br>
+        <form id="selectthetaform">
+        <input type="checkbox" name="thetatype" value="thetaon" onClick="makeECSelection()" checked="checked">Input medial septal theta<br>
+        </form>
+    </div>
+
+    <!-- SELECT GENOTYPE -->
+    <!--
+    <div class="genotype_selector"> 
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Genotype selection</span><br>
+        <form id="selectgenoform">
+            <input type="radio" name="genotype" value="WT" onClick="makeECSelection()" checked="checked">WT (healthy)<br>
+            <input type="radio" name="genotype" value="rTg4510" onClick="makeECSelection()">rTg4510 (dementia)<br>
+        </form>
+    </div>
+    -->
+
+    <script>
+        istheta = true;
+        istg = false;
+    </script>
+
+    <script>
+    function makeECSelection() {
+                
+        var form = document.getElementById("selectthetaform");
+        var data = new FormData(form);
+        
+        istheta = false;
+        for (const entry of data){
+            istheta=true;
+        };
+        console.log(istheta)
+
+
+        var form = document.getElementById("selectgenoform");
+        var data = new FormData(form);
+        
+        for (const entry of data){
+            genotype=entry[1];
+            console.log(genotype)
+        };
+
+        switch (genotype) {
+            case "WT":
+                istg = false;
+                break
+            case "rTg4510":
+                istg=true;
+        }
+    
+    }
+    </script>
+
+    <!-- OUTPUT THE RASTER PLOT -->
+    <div class="output_raster_monitor"></div>
+    <div id="output_raster"></div>
+
+    <!-- OUTPUT THE LFP -->
+    <div class="simulated_lfp_monitor"></div>
+    <div id="simulated_lfp"></div>
+
+    <script>function simulateECFunction() {
+            
+        const dvloc=Number(document.getElementById("dvaxis").value);
+        runEntorhinalModel(dvloc,istheta,istg);
+
+    }</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------- CORTICAL COLUMN SIMULATOR ----------------->
+
+
+<div class="JR_description">
+    <h2>Neural mass</h2>
+</div>
+
+
+<!-- SELECT STIMULUS -->
+<div class="stim_select_run"> 
+
+    <div class="stim_selector">
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Select stimulus</span><br>
+        <form id="selectstimform">
+        <input type="radio" name="stimtype" value="RS" onClick="makeRSStim(true)" checked="checked">Resting state<br>
+        <input type="radio" name="stimtype" value="VEP" onClick="makeVEPStim()">Visual flash<br>
+        <input type="radio" name="stimtype" value="Custom" onClick="makeCustomStim()">Custom<br>  
+        </form>
+    </div>
+
+    <div class="stimbutton_container">
+        <div id="stimbuttons">
+            <span style="font-size:10pt; font-family:Arial, Helvetica, sans-serif; color: white; grid-area:1/1/2/3; text-align:center;">Add stimulus</span>
+            <button id="constant-button">Constant</button>
+            <button id="noise-button">Noise</button>
+            <button id="flash-button">Visual Flash</button>
+            <button id="step-button">Step</button>
+            <button id="osc-button">Oscillation</button>
+            <button id="ramp-button">Ramp</button>
+        </div>
+    </div>
+
+
+    <!-- Make the custom buttons work -->
+    <div id="constant-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add constant stimulus</h2>
+            Constant input current: <input type="number" value="220" id="constant-val"> pulses per second<br>
+            <button id="constant-submit" class="submitbutton">Submit</button>
+            <button id="constant-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div id="noise-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add noise to stimulus</h2>
+            Noise amplitude: <input type="number" value="33" id="noise-val"> pulses per second<br>
+            <button id="noise-submit" class="submitbutton">Submit</button>
+            <button id="noise-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div id="flash-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add visual flash to stimulus</h2>
+            Flash brightness: <input type="number" value="1" step=0.1 id="flash-brightness"><br>
+            Onset time: <input type="number" value="500" id="flash-time"> ms<br>
+            <button id="flash-submit" class="submitbutton">Submit</button>
+            <button id="flash-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div id="step-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add step to stimulus</h2>
+            Amplitude: <input type="number" value="50" id="step-val"> pulses per second<br>
+            On time: <input type="number" value="500" id="step-ontime"> ms<br>
+            Off time: <input type="number" value="1500" id="step-offtime"> ms<br>
+            <button id="step-submit" class="submitbutton">Submit</button>
+            <button id="step-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div id="osc-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add oscillaton to stimulus</h2>
+            Amplitude: <input type="number" value="50" id="osc-val"><br>
+            Frequency: <input type="number" value="10" id="osc-freq"> Hz<br>
+            <button id="osc-submit" class="submitbutton">Submit</button>
+            <button id="osc-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div id="ramp-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add ramp to stimulus</h2>
+            Gradient: <input type="number" value="50" id="ramp-val"> pulses per second per second<br>
+            <button id="ramp-submit" class="submitbutton">Submit</button>
+            <button id="ramp-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div class="JRconn_container">
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Synaptic density</span><br>
+        <input type="text" value="125" class="dial" data-min=0 data-max=1350 data-step=1 data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width=150 data-height=150 id="JRconnectivity">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+    </div>
+
+    <div style="height: 60pt; float:left;margin-left:10pt">
+        <button onclick=simulateJRFunction() style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; z-index: 1; margin-bottom: 500pt;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+    </div>
+    <div style="height: 60pt; float:right;margin-right:10pt">
+        <button id="jrsim_help-button" style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:48px;color:rgb(118,208,237)">?</button>
+    </div>
+</div>
+
+<div id="jrsim_help-modal" class="modal">
+    <div class="help-modal-content">
+        <button id="jrsim_help-cancel" class="cancelbutton" style="float: right;">X</button>
+        <img src="./images/jr_sim_help.png" height=100% width=100%>
+    </div>
+</div>
+
+
+<!-- OUTPUT THE CURRENT -->
+<div class="output_stim_monitor"></div>
+<div id="output_stim"></div>
+
+<!-- OUTPUT THE VOLTAGE -->
+<div class="simulated_NMM_monitor"></div>
+<div id="simulated_NMM"></div>
+<!--</div>-->
+
+<!-- DEFAULT STIM -->
+<script>makeRSStim(false)</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------- CORTICAL COLUMN SIMULATOR ----------------->
+
+<div class="FC_description">
+    <h2>Functional connectivity</h2>
+</div>
+
+<!-- SELECT COUPLING TYPE -->
+<div class="coupling_select_run"> 
+
+    <div class="Glconn_container">
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Connection strength</span><br>
+        <input type="text" value="5" class="dial" data-min=0 data-max=50 data-step=1 data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width=150 id="Glconnectivity">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+    </div>
+
+    <div style="height: 60pt; float:left;margin-left:10pt">
+        <button onclick=simulateOscFunction() style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; z-index: 1;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+    </div>
+    <div style="height: 60pt; float:right;margin-right:10pt">
+        <button id="brainsim_help-button" style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:48px;color:rgb(118,208,237)">?</button>
+    </div>
+</div>
+
+
+<div class="coupling_selector">
+    <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Select coupling type</span><br>
+    <form id="selectFCform">
+    <div><input type="radio" name="FCtype" value="Dif" checked="checked">Diffusive</div>
+    <div><input type="radio" name="FCtype" value="Add">Additive</div>
+    <div><input type="radio" name="FCtype" value="Pha">Phase</div>
+    <div><input type="radio" name="FCtype" value="Amp">Amplitude</div>
+    </form>
+</div>
+
+<div id="brainsim_help-modal" class="modal">
+    <div class="help-modal-content">
+        <button id="brainsim_help-cancel" class="cancelbutton" style="float: right;">X</button>
+        <img src="./images/brain_sim_help.png" height=100% width=100%>
+    </div>
+</div>
+
+<!-- OUTPUT THE CURRENT -->
+<div class="simulated_FCtime_monitor"></div>
+<div id="simulated_FCtime"></div>
+
+<!-- OUTPUT THE VOLTAGE -->
+<div class="simulated_FC_monitor"></div>
+<div id="simulated_FC">
+</div>
+<!--</div>-->
+
+<script src="javascript_codes/modal_buttons.js"></script>
+
+
+<!--- SCALE --->
+<div class="scale_description">
+    <h2>Neural Scale</h2>
+    <p>(See <a href="brainnetworks.html">brain networks</a>)</p>
+</div>
+
+<div id="patch_clamp_pic" class="scale_pic" >
+    <img src="images/neuron.png">
+</div>
+
+<div id="neural_network_pic" class="scale_pic" >
+    <img src="images/neuralnetwork.png">
+</div>
+
+<div id="neural_mass_pic" class="scale_pic" >
+    <img src="images/neuralmassmodel.png">
+</div>
+
+<div id="whole_brain_pic" class="scale_pic" >
+    <img src="images/brainnetwork.png">
+</div>
+
+
+<div id="sim_footer">
+    <footer>
+        All figures on this page have been modified from the following publications under the CC-BY licence: <br>
+        Tait et al. (2018) J Theor Biol 449: 23-34; Tait et al. (2019) Clin Neurophysiol 130(9):1581-1595; Tait (2019) Doctoral Thesis; Booth et al. (2016) J Neurosci 36(2):312-324 
+    </footer>
+</div>
+
+
+<!------------------------------------------------------>
+</div> <!-- SIMULATOR GRID -->
+
+

@@ -1,0 +1,16 @@
+
+h1 {
+    font-family: 'Arial','Helvetica','Sans-Serif';
+    font-size: 25px;
+}
+
+h2 {
+    font-family: 'Arial','Helvetica','Sans-Serif';
+    font-size: 18px;
+}
+
+
+.rescontainer {
+    width: 100%;
+    max-width: 900px;
+}
