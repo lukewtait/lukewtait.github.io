@@ -7,10 +7,11 @@
             <!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
             <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		</head>
 		<body>
             <!-- navigation bar on left -->
-			<div class="nav">
+			<div class="nav" id="mainnav">
                 <!-- profile picture + name-->
                 <img src="images/profilepic.jpg" atl="Avatar" class="avatar">
                 <h1>Luke Tait</h1>
@@ -19,7 +20,7 @@
 	    		<ul>
 	        		<li><a href="./index.html">Home</a></li>
                     <li id="researchbutton" onclick="dispResearchLinks()">Research <i class="fa fa-caret-down"></i></li>
-                    <div id="researchlinks">
+                    <div class="reslink" id="researchlinks">
                         <a href="./brainimaging.html">Imaging the brain</a>
                         <a href="./brainnetworks.html">Brain networks</a>
                         <a href="./microstates.html">Microstates of the brain</a>
@@ -98,6 +99,126 @@
                 </div>
                
             </div>
+
+
+
+            <!-- mobile navigation bar -->
+
+            <div class="nav" id="mobnavmenu">
+                <!-- links to pages -->
+	    		<ul>
+	        		<li><a href="./index.html">Home</a></li>
+                    <li id="researchbutton" onclick="dispResearchLinks_mob()">Research <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="researchlinks_mob">
+                        <a href="./brainimaging.html">Imaging the brain</a>
+                        <a href="./brainnetworks.html">Brain networks</a>
+                        <a href="./microstates.html">Microstates of the brain</a>
+                        <a href="./modelling.html">Simulating the brain</a>
+                        <a href="./diagnosis.html">Diagnosing Alzheimer's disease</a>
+                    </div>
+                    <li><a href="./publications.html">Publications</a></li>
+	        		<li><a href="./cv.html">CV</a></li>
+	        		<!--<li><a href="./blog">Blog</a></li>-->
+                </ul>
+
+                <!-- javascript to open and close research links-->
+                <script>
+                function dispResearchLinks_mob() {
+                    var x = document.getElementById("researchlinks_mob");
+                    if (x.style.display === "block") {
+                    x.style.display = "none";
+                    } else {
+                    x.style.display = "block";
+                    }
+                }
+                </script>
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+            <div class="mnav">
+                <!-- profile picture + name-->
+                <i class="fa fa-bars" style="display: inline;" onclick="dispNavBar()" id="mainburger"></i>
+                <h1 style="display: inline;">Luke Tait</h1>
+
+                <script>
+                    function dispNavBar() {
+                        var x = document.getElementById("mobnavmenu");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                </script>
+               
+            </div>
+
+            <script>
+                $("body").click(
+                    function(e)
+                    {
+                        var mobnavmenu = document.getElementById("mobnavmenu");
+                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "researchbutton"))
+                        {
+                        $("#mobnavmenu").hide();
+                        }
+                    }
+                );
+            </script>
             
 
 
@@ -114,12 +235,18 @@
         There is no cure for AD, and since 2015 AD and dementia have been the <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsregistrationsummarytables/2018">leading cause of death in England and Wales</a>. 
     </p>
     <p>
-        In AD, two harmful pathologies are found in the brain. These are known as amyloid-beta, which form "plaques" outside of neurons, and tau, which form "tangles" inside neurons. 
+        In AD, two main pathologies are found in the brain, namely extracellular amyloid-beta plaques and intracellulat tau neurofibrillary tangles. 
         Neurons in the brain progressively die, and this causes a phenomenon known as atrophy - a shrinking of the volume of the brain. 
         Staging of amyloid-beta, tau, and atrophy are shown in the figure below. 
     </p>
-    <div style="max-width:1000px;">
-        <img src="images/ADstaging.png" style="max-height:500px; max-width:1000px;">
+    <div class="figure">
+        <img src="images/ADstaging.png">
+        <p style="text-align: center;">
+            <b>
+                Staging of amyloid plaques, tau tangles, and cortical atrophy in the brain.
+            </b>
+            Figure modified from Tait et al. (2019, Doctoral Thesis). 
+        </p>
     </div>
 
     <h2>Why EEG?</h2>
@@ -137,8 +264,8 @@
 
     <h2>The AlzSM Project</h2>
     <p>
-        The AlzSM project is an international collaboration between universities in the South West of England and Wales and the State Hospital of San Marino. 
-        Psychologists, clinicians, mathematicians, and physicists are all working together to record and analyse the EEG of people living with Alzheimer's disease. 
+        The AlzSM project is an international collaboration between universities in the South West of England and Wales and the State Hospital of the Republic of San Marino. 
+        Psychologists, clinicians, mathematicians, and neuroscientists are all working together to record and analyse the EEG of people living with Alzheimer's disease. 
         The aim of AlzSM is to develop new EEG based tools to aid with early diagnosis of AD. 
         At the present stage, we have developed <a href="https://doi.org/10.1101/833244">a new method</a> based on <a href="microstates.html">EEG microstates</a> which seems successful.
         Our tool could differentiate between healthy people and people with Alzheimer's disease (a few days after diagnosis) correctly 85% of the time based only on the EEG. 
@@ -149,9 +276,9 @@
         The steps to developing the EEG marker of Alzheimer's disease are shown in the figure below. 
         The next steps are testing on a larger cohort, and making steps toward using this tool in a clinic. 
     </p>
-    <div style="max-width:1000px;">
-        <img src="images/biomarker_development.png" style="max-height:500px">
-        <p style="font-size: 9pt;">
+    <div class="figure">
+        <img src="images/biomarker_development.png" style="max-width: 400px;">
+        <p>
             <b>Development and testing of tools for diagnosis AD from the EEG, as described in <a href="https://doi.org/10.1101/833244">Tait et al (2019)</a>.</b>
             (<b>A</b>) Starting with a single cohort of people with AD and healthy controls ("Training data"), we can select features of the EEG we wish to study and train a machine learning model to diagnose AD. We can test the model using a method called cross-validation, which is used to check the model is robust to new participants. 
             (<b>B</b>) The next step is to test the model on a new set of participants ("Test data"). 

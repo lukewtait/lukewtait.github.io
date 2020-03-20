@@ -7,10 +7,11 @@
             <!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
             <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		</head>
 		<body>
             <!-- navigation bar on left -->
-			<div class="nav">
+			<div class="nav" id="mainnav">
                 <!-- profile picture + name-->
                 <img src="images/profilepic.jpg" atl="Avatar" class="avatar">
                 <h1>Luke Tait</h1>
@@ -19,7 +20,7 @@
 	    		<ul>
 	        		<li><a href="./index.html">Home</a></li>
                     <li id="researchbutton" onclick="dispResearchLinks()">Research <i class="fa fa-caret-down"></i></li>
-                    <div id="researchlinks">
+                    <div class="reslink" id="researchlinks">
                         <a href="./brainimaging.html">Imaging the brain</a>
                         <a href="./brainnetworks.html">Brain networks</a>
                         <a href="./microstates.html">Microstates of the brain</a>
@@ -98,6 +99,126 @@
                 </div>
                
             </div>
+
+
+
+            <!-- mobile navigation bar -->
+
+            <div class="nav" id="mobnavmenu">
+                <!-- links to pages -->
+	    		<ul>
+	        		<li><a href="./index.html">Home</a></li>
+                    <li id="researchbutton" onclick="dispResearchLinks_mob()">Research <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="researchlinks_mob">
+                        <a href="./brainimaging.html">Imaging the brain</a>
+                        <a href="./brainnetworks.html">Brain networks</a>
+                        <a href="./microstates.html">Microstates of the brain</a>
+                        <a href="./modelling.html">Simulating the brain</a>
+                        <a href="./diagnosis.html">Diagnosing Alzheimer's disease</a>
+                    </div>
+                    <li><a href="./publications.html">Publications</a></li>
+	        		<li><a href="./cv.html">CV</a></li>
+	        		<!--<li><a href="./blog">Blog</a></li>-->
+                </ul>
+
+                <!-- javascript to open and close research links-->
+                <script>
+                function dispResearchLinks_mob() {
+                    var x = document.getElementById("researchlinks_mob");
+                    if (x.style.display === "block") {
+                    x.style.display = "none";
+                    } else {
+                    x.style.display = "block";
+                    }
+                }
+                </script>
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+            <div class="mnav">
+                <!-- profile picture + name-->
+                <i class="fa fa-bars" style="display: inline;" onclick="dispNavBar()" id="mainburger"></i>
+                <h1 style="display: inline;">Luke Tait</h1>
+
+                <script>
+                    function dispNavBar() {
+                        var x = document.getElementById("mobnavmenu");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                </script>
+               
+            </div>
+
+            <script>
+                $("body").click(
+                    function(e)
+                    {
+                        var mobnavmenu = document.getElementById("mobnavmenu");
+                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "researchbutton"))
+                        {
+                        $("#mobnavmenu").hide();
+                        }
+                    }
+                );
+            </script>
             
 
 
@@ -112,12 +233,12 @@
     <p>
         Using a virtual, simulated brain has two main advantages over a real brain. 
         Firstly, with a simulated brain, there are very few limitations on experiments which can be performed. 
-        A simulated brain has no cost limitations to run (beyond the cost of a computer), whereas experiments on real brains (either human or animal) can often be costly. 
+        A simulated brain has no cost limitations to run (beyond the cost of a computer), whereas experiments on real brain tissue can often be costly. 
         There are far fewer ethical limitations as no living beings are involved, meaning experiments which cannot be performed in humans or animals can be performed on a simulated brain to help understand how the brain works. 
         Furthermore, a simulated brain can be manipulated in ways that are difficult or impossible in a real brain, meaning a wider range of experiments can be performed. 
     </p>
     <p>
-        A second advantage of a simulated brain is that is relies on mathematical equations. 
+        A second advantage of a simulated brain is that it relies on mathematical equations. 
         Studying the equations that underpin the simulated brain activity allows us to gain deep insight into the mechanisms of how the brain functions.  
     </p>
     <p>
@@ -126,30 +247,18 @@
         Therefore brain simulations should be rigorously tested against experimental data and should serve as a method to inform new experiments or understand results of experiments where the outcome is known.     
     </p>
 
-    <div style="max-width:1000px; margin: auto;">
-        <img src="images/modelling_guide.png" style="max-height:500px">
-        <p style="font-size: 9pt;">
-            <b>Using models to understand brain data.</b>
-            In this figure, we show an example of how models of the brain can be used to understand the results of experiments. 
-            (<b>A</b>) Booth et al. (2016) found that in a rodent model of dementia, neurons in a part of the brain called the entorinhal cortex (responsible for navigation) stopped spiking in "clusters" (multiple spikes then a break). 
-            Here, "WT" refers to "wild-type" (i.e. healthy mice), and "rTg4510" are the dementia mice. 
-            (<b>B</b>) To understand why these neurons changed their spiking pattern in dementia, we built a model of entorhinal neurons (Tait et al. 2018) and identified two currents ("h" and "AHP") which could change how much the simulated cell spiked in clusters. 
-            (<b>C</b>) The model was then compared to the data. In the experiments (Booth et al. 2016), a change in "AHP" was found, but no change in "h" was found (not shown). The model suggests that the increase in AHP observed in the dementia rodents could explain the change in spiking patterns. 
-            (<b>D</b>) An advantage of models is that the equations can be analysed to gain a deeper understanding of the mechanisms. In Tait et al. (2018), we studied the equations to understand why the neurons clustered and why changing the AHP alters this. 
-            *Figures were modified from Tait et al. (2019) and Booth et al. (2016) under the CC-BY licence. 
-        </p>
-
-    </div>
-
     <h2>Multi-scale modelling of the brain</h2>
     <p>
-        The figure above shows an example of modelling a single neuron. 
-        I am interested in modelling the brain at multiple scales, from the single cell to whole brain modelling (see the figure below).
-        In fact, the title of my PhD thesis was <a href="https://doi.org/10871/38986">"Multi-Scale Mathematical Modelling of Brain Networks in Alzheimer's Disease"</a><br>.
+        There are 86 billion neurons in the human brain. Models can range from single neurons, to the whole brain. But does whole brain modelling mean simulating all of these neurons? 
+        Whilst <a href="https://doi.org/10.1073/pnas.0712231105">this type of study has been attempted</a>, it takes a lot of computing power and can lead to difficult to interpret results. 
+        Instead, we often directly build models at the spatial scale of interest. 
+        For example, to study how groups of neurons interact, we can use a network of many simulated neurons ("B" in the figure below), or we could simulate a population of neurons as a single lumped model ("C" in the figure below). This latter case is known as a neural mass model.
+        It is a similar idea to measuring the temperature of a room using a thermometer - we are taking one value for the whole room instead of measuring the energy of each atom in the room individually. The thermometer gives us information about the state of the atoms on average; in a higher temperature room, the atoms in the air are moving more quickly on average.
+        Which you choose depends on the hypothesis you want to test.
     </p>
 
-    <div style="max-width:1000px;  margin: auto;">
-        <img src="images/multiscale_modelling.png" style="max-height:500px">
+    <div class="figure">
+        <img src="images/multiscale_modelling.png">
         <p style="font-size: 9pt;">
             <b>Modelling the brain at different scales.</b>
             In this figure, we show examples of the brain modelled at each scale. For each subfigure, on the left shows an example model output, whilst on the right shows the spatial scale (corresponding to descriptions on the <a href="brainnetworks.html">brain networks</a> page). 
@@ -161,33 +270,11 @@
 
     </div>
 
-    <p>
-        There are 86 billion neurons in the human brain. Does whole brain modelling mean simulating all of these neurons? 
-        Whilst <a href="https://doi.org/10.1073/pnas.0712231105">this has been attempted</a>, it takes a lot of computing power and can lead to difficult to interpret results. 
-        Instead, we often directly build models at the spatial scale of interest. 
-        For example, to study how groups of neurons interact, we can use a network of many simulated neurons ("B" in the figure above), or we could simulate a population of neurons as a single lumped model ("C" in the figure above). This latter case is known as a neural mass model.
-        It is a similar idea to measuring the temperature of a room using a thermometer - we are taking one value for the whole room instead of measuring the energy of each atom in the room individually. The thermometer still gives us information about the state of the atoms on average however; in a higher temperature room, the atoms in the air are moving more quickly on average.
-        Which you choose depends on the hypothesis you want to test.
-    </p>
+
     <p>
         Some examples of brain simulations at the scales shown in the figure above can be found in the "brain simulator" section below. 
         You can simulate everything from a single neuron to whole brain recordings.
     </p>
-    <p>
-        Finally, a key interest of mine is how different scales affect each other. How does chaning the spiking pattern of neurons alter the oscillatory dynamics of the network? How does changing coupling between populations alter whole brain synchrony?
-        In neurodegenerative disorders such as dementia, the altered large-scale dynamics (such as recorded by EEG) may be due to breakdown of synapses (connections between neurons) at a much smaller scale. 
-        The figure below shows examples of two studies I have performed to test this using modelling. 
-    </p>
-
-    <div style="max-width:1000px;  margin: auto;">
-        <img src="images/CHMP_multiscale.png" style="max-height:500px">
-        <p style="font-size: 9pt;">
-            <b>Interactions between spatial scales.</b>
-            (<b>A-B</b>) How does connectivity between neurons within a region of the brain and between regions of the brain alter the ability of regions to synchronize? In a rodent model of dementia, spiking activity of neurons within a brain region becomes more synchronous, but synchrony between regions decreases. In A, we vary local coupling ("a") and long-range coupling ("G") in a model of the rodent brain, and calculate the synchrony between regions of the brain. B shows example simulations of a possible explanation for the changes in dementia, marked "P2". Figure modified from Tait (Doctoral Thesis, Chapter 3; 2019).
-            (<b>C</b>) In humans with Alzheimer's disease, breakdown of local connections leads to oscillations slowing down. Synchrony between regions of the brain is also disrupted. By realistically changing the local frequency of neural oscillations at each region in our model of the human brain to reflect changes in Alzheimer's disease, we can test to what degree local frequency alterations affect whole brain synchrony. Figure modified from Tait et al. (2019).
-            </p>
-
-    </div>
 </div>
 
 

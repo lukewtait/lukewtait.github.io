@@ -7,10 +7,11 @@
             <!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
             <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		</head>
 		<body>
             <!-- navigation bar on left -->
-			<div class="nav">
+			<div class="nav" id="mainnav">
                 <!-- profile picture + name-->
                 <img src="images/profilepic.jpg" atl="Avatar" class="avatar">
                 <h1>Luke Tait</h1>
@@ -19,7 +20,7 @@
 	    		<ul>
 	        		<li><a href="./index.html">Home</a></li>
                     <li id="researchbutton" onclick="dispResearchLinks()">Research <i class="fa fa-caret-down"></i></li>
-                    <div id="researchlinks">
+                    <div class="reslink" id="researchlinks">
                         <a href="./brainimaging.html">Imaging the brain</a>
                         <a href="./brainnetworks.html">Brain networks</a>
                         <a href="./microstates.html">Microstates of the brain</a>
@@ -98,6 +99,126 @@
                 </div>
                
             </div>
+
+
+
+            <!-- mobile navigation bar -->
+
+            <div class="nav" id="mobnavmenu">
+                <!-- links to pages -->
+	    		<ul>
+	        		<li><a href="./index.html">Home</a></li>
+                    <li id="researchbutton" onclick="dispResearchLinks_mob()">Research <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="researchlinks_mob">
+                        <a href="./brainimaging.html">Imaging the brain</a>
+                        <a href="./brainnetworks.html">Brain networks</a>
+                        <a href="./microstates.html">Microstates of the brain</a>
+                        <a href="./modelling.html">Simulating the brain</a>
+                        <a href="./diagnosis.html">Diagnosing Alzheimer's disease</a>
+                    </div>
+                    <li><a href="./publications.html">Publications</a></li>
+	        		<li><a href="./cv.html">CV</a></li>
+	        		<!--<li><a href="./blog">Blog</a></li>-->
+                </ul>
+
+                <!-- javascript to open and close research links-->
+                <script>
+                function dispResearchLinks_mob() {
+                    var x = document.getElementById("researchlinks_mob");
+                    if (x.style.display === "block") {
+                    x.style.display = "none";
+                    } else {
+                    x.style.display = "block";
+                    }
+                }
+                </script>
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+            <div class="mnav">
+                <!-- profile picture + name-->
+                <i class="fa fa-bars" style="display: inline;" onclick="dispNavBar()" id="mainburger"></i>
+                <h1 style="display: inline;">Luke Tait</h1>
+
+                <script>
+                    function dispNavBar() {
+                        var x = document.getElementById("mobnavmenu");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                </script>
+               
+            </div>
+
+            <script>
+                $("body").click(
+                    function(e)
+                    {
+                        var mobnavmenu = document.getElementById("mobnavmenu");
+                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "researchbutton"))
+                        {
+                        $("#mobnavmenu").hide();
+                        }
+                    }
+                );
+            </script>
             
 
 
@@ -111,23 +232,23 @@
     <h2>What are microstates?</h2>
     <p>
         The brain is highly dynamic. Even at rest, different networks of regions in the brain are rapidly activating and inactivating. 
-        In fact, a handful of different "resting state networks" (RSNs) have been identified from fMRI, EEG, and MEG data (see <a href="brainimaging.html">imaging the brain</a>).
+        In fact, a handful of different "resting state networks" (RSNs) have been identified from fMRI, EEG, and MEG data using various different methodologies.
         These RSNs are groups of regions of the brain that activate and inactivate together. 
         It is hypothesised that each RSN remains active for tens to hundreds of milliseconds, before rapidly switching to a different active RSN. 
         In the EEG literature, these short, stable periods are known as <em>microstates</em> of the brain. 
     </p>
     <p>
         Because whole brain recordings at millisecond resolution are required to study microstates, typically EEG or MEG are used (although fMRI can be used to study RSN transitions at a slower time scale). 
-        In fact, microstates are most commonly studied using EEG - different networks project different shaped electric fields (called the topography of the field) onto the scalp, and EEG microstate analysis typically studies the properties of these different topographies. 
+        In fact, microstates are most commonly studied using EEG - different networks project electric fields with different topographies, and EEG microstate analysis typically studies the properties of these different topographies. 
         In resting state EEG, four EEG microstates have repeatably been identified, known as the canonical maps. 
     </p>
     <p>
         For more information, a fantastic technical review of EEG microstates can be found here: <a href="https://doi.org/10.1016/j.neuroimage.2017.11.062">Michel and Koenig (2018) NeuroImage 180:557-593</a>.
     </p>
 
-    <div style="max-width:1000px;">
-        <img src="images/microstate_maps.png" style="max-height:500px">
-        <p style="font-size: 9pt;">
+    <div class="figure">
+        <img src="images/microstate_maps.png">
+        <p>
             <b>The four canonical microstate maps.</b>
             On the left, we show the four canonical microstate maps as identified in <a href="https://doi.org/10.1101/833244">Tait et al. (2019) bioRxiv 833244</a>. Red and blue show the strength and polarity of the electric field on the scalp (i.e. when red is positive, blue is negative and vice versa). Black circles show the locations of EEG electrodes. 
             On the right, we show that the four canonical maps have been repeatedly identified in a wide range of studies.
@@ -135,18 +256,18 @@
         </p>
     </div>
 
-    <h1>How are microstates generated in the brain?</h1>
+    <h2>How (and why) are microstates generated in the brain?</h2>
     <p>
-        This is current an open question. 
-        My research aims to study this, by combining typical EEG microstate analyses with <a href="brainimaging.html">high resolution MEG and source reconstruction</a> and <a href="modelling.html">mathematical models of the brain</a>.
-        Questions will involve which regions of the brain are responsible for microstate generation, and how does transitioning between states arise. 
+        This is currently an open question. 
+        My current research aims to study this, by combining typical EEG microstate analyses with <a href="brainimaging.html">high resolution MEG and source reconstruction</a> and <a href="modelling.html">mathematical models of the brain</a>.
+        Questions will involve which regions of the brain are responsible for microstate generation, and how transitioning between states arises. 
     </p>
 
-    <h2>Microstates in Alzheimer's disease</h2>
+    <h2>Microstates in healthy cognition and Alzheimer's disease</h2>
     <p>
-        Since microstates are believed to be the building blocks of spontaneous conciousness, it is of interest to understand how they relate to cognition and cognitive impairment in Alzheimer's disease. 
-        We have found that certain states related to working memory and attention are altered in Alzheimer's disease, and using a new measure we found that transitioning between states is slower and less complex (<a href="https://doi.org/10.1101/833244">Tait et al. (2019)</a>).
-        Future will involve understanding how and why these states change in Alzheimer's disease, and whether these marker may be useful for <a href="diagnosis.html">aiding early diagnosis of Alzheimer's disease.</a> 
+        Since microstates are believed to be the building blocks of spontaneous conciousness, it is of interest to understand how they relate to healthy cognition and cognitive impairment in Alzheimer's disease. 
+        We have found that certain states related to working memory and attention are altered in Alzheimer's disease, and using a new measure of transition complexity we found that transitioning between states is slower and less complex (<a href="https://doi.org/10.1101/833244">Tait et al. (2019)</a>).
+        Future will involve understanding how and why these states change in Alzheimer's disease, and whether these markers may be useful for <a href="diagnosis.html">aiding early diagnosis of Alzheimer's disease.</a> 
     </p>
     
 </div>

@@ -7,10 +7,11 @@
             <!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
             <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		</head>
 		<body>
             <!-- navigation bar on left -->
-			<div class="nav">
+			<div class="nav" id="mainnav">
                 <!-- profile picture + name-->
                 <img src="images/profilepic.jpg" atl="Avatar" class="avatar">
                 <h1>Luke Tait</h1>
@@ -19,7 +20,7 @@
 	    		<ul>
 	        		<li><a href="./index.html">Home</a></li>
                     <li id="researchbutton" onclick="dispResearchLinks()">Research <i class="fa fa-caret-down"></i></li>
-                    <div id="researchlinks">
+                    <div class="reslink" id="researchlinks">
                         <a href="./brainimaging.html">Imaging the brain</a>
                         <a href="./brainnetworks.html">Brain networks</a>
                         <a href="./microstates.html">Microstates of the brain</a>
@@ -98,6 +99,126 @@
                 </div>
                
             </div>
+
+
+
+            <!-- mobile navigation bar -->
+
+            <div class="nav" id="mobnavmenu">
+                <!-- links to pages -->
+	    		<ul>
+	        		<li><a href="./index.html">Home</a></li>
+                    <li id="researchbutton" onclick="dispResearchLinks_mob()">Research <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="researchlinks_mob">
+                        <a href="./brainimaging.html">Imaging the brain</a>
+                        <a href="./brainnetworks.html">Brain networks</a>
+                        <a href="./microstates.html">Microstates of the brain</a>
+                        <a href="./modelling.html">Simulating the brain</a>
+                        <a href="./diagnosis.html">Diagnosing Alzheimer's disease</a>
+                    </div>
+                    <li><a href="./publications.html">Publications</a></li>
+	        		<li><a href="./cv.html">CV</a></li>
+	        		<!--<li><a href="./blog">Blog</a></li>-->
+                </ul>
+
+                <!-- javascript to open and close research links-->
+                <script>
+                function dispResearchLinks_mob() {
+                    var x = document.getElementById("researchlinks_mob");
+                    if (x.style.display === "block") {
+                    x.style.display = "none";
+                    } else {
+                    x.style.display = "block";
+                    }
+                }
+                </script>
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+            <div class="mnav">
+                <!-- profile picture + name-->
+                <i class="fa fa-bars" style="display: inline;" onclick="dispNavBar()" id="mainburger"></i>
+                <h1 style="display: inline;">Luke Tait</h1>
+
+                <script>
+                    function dispNavBar() {
+                        var x = document.getElementById("mobnavmenu");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                </script>
+               
+            </div>
+
+            <script>
+                $("body").click(
+                    function(e)
+                    {
+                        var mobnavmenu = document.getElementById("mobnavmenu");
+                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "researchbutton"))
+                        {
+                        $("#mobnavmenu").hide();
+                        }
+                    }
+                );
+            </script>
             
 
 
@@ -110,177 +231,83 @@
 
     <h2>What is neuroimaging?</h2>
     <p>
-        "Neuroimaging" refers to obtaining a picture of the brain. There are two main classes of neuroimaging. 
-        <em>Structural neuroimaging</em>, such as CT or MRI scans, involves obtaining a picture of the structure of the brain or how it is wired up. 
-        Conversely <em>functional neuroimaging</em>, including magneto- or electro-encephalography and functional MRI, images the activity of the brain over time. 
-        The figure below shows an example of functional and structural neuroimaging - in the background (black and white picture) is an MRI scan showing the structure of the brain (structural imaging), whilst overlaid (yellow/red pixels) shows which parts of the brain are active at a single time point (functional imaging). 
-        My research focuses primarily on functional neuroimaging.
-    </p>
-    <img src="images/functional_neuroimaging.png" style="max-height:200px; max-width: 100%;">
-    <!--
-    <p>
-        There are many different types of functional neuroimaging, ranging from imaging the activity of a single neuron to the whole brain. 
-        The table below summarises the different types of neuroimaging and their pros and cons.
-        On the <a href="simulator.html">brain simulator</a> page, you can perform simulations of different types of neuroimaging, including patch clamp (single neuron), local field potentials (invasive recordings of many neurons in a region), and M/EEG (whole brain recordings). 
-        Whilst I have worked with all three of these functional neuroimaging modalities, my primary area of interest is the latter, MEG and EEG.
-        This stands for magneto- or electro-encephalography. 
-        When the brain is active, it generates magnetic and electric fields, which conduct to outside of the head. 
-        By placing sensors on or around the head, these fields can be recorded to measure the brain activity. 
-        This is the purpose of MEG and EEG, which have the advantage of being able to record brain activity very quickly (taking a 'picture' approximately once every millisecond). 
-        Because the sensors are outside the head, this is also a 'non-invasive' way of recording the brain, meaning that no surgery is required - having an MEG or EEG recording is essentially like wearing a hat. 
-        This means large populations of humans can be imaged for research purposes, whereas invasive modalities are generally restricted to people already getting surgery (for example, people with epilepsy) or experiments on animals.   
+        "Neuroimaging" refers to generating a picture of the brain.
+        <em>Structural neuroimaging</em> involves generating a picture of the structure of the brain. 
+        Conversely <em>functional neuroimaging</em> images the activity of the brain over time. 
+        My research focuses primarily on functional neuroimaging, in particular magneto- and electro-encephalography (MEG/EEG respectively). 
+        When a mass of neurons within a region of the brain synchronously become active, they create electric and magentic fields around the head. 
+        MEG/EEG place sensors outside the head (MEG) or on the scalp (EEG) and record these magnetic/electric fields. 
     </p>
 
-    <style>
-        table {
-          font-family: arial, sans-serif;
-          border-collapse: collapse;
-          width: 100%;
-        }
-        
-        td, th {
-          border: 1px solid #dddddd;
-          text-align: left;
-          padding: 8px;
-        }
-        
-        tr:nth-child(even) {
-          background-color: #dddddd;
-        }
-    </style>
-
-    <table>
-        <tr>
-            <th>Modality</th>
-            <th>Invasive</th>
-            <th>Signal</th>
-            <th>Spatial resolution</th>
-            <th>Temporal resolution</th>
-        </tr>
-        <tr>
-            <td>Patch clamp</td>
-            <td>Yes</td>
-            <td>Voltage of a neuron</td>
-            <td>Single neuron</td>
-            <td>Faster than a millisecond</td>
-        </tr>
-        <tr>
-            <td>Multi-electrode array (MEA)</td>
-            <td>Yes</td>
-            <td>When neurons become active, they release ions which cause a current to flow outside the cell. MEA records these currents.</td>
-            <td>Groups of neurons at the same time</td>
-            <td>Faster than a millisecond</td>
-        </tr>
-        <tr>
-            <td>Two-photon calcium imaging</td>
-            <td>Yes</td>
-            <td>When neurons become active, they take in calcium. Calcium imaging images the amount of calcium in the neuron.</td>
-            <td>Groups of neurons at the same time</td>
-            <td>Milliseconds to seconds</td>
-        </tr>
-        <tr>
-            <td>Local field potential (LFP)</td>
-            <td>Yes</td>
-            <td>When neurons become active, they release ions which cause a current to flow outside the cell. LFP records this current is recorded.</td>
-            <td>The synchronous activity of many neurons</td>
-            <td>Millisecond</td>
-        </tr>
-        <tr>
-            <td>Electroencephalography (EEG)</td>
-            <td>No</td>
-            <td>When neurons become active, they generate electric fields which conduct onto the scalp. EEG records these electric fields by placing sensors on the scalp.</td>
-            <td>Activity of approximately a 10mm patch of the brain.</td>
-            <td>Millisecond</td>
-        </tr>
-        <tr>
-            <td>Magnetoencephalography (MEG)</td>
-            <td>No</td>
-            <td>When neurons become active, they also generate magnetic fields which conduct outside the head. MEG records these electric fields by placing the head in a helmet of sensors.</td>
-            <td>Activity of approximately a 5mm patch of the brain.</td>
-            <td>Millisecond</td>
-        </tr>
-        <tr>
-            <td>Functional MRI (fMRI)</td>
-            <td>No</td>
-            <td>More active regions of the brain require more oxygen. fMRI measures the amount of oxygen in the blood at different points of the brain.</td>
-            <td>Activity of approximately a 1-5mm patch of the brain.</td>
-            <td>Seconds</td>
-        </tr>
-        <tr>
-            <td>Positron Emission Tomography (PET)</td>
-            <td>No</td>
-            <td>More active regions of the brain require more oxygen and glucose, which they turn into energy through a process called metabolism. PET measures metabolic activity.</td>
-            <td>Activity of approximately a 5mm patch of the brain.</td>
-            <td>Tens of seconds</td>
-        </tr>
-      </table>
-    -->
+    <div class="figure">
+        <img src="images/functional_neuroimaging.png">
+        <p>
+            <b>Structural and functional neuroimaging.</b>
+            In black and white is an MRI scan showing the structure of the brain (structural imaging), whilst overlaid (yellow/red pixels) shows which parts of the brain are active at a single time point (functional imaging). 
+        </p>
+    </div>
+   
 
     <h2>Why is functional neuroimaging important?</h2>
     <p>
-        Functional neuroimaging is crucial to understand the activity of the brain. 
-        Firstly, it can help with understanding how the healthy brain works.
+        Functional neuroimaging is crucial to understand the brain activity underpinning healthy cognition and neurological disorders.
         For example, questions that can be answered with functional neuroimaging include "which areas of the brain become active during a certain task?", 
-        or "<a href="brainnetworks.html">how do different areas of the brain work together?</a>".
-    </p>
-    <p>
-        Secondly, it can be useful for understanding what is pathological brain activity in neurological diseases. 
-        A focus of my research is uncovering how dysfunctional brain activity underpins cognitive impairment in dementias such as Alzheimer's disease.
-    </p>
-    <p>
-        Finally, functional neuroimaging is useful as a diagnostic tool in the clinic. 
-        At present a type of functional neuroimaging called EEG (see below) is used to diagnose epilepsy.
+        or "<a href="brainnetworks.html">how do different areas of the brain work together?</a>", and how is this activity dysfunctional in disease?
+        Functional neuroimaging is also useful as a diagnostic tool in the clinic. 
+        For example, at present EEG is used to diagnose epilepsy.
         I am interested in adapting EEG to <a href="diagnosis.html">aid with diagnosing Alzheimer's disease</a> at stages before a diagnosis can be made based on cognitive symptoms. 
     </p>
 
     <h2>What is "source reconstruction"?</h2>
     <p>
-        While there are many different types of neuroimaging, my primary interests are in magneto- and electro-encephalography (MEG/EEG respectively). 
-        When parts of the brain become active, they create an electric and magentic field, which conduct outside the head. 
-        MEG/EEG place sensors outside the head (MEG) or on the scalp (EEG) to record the resulting magnetic/electric fields. 
-    </p>
-    <p>
-        In the picture above, the functional activity was recorded from EEG. 
+        In the figure above, the functional data was recorded from EEG. 
         But if EEG is recorded using sensors placed on the scalp, then why is the activity not shown on the surface of the head?
-        The answer is because <em>source reconstruction</em> was used on the EEG. 
+        The answer is because <em>source reconstruction</em> was applied to the EEG. 
         Source reconstruction is the process of estimating where in the brain the M/EEG activity originated from.
     </p>
-    <img src="images/source_reconstruction.png" style="max-height:200px; max-width: 100%;">
+    <div class="figure">
+        <img src="images/source_reconstruction.png">
+        <p>
+            <b>Source reconstruction </b>
+            is the estimation of the brain activity that generates the magnetic/electric fields recorded by M/EEG. 
+        </p>
+    </div>
     <p>
-        Conceptually (and mathematically!), it is analogous to a version of the 'cocktail party problem': If there are people in a room conversing at a cocktail party, and I place microphones around the room, can I guess who was standing where and what they were saying based only on the microphone recordings? 
-        The people in the room are parts of the brain, their conversation is the brain activity, and the microphones are the M/EEG sensors. 
-    </p>
-    <p>
-        Unfortunately, there is no 'unique' solution to source reconstruction, because there are many many more neurons in the brain (86 billion) than sensors in MEG (typically 200-300) or EEG (typically 19-300).
-        This is known as an 'underdetermined' problem, and is similar to asking "if A+B=10, then what are A and B?".
-        There are an infinite number of pairs of A and B that sum to make 10. 
-        A key research interest of mine is how we can make a 'best guess' of the source reconstructed activity.
-        Additionally, these best guesses often blur the solution, so I am interested in developing ways to counteract this problem.
+        Unfortunately, there is no unique solution to source reconstruction, because there are many many more neurons in the brain (86 billion) than sensors in MEG (typically 200-300) or EEG (typically 10-300).
+        This is known as an underdetermined problem, and is like asking "If A+B=10, what are A and B?".
+        This question, like the source reconstruction problem, has an infinite number of solutions. 
+        I am interested in how we can make a 'best estimate' of the source activity.
     </p>
 
     <h2>Where are meaningful "regions of the brain" to study?: An "atlas" of the brain</h2>
     <p>
-        Once we have imaged the brain, we have to define regions of the brain to study. 
+        Once we have imaged the brain, it is useful to define regions of the brain to study. 
         To get the most from our data, these regions should be defined meaningfully and not just chosen at random. 
         This is often done using a map of brain regions, called an atlas.
         Probably the most detailed atlas available to date was developed by the <a href="https://doi.org/10.1038/nature18933">Human Connectome Project</a> by looking at brain structure, function and activation during a range of tasks, and connectivity. 
         We have developed <a href="https://github.com/lukewtait/evaluate_inverse_methods/tree/master/reduced_atlas">an atlas designed for use with MEG</a> based on the Human Connectome Project's atlas.  
         This atlas is shown below on a smoothed brain surface.
     </p>
-    <img src="images/HCP250_atlas.png" style="max-height:200px; max-width: 100%;">
+    <div class="figure">
+        <img src="images/HCP250_atlas.png">
+        <p>
+            <b>Our MEG optimized HCP-250 atlas.</b> The atlas can be found in my <a href="https://github.com/lukewtait/evaluate_inverse_methods/tree/master/reduced_atlas">"evaluate_inverse_methods" Github repository</a>, 
+            and a description of the atlas can be found in <a href = "https://doi.org/10.1101/2020.01.12.903302">our recent preprint</a>.
+        </p>
+    </div>
 
     <h2>Imaging at smaller scales</h2>
     <p>
         The focus of this page has been on MEG and EEG, which are methods of imaging the whole brain, and are the primary focus of my recent research. 
-        However, there are many other methods for functional imaging of the brain, at a range of scales. 
+        However, there are many other methods for functional imaging of the brain, at a range of spatial scales. 
         I have experience working with a range of other methods, primarily in rodent models of Alzheimer's disease. 
         During my PhD, I spent six months working in a patch clamp lab, recording the activity of single neurons. 
-        I additionally have interest in modalities such as local field potential recordings, which are highly similar to EEG but are invasive so typically only record a single region of the brain at a time,
-        and two-photon calcium imaging, which records the activity in a group of neurons by imaging the amount of calcium in the cell (which increases as the cell becomes more active). 
+        I additionally have interest in modalities such as invasive local field potential recordings, which are similar to EEG but are recorded using electrodes placed within the brain tissue,
+        and two-photon calcium imaging, which records the activity in a group of neurons by imaging the calcium dynamics of each neuron in the group. 
         By combining neuroimaging at multiple scales, a more detailed description of the brain can be obtained. 
     </p>
     <p>
-        Simulations of patch clamp, local field potential, and EEG/MEG experiments can be found on the <a href="modelling.html">brain simulator</a> page.
+        Simulations of patch clamp, local field potential, and EEG/MEG experiments can be found on the <a href="modelling.html">modelling the brain</a> page.
     </p>
 
 </div>
