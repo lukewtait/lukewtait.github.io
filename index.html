@@ -19,30 +19,12 @@
                 <!-- links to pages -->
 	    		<ul>
 	        		<li><a href="./index.html">Home</a></li>
-                    <li id="researchbutton" onclick="dispResearchLinks()">Research <i class="fa fa-caret-down"></i></li>
-                    <div class="reslink" id="researchlinks">
-                        <a href="./brainimaging.html">Imaging the brain</a>
-                        <a href="./brainnetworks.html">Brain networks</a>
-                        <a href="./microstates.html">Microstates of the brain</a>
-                        <a href="./modelling.html">Simulating the brain</a>
-                        <a href="./diagnosis.html">Diagnosing Alzheimer's disease</a>
-                    </div>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
                     <li><a href="./publications.html">Publications</a></li>
 	        		<li><a href="./cv.html">CV</a></li>
 	        		<!--<li><a href="./blog">Blog</a></li>-->
                 </ul>
-
-                <!-- javascript to open and close research links-->
-                <script>
-                function dispResearchLinks() {
-                    var x = document.getElementById("researchlinks");
-                    if (x.style.display === "block") {
-                    x.style.display = "none";
-                    } else {
-                    x.style.display = "block";
-                    }
-                }
-                </script>
 
                 <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
                 -->
@@ -108,30 +90,12 @@
                 <!-- links to pages -->
 	    		<ul>
 	        		<li><a href="./index.html">Home</a></li>
-                    <li id="researchbutton" onclick="dispResearchLinks_mob()">Research <i class="fa fa-caret-down"></i></li>
-                    <div class="reslink" id="researchlinks_mob">
-                        <a href="./brainimaging.html">Imaging the brain</a>
-                        <a href="./brainnetworks.html">Brain networks</a>
-                        <a href="./microstates.html">Microstates of the brain</a>
-                        <a href="./modelling.html">Simulating the brain</a>
-                        <a href="./diagnosis.html">Diagnosing Alzheimer's disease</a>
-                    </div>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
                     <li><a href="./publications.html">Publications</a></li>
 	        		<li><a href="./cv.html">CV</a></li>
 	        		<!--<li><a href="./blog">Blog</a></li>-->
                 </ul>
-
-                <!-- javascript to open and close research links-->
-                <script>
-                function dispResearchLinks_mob() {
-                    var x = document.getElementById("researchlinks_mob");
-                    if (x.style.display === "block") {
-                    x.style.display = "none";
-                    } else {
-                    x.style.display = "block";
-                    }
-                }
-                </script>
 
                 <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
                 -->
@@ -192,7 +156,7 @@
             <div class="mnav">
                 <!-- profile picture + name-->
                 <i class="fa fa-bars" style="display: inline;" onclick="dispNavBar()" id="mainburger"></i>
-                <h1 style="display: inline;">Luke Tait</h1>
+                <!--<h1 style="display: inline;">Luke Tait</h1>-->
 
                 <script>
                     function dispNavBar() {
@@ -241,69 +205,44 @@
 	</div>
 
 	<div class="home_research"> <!-- research -->
-		<h1>Research</h1>
+		<h1>Research and Outputs</h1>
 		<p>	
 			Select an image below to read about my research interests and a list of my publications. 
 		</p>
 	</div>
 
-	<a class="homefig" href="./brainimaging.html">
-		<!--<p>Imaging the brain</p>-->
+	<a class="homefig" href="research.html">
 		<div class="homefigoverlay">
-			<img src="images/home_imaging.png">
+			<img src="images/home_research.png">
 			<div class="overlay">
-				<div class="overlaytext">Imaging the brain</div>
+				<div class="overlaytext">Research</div>
 			</div>
 		</div>
 	</a>
 
-
-	<a class="homefig" href="brainnetworks.html">
-		<!--<p>Brain networks</p>-->
+	<a class="homefig" href="outputs.html">
 		<div class="homefigoverlay">
-			<img src="images/home_fc.png">
+			<img src="images/home_outputs2.png">
 			<div class="overlay">
-				<div class="overlaytext">Brain networks</div>
+				<div class="overlaytext">Outputs, Tools, and Workshops</div>
 			</div>
 		</div>
 	</a>
 
-	<div class="homefig">
-		<!--<p>Microstates</p>-->
-		<div class="homefigoverlay">
-			<img src="images/home_microstates.png">
-			<div class="overlay">
-				<div class="overlaytext">Microstates</div>
-			</div>
-		</div>
-	</div>
-
-	<a class="homefig" href="modelling.html">
-		<!--<p>Simulating the brain</p>-->
-		<div class="homefigoverlay">
-			<img src="images/home_simulating.png">
-			<div class="overlay">
-				<div class="overlaytext">Simulating the brain</div>
-			</div>
-		</div>
-	</a>
-
-	<a class="homefig" href="diagnosis.html">
-		<!--<p>Diagnosing Alzheimer's disease</p>-->
-		<div class="homefigoverlay">
-			<img src="images/home_diagnosis.png">
-			<div class="overlay">
-				<div class="overlaytext">Diagnosing Alzheimer's disease</div>
-			</div>
-		</div>
-	</a>
-
-	<a class="homefig" href="./publications.html">
-		<!--<p>Publications</p>-->
+	<a class="homefig" href="publications.html">
 		<div class="homefigoverlay">
 			<img src="images/home_publications.png">
 			<div class="overlay">
 				<div class="overlaytext">Publications</div>
+			</div>
+		</div>
+	</a>
+
+	<a class="homefig" href="cv.html">
+		<div class="homefigoverlay">
+			<img src="images/home_cv.png">
+			<div class="overlay">
+				<div class="overlaytext">CV</div>
 			</div>
 		</div>
 	</a>

@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Brain Modelling Workshop</title>
+			<!-- link to main stylesheet -->
+            <link rel="stylesheet" type="text/css" href="css/main.css">
+            <!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
+            <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		</head>
+		<body>
+            <!-- navigation bar on left -->
+			<div class="nav" id="mainnav">
+                <!-- profile picture + name-->
+                <img src="images/modelling_workshop_logo.png" atl="Avatar" class="avatar">
+                <h1>Brain Modelling Workshop</h1>
+
+                <!-- links to pages -->
+	    		<ul>
+                    <li><a href="./workshop.html">Workshop Home</a></li>
+                    <li id="sessionsbutton" onclick="dispTutorials()">Tutorials<i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="tutorialslist">
+                        <a href="./workshop1.html">1) Introduction to Dynamical Systems</a>
+                        <a href="./workshop2.html">2) Dynamics on Networks</a>
+                        <a href="./workshop3.html">3) Bifurcations in Neural Dynamics and Cognition</a>
+                        <a href="./workshop4.html">4) Fitting Models to Data</a>
+                    </div>
+                    <li><a target="_blank" href="https://www.github.com/lukewtait/intro_to_modelling">Github Page <i class="fa fa-github"></i></a></li>
+                    <li><a href="./index.html">Site Home</a></li>
+	        		<!--<li><a href="./blog">Blog</a></li>-->
+                </ul>
+
+                <!-- javascript to open and close research links-->
+                <script>
+                    function dispTutorials() {
+                        var x = document.getElementById("tutorialslist");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                </script>
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+
+
+            <!-- mobile navigation bar -->
+
+            <div class="nav" id="mobnavmenu">
+                <!-- links to pages -->
+                <ul>
+                    <li><a href="./workshop.html">Workshop Home</a></li>
+                    <li id="sessionsbutton" onclick="dispTutorials_mob()">Tutorials<i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="tutorialslist_mob">
+                        <a href="./workshop1.html">1) Introduction to Dynamical Systems</a>
+                        <a href="./workshop2.html">2) Dynamics on Networks</a>
+                        <a href="./workshop3.html">3) Bifurcations in Neural Dynamics and Cognition</a>
+                        <a href="./workshop4.html">4) Fitting Models to Data</a>
+                    </div>
+                    <li><a target="_blank" href="https://www.github.com/lukewtait/intro_to_modelling">Github Page <i class="fa fa-github"></i></a></li>
+                    <li><a href="./index.html">Site Home</a></li>
+	        		<!--<li><a href="./blog">Blog</a></li>-->
+                </ul>
+
+                <!-- javascript to open and close research links-->
+                <script>
+                    function dispTutorials_mob() {
+                        var x = document.getElementById("tutorialslist_mob");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                </script>
+
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+            <div class="mnav">
+                <!-- profile picture + name-->
+                <i class="fa fa-bars" style="display: inline;" onclick="dispNavBar()" id="mainburger"></i>
+                <!--<h1 style="display: inline;">Luke Tait</h1>-->
+
+                <script>
+                    function dispNavBar() {
+                        var x = document.getElementById("mobnavmenu");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                </script>
+               
+            </div>
+
+            <script>
+                $("body").click(
+                    function(e)
+                    {
+                        var mobnavmenu = document.getElementById("mobnavmenu");
+                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "sessionsbutton"))
+                        {
+                        $("#mobnavmenu").hide();
+                        }
+                    }
+                );
+            </script>
+            
+
+
+
+			<div class="container">
+			
+			<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="javascript_codes/Worksheet1.js"></script>
+<script src="css/codemirror-5.56.0/lib/codemirror.js"></script>
+<link rel="stylesheet" href="css/codemirror-5.56.0/lib/codemirror.css">
+<script src="css/codemirror-5.56.0/mode/javascript/javascript.js"></script>
+<link rel="stylesheet" href="css/workshop.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script src="javascript_codes/jquery.knob.min.js"></script>
+
+
+<div style="width: 100%; max-width: 1000pt; margin: auto;"><img src="images/workshop1_header.png" width="100%"></div>
+<p>
+    The video below shows the first session of the workshop "An Introduction to Modelling Brain Dynamics". 
+    In this session, I introduce concepts in dynamical systems theory such as ordinary differential equations, steady states, and oscillations ("periodic orbits"). 
+    I apply these concepts to a popular model of large-scale brain dynamics called the Wilson-Cowan model.
+    The slides can be found at <a href="www.github.com/lukewtait/intro_to_modelling">the workshop's Github page</a>.
+</p>
+
+
+<div class="video-container-1">
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZxXE2eQ7Y38" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+
+<p>
+    After watching this seminar, you may wish to practice these skills in a practical session. 
+    The original session was run with a Matlab practical, for which the files can also be found at the <a href="https://www.github.com/lukewtait/intro_to_modelling">the workshop's Github page</a>. 
+    Alternatively, the rest of this page is dedicated to a slightly modified version of the practical which can be run directly from the browser. 
+</p>
+
+<div style="font-size: 25pt; color: rgb(100,100,255)"><a href=workshop2.html>Click to continue to Session 2</a></div>
+
+<h1>Practical Session 1: Solving differential equations on a computer</h1>
+<div>
+    <p>This practical session aims to introduce you to simulating brain dynamics on a computer. The practical is split into three parts, which take you through the steps required to simulate cortical gamma oscillations using the Wilson-Cowan model. The parts are outlined below:</p>
+    <ol>
+        <li>The Euler method: You will implement a dynamical systems solver on a computer</li>
+        <li>The Wilson-Cowan model: You will implement the Wilson-Cowan model + simulate using the Euler method, to observe the generation of gamma rhythms.</li>
+        <li>Stochastic differential equations: You will learn how to add noise to dynamical systems, and study noise-induced gamma oscillations in your Wilson-Cowan model.</li>
+    </ol>
+    <p>
+        This practical session is based on the Matlab practical session found at <a href="https://www.github.com/lukewtait/intro_to_modelling">the workshop's Github page</a>.
+        The online version of the practical uses Javascript syntax. To increase useability, we have declared variables outside of the editors provided and included the syntax for more complicated operations such as loops. As such, most of the coding should be basic mathematical operations and similar to e.g. Matlab or Python.  
+    </p>
+</div>
+
+<h2>Part 1: The Euler Method</h2>
+<div>
+    <p>
+        In this section you will implement an “Euler solver”, which is an algorithm to solve differential equations on a computer. 
+        You will use this solver to simulate the one population firing rate equation. 
+        Because this equation has an exact solution, you will be able to compare the Euler solution to the real solution, and see errors in the Euler solution. 
+        The algorithm, using Javascript syntax, is outlined below.
+    </p>
+    <h4>Algorithm: The Euler Method</h4>
+    <p>
+        Given an array <span class="inlinecode">t</span> of time points at which to solve, 
+        a function <span class="inlinecode">f(x[i])</span> which outputs \(\dot{x}\) at the <span class="inlinecode">i</span>'th time point,
+        and initial conditions <span class="inlinecode">x0</span>: 
+    </p>
+    <ol>
+        <li>Initialize an array <span class="inlinecode">x</span> of length <span class="inlinecode">T</span>, where <span class="inlinecode">T</span> is the number of time points.</li>
+        <li>Set <span class="inlinecode">x[0]=x0</span></li>
+        <li>
+            Loop over time points <span class="inlinecode">i</span> in the range <span class="inlinecode">0</span> to <span class="inlinecode">T-1</span>. 
+            At each time point, first find the time step <span class="inlinecode">h=t[i+1]-t[i]</span>. 
+            Next, find the solution for the next time point using the Euler method, <span class="inlinecode">x[i+1]=x[i]+h*f(x[i])</span>.
+        </li>
+    </ol>
+</div>
+
+
+<p>
+    <span style="font-weight: bold">Task 1)</span> In the Editor 1, we have started the Euler algorithm. Steps 1-2 were completed on lines 10-11 of the code. 
+    On line 14, we have also started the loop over time points, using index <span class="inlinecode">i</span> to loop from time <span class="inlinecode">0</span> to <span class="inlinecode">T-1</span>. 
+    On the lines below where it says <span class="inlinecode">// **** YOUR CODE HERE ****</span>, i.e. in lines 17-18, you should fill in steps to calculate the time step and then find the solution at the next time point. 
+</p>
+
+<h5>Editor 1: Code for the Euler ODE algorithm (finish the code)</h5>
+<div id="q1_EulerODE_container">
+<div class="codediv">
+<textarea autocomplete="off" id="codetext_q1_EulerODE" spellcheck="false" wrap="logical" class="CodeMirror-code">
+// This file contains the contents of a function which takes as input: 
+// x0: The initial conditions
+// t: A time axis
+// f: an ODE function to solve
+
+// number of time points
+T=t.length ; 
+
+// Initialize output array
+x=Array(T); // make x an empty array with T entries, one for each time point
+x[0]=x0 ; // enter initial condition to first time point
+
+// Do Euler loop
+for (i=0; i &lt T-1; i++) { // loop over time points from time 0 to time T-1
+
+    // **** YOUR CODE HERE ****
+    
+
+
+}
+</textarea>
+<script>var eulerODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q1_EulerODE"),{lineNumbers: true});</script>
+</div>
+
+<textarea autocomplete="off" id="codetext_sol1_EulerODE" spellcheck="false" wrap="logical" style="display: none;">
+// This file contains the contents of a function which takes as input: 
+// x0: The initial conditions
+// t: A time axis
+// f: an ODE function to solve
+
+// number of time points
+T=t.length ;
+
+// Initialize output array
+x=Array(T); // make x an empty array with T entries, one for each time point
+x[0]=x0 ; // enter initial condition to first time point
+
+// Do Euler loop
+for (i=0; i &lt T-1; i++) { // loop over time points from time 0 to time T-1
+
+    // **** YOUR CODE HERE ****
+    h=t[i+1]-t[i] ; // find the time step h, which is the difference between t[i+1] and t[i]
+    x[i+1]=x[i]+h*f(x[i]) ; // calculate x[i+1] from x[i] using Euler step
+
+}
+</textarea>
+<div>
+    <button onclick="default_button_eulerODE1()" type="button">Reset</button>
+    <button onclick="q1_euler_solution_button()" type="button">Solution</button>
+</div>
+
+</div>
+
+
+<p>
+    <span style="font-weight: bold">Task 2)</span> Check your algorithm works by clicking the Run (<i class="fa fa-caret-right"></i>) button on the simulator below using the default settings. 
+    The black line (Euler solution) and dotted blue line (exact solution) should be very similar. 
+</p>
+
+<button onclick="$('.task2sol').toggle();"><div class="task2sol">Show solution</div><div class="task2sol" style="display: none">Hide solution</div></button>
+<div class="task2sol" style="display: none; background-color: rgba(0,114,189, 0.2); padding: 3pt;">
+    <p>
+        When you click run on the simulator using the default values, you should get an output that looks like the following: 
+    </p>
+    <div style="width: 95%; max-width: 1000px;">
+        <img src="./images/worksheet1_task2_sol.png" width="100%">
+    </div>
+    <p>
+        The Euler and exact solutions are very similar, tracing almost identical lines.
+    </p>
+</div>
+
+
+
+
+
+<p>
+    <span style="font-weight: bold">Task 3)</span> Do you think the Euler solver will be more accurate with smaller or larger time steps? 
+    Vary the time step in the simulator below and Run to test your hypothesis. 
+    Do you notice any downsides to smaller time steps? (hint: the output in the console to the right shows how long the simulation took and the error in the Euler solution (root mean square error; RMSE)).
+</p>
+
+
+<button onclick="$('.task3sol').toggle();"><div class="task3sol">Show solution</div><div class="task3sol" style="display: none">Hide solution</div></button>
+<div class="task3sol" style="display: none; background-color: rgba(0,114,189, 0.2); padding: 3pt;">
+    <p>
+        Below, successive simulations using three different time steps are shown. As the step size gets larger, the solution becomes
+        less accurate (increased root mean square error, and you can visually see the Euler solution fits the exact solution more closely).
+        However, when the step size is very small, the simulation time is very large. 
+        There is a speed/accuracy trade off whenever you solve an ODE on the computer.
+    </p>
+    <div style="width: 95%; max-width: 1000px;">
+        <img src="./images/worksheet1_task3_sol1.png" width="100%">
+        <img src="./images/worksheet1_task3_sol2.png" width="100%">
+        <img src="./images/worksheet1_task3_sol3.png" width="100%">
+    </div>
+</div>
+
+
+
+<div class="outputgrid" id="eulerODEgrid">
+    <div class="input_selector">
+        <div id="selectInputCurrent">
+            <span style="font-size:9pt; font-family:Arial, Helvetica, sans-serif; color: white;">Input current</span><br>
+            <input type="text" value="0.5" class="dial" data-min="-2" data-max="2" data-step=0.1 data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width="75%" id="dialInputCurrent">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+        </div>
+
+        <div id="selectInitialRate">
+            <span style="font-size:9pt; font-family:Arial, Helvetica, sans-serif; color: white;">Initial Firing Rate</span><br>
+            <input type="text" value="0.9" class="dial" data-min="0" data-max="1" data-step=0.1 data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width="75%" id="dialInitialRate">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+        </div>
+
+        <div id="selectTimeStep">
+            <span style="font-size:9pt; font-family:Arial, Helvetica, sans-serif; color: white;">Time Step, \(h\) [ms]</span><br>
+            <input type="text" value="0.1" class="dial" data-min="0.001" data-max="2" data-step=0.001 data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width="75%" id="dialTimeStep">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+        </div>
+        
+        <div id="runButton">
+            <button onclick="SimulateFiringRateModel()" style="height: 65pt; width: 65pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+        </div>
+
+        <div id="defaultButton">
+            <button id="eulerODEinput_help" onclick="set_default_inputs()" style="height: 30pt; width: 65pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:12pt;color:rgb(118,208,237)">Defaults</button>
+        </div>
+
+        <div id="helpButton">
+            <button id="eulerODEinput_help" style="height: 30pt; width: 65pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:18pt;color:rgb(118,208,237)">?</button>
+        </div>
+
+
+    </div>
+    <div class="output_monitor"></div>
+    <div id="eulerODEoutput"></div>
+    <div class="time_monitor"></div>
+    <div id="eulerODEoutput_time">
+        <textarea id="eulerODEoutput_textarea" readonly="readonly"></textarea>
+    </div>
+</div>
+<script>document.getElementById("eulerODEoutput_textarea").value='';</script>
+
+<script>
+
+
+    function default_button_eulerODE1() {
+        eulerODE1.toTextArea() ; // destroy code mirror
+        document.getElementById("codetext_q1_EulerODE").value=document.getElementById("codetext_q1_EulerODE").defaultValue ; // replace with default value
+        eulerODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q1_EulerODE"),{lineNumbers: true}); // build new code builder
+    }
+
+    function q1_euler_solution_button() {
+        eulerODE1.toTextArea() ; // destory code mirror
+        document.getElementById("codetext_q1_EulerODE").value = document.getElementById("codetext_sol1_EulerODE").defaultValue ; // replace with original value
+        eulerODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q1_EulerODE"),{lineNumbers: true}); // build new code builder
+    }
+
+    function set_default_inputs() {
+        document.getElementById("dialInputCurrent").value=document.getElementById("dialInputCurrent").defaultValue;
+        document.getElementById("dialInitialRate").value=document.getElementById("dialInitialRate").defaultValue;
+        document.getElementById("dialTimeStep").value=document.getElementById("dialTimeStep").defaultValue;
+        $("input.dial").trigger('change');
+    }
+   
+</script>
+
+<script>set_default_inputs();</script>
+
+
+
+
+<!-- -----------------------------------------   PART 2   ----------------------------------------------------- -->
+<div style="height: 50pt"></div>
+<h2>Part 2: The Wilson-Cowan Equations</h2>
+
+<div>
+    <p>
+        Parts 2-3 of this workshop focus on simulating gamma oscillations in the cortex using the Wilson-Cowan model. 
+        The background behind the Wilson-Cowan equations was described in the slides. 
+        The equations are given by:
+        \[ \tau_E \dot{E} = -E + S_E(P+c_{EE}E-c_{IE}I) \qquad [1] \]
+        \[ \tau_I \dot{I} = -I + S_I(c_{EI}E-c_{II}I) \qquad [2] \]
+        where the sigmoid functions \(S_a(input)\) are given by
+        \[ S_a(input) = {1 \over 1+\exp(-k_a\times(input-\theta_a))} \qquad [3] \]
+        and where \(a = \{E,I\}\) (i.e. there is a function \(S_E\) for the excitatory population and a function \(S_I\) for the inhibitory population).
+        We will use the parameters given in Table 1 (modified from Onslow et al. 2014 PLoS One 9(8):e102591):
+    </p>
+    
+</div>
+
+<h5 style="margin: auto; width: 95%; max-width: 600px; min-width: 200px; text-align: center;">Table 1: Parameter values for Wilson-Cowan model</h5>
+<table>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+      <th>Parameter</th>
+      <th>Value</th>
+      <th>Meaning</th>
+    </tr>
+    <tr>
+      <td>\(\tau_E\)</td>
+      <td>3.2</td>
+      <td>\(\tau_I\)</td>
+      <td>3.2</td>
+      <td>Population time constants</td>
+    </tr>
+    <tr>
+      <td>\(c_{EE}\)</td>
+      <td>2.4</td>
+      <td>\(c_{IE}\)</td>
+      <td>2</td>
+      <td>Connectivity onto \(E\) population</td>
+    </tr>
+    <tr>
+        <td>\(c_{EI}\)</td>
+        <td>2</td>
+        <td>\(c_{II}\)</td>
+        <td>0</td>
+        <td>Connectivity onto \(I\) population</td>
+    </tr>
+    <tr>
+        <td>\(k_E\)</td>
+        <td>4</td>
+        <td>\(k_I\)</td>
+        <td>4</td>
+        <td>Slope of sigmoid</td>
+    </tr>
+    <tr>
+        <td>\(\theta_E\)</td>
+        <td>1</td>
+        <td>\(\theta_I\)</td>
+        <td>1</td>
+        <td>"Threshold" (input at which firing rate=0.5)</td>
+    </tr>
+  </table>
+
+<p>
+    <span style="font-weight: bold">Task 4)</span> In the Euler solver you wrote in the previous part, one of the inputs was a function <span class="inlinecode">f(x[i])</span>, 
+    which gave the rate of change of \(x\), i.e. \(\dot{x}=f(x)\). 
+    In the previous section, this function was already implemented for you for the firing rate equation. 
+    This ODE function can be seen in the Editor 2 below. 
+    It takes two inputs, <span class="inlinecode">r_i</span> (which is the firing rate at time point <span class="inlinecode">i</span>) and
+    <span class="inlinecode">P</span> (the input current).
+    The output is <span class="inlinecode">rdot_i</span>, which is the derivative of the firing rate at this time point.
+</p>
+<p>
+    Your task is to finish the code in Editor 3 below to complete the ODE function for the Wilson-Cowan equations. 
+    You will essentially need to use the code in Editor 2 as a template, but modify it for two populations of neurons. 
+    Therefore parameters, inputs, sigmoid curves, and derivatives need to be defined for both the \(E\) and \(I\) populations. 
+</p>
+
+<div id="example_firingrate_container">
+<div class="codediv">
+    <h5>Editor 2: Example firing rate model ODE function (cannot be edited)</h5>
+<textarea autocomplete="off" id="example_firingrate_ODE" spellcheck="false" wrap="logical" class="CodeMirror-code">
+// This (read only) file contains example contents of a function which takes as input: 
+// r_i: The firing rate of a neural population at time point i 
+// P: The input current to the the population
+// and gives as output:
+// rdot_i: The derivative of the firing rate at time point i.
+// *** You cannot edit this file, but it is useful as an example start point for the Wilson-Cowan ODE file you must write below ***
+
+
+// Set parameters
+tau = 3.2 ; 
+k   = 4 ; 
+th  = 1 ; 
+
+// Get the input to the population
+input = P ;
+
+// Calculate sigmoid function
+S = 1/(1+Math.exp(-k*(input-th))) ; 
+
+// Calculate rate of change of r 
+rdot_i = (1/tau)*(-r_i + S) ;     
+
+</textarea>
+<script>var firingrateODE1 = CodeMirror.fromTextArea(document.getElementById("example_firingrate_ODE"),{lineNumbers: true, readOnly: true});</script>
+</div>
+</div>
+
+
+<h5>Editor 3: ODE function for Wilson-Cowan model (finish the code)</h5>
+
+<div id="q2_WilsonCowanODE_container">
+<div class="codediv">
+<textarea autocomplete="off" id="codetext_q2_WilsonCowanODE" spellcheck="false" wrap="logical" class="CodeMirror-code">
+// This file contains the contents of a function which takes as input: 
+// x_i=[E,I]: The firing rates of the excitatory (E) and inhibitory (I) neural populations at time point i 
+// P: The input current to the the excitatory population
+// and gives as output:
+// xdot_i=[Edot,Idot]: The derivative of the firing rate at time point i.
+
+// Extract E and I
+E = x_i[0] ;
+I = x_i[1] ;
+
+// Set parameters
+// **** YOUR CODE HERE - use Table 1 to replace the NaNs with the correct values ****
+tauE = NaN ; tauI = NaN ; // replace NaN with correct values 
+cEE  = NaN ; cIE  = NaN ; // replace NaN with correct values
+cEI  = NaN ; cII  = NaN ; // replace NaN with correct values
+kE   = NaN ; kI   = NaN ; // replace NaN with correct values
+thE  = NaN ; thI  = NaN ; // replace NaN with correct values
+
+// Get the input to the populations
+// **** YOUR CODE HERE - inputs are given by the terms in brackets in equations [1] and [2] ****
+inputE = NaN ; // replace NaN with correct values
+inputI = NaN ; // replace NaN with correct values
+
+// Calculate sigmoid function
+// **** YOUR CODE HERE - sigmoids are given by equation [3]. You can modify line X from editor 2. ***
+SE = NaN ; // replace NaN with correct values
+SI = NaN ; // replace NaN with correct values
+
+// Calculate rates of change
+// **** YOUR CODE HERE - Use equations [1] and [2]. You can modify line X from editor 2. *** 
+Edot = NaN ; // replace NaN with correct values 
+Idot = NaN ; // replace NaN with correct values
+
+// Package Edot and Idot
+xdot_i = [Edot , Idot] ; 
+</textarea>
+<script>var wilsoncowanODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q2_WilsonCowanODE"),{lineNumbers: true});</script>
+</div>
+    
+<textarea autocomplete="off" id="codetext_sol2_WilsonCowanODE" spellcheck="false" wrap="logical" style="display: none;">
+// This file contains the contents of a function which takes as input: 
+// x_i=[E,I]: The firing rates of the excitatory (E) and inhibitory (I) neural populations at time point i 
+// P: The input current to the the excitatory population
+// and gives as output:
+// xdot_i=[Edot,Idot]: The derivative of the firing rate at time point i.
+
+// Extract E and I
+E = x_i[0] ;
+I = x_i[1] ;
+
+// Set parameters
+// **** YOUR CODE HERE - use Table 1 to replace the NaNs with the correct values ****
+tauE = 3.2 ; tauI = 3.2 ; // population time constants
+cEE  = 2.4 ; cIE  = 2   ; // connectivity onto E population
+cEI  = 2   ; cII  = 0   ; // connectivity onto I population
+kE   = 4   ; kI   = 4   ; // slope of sigmoid
+thE  = 1   ; thI  = 1   ; // threshold
+
+// Get the input to the populations
+// **** YOUR CODE HERE - inputs are given by the terms in brackets in equations [1] and [2] ****
+inputE = P + cEE*E - cIE*I ; // input to E population
+inputI = cEI*E - cII*I ; // input to I population
+
+// Calculate sigmoid function
+// **** YOUR CODE HERE - sigmoids are given by equation [3]. You can modify line 18 from editor 2. ***
+SE = 1/(1+Math.exp(-kE*(inputE-thE))) ; // sigmoid for E
+SI = 1/(1+Math.exp(-kI*(inputI-thI))) ; // sigmoid for I
+
+// Calculate rates of change
+// **** YOUR CODE HERE - Use equations [1] and [2]. You can modify line 21 from editor 2. *** 
+Edot = (1/tauE)*(-E + SE) ;    
+Idot = (1/tauI)*(-I + SI) ; 
+
+// Package Edot and Idot
+xdot_i = [Edot , Idot] ;
+
+</textarea>
+<div>
+    <button onclick="default_button_wilsoncowanODE1()" type="button">Reset</button>
+    <button onclick="q2_wilsoncowan_solution_button()" type="button">Solution</button>
+</div>
+
+</div>
+
+
+<p>
+    <span style="font-weight: bold">Task 5)</span> Simulate the Wilson-Cowan system by clicking the Run (<i class="fa fa-caret-right"></i>) button on the simulator below using the default settings. 
+    You should find a steady state at \(E=0.0181\) and \(I=0.0207\). 
+</p>
+
+<button onclick="$('.task5sol').toggle();"><div class="task5sol">Show solution</div><div class="task5sol" style="display: none">Hide solution</div></button>
+<div class="task5sol" style="display: none; background-color: rgba(0,114,189, 0.2); padding: 3pt;">
+    <p>
+        When you click run on the simulator using the default values, you should get an output that looks like the following: 
+    </p>
+    <div style="width: 95%; max-width: 1000px;">
+        <img src="./images/worksheet1_task5_sol.png" width="100%">
+    </div>
+    <p>
+        Placing your cursor over the lines shows the values, which are approximately \(E=0.0181\) and \(I=0.0207\) for any time point, suggesting a steady state at these values.
+    </p>
+</div>
+
+<p>
+    <span style="font-weight: bold">Task 6)</span> Vary the input current in the simulator below. What happens as this input to the excitatory population increases?
+</p>
+
+<button onclick="$('.task6sol').toggle();"><div class="task6sol">Show solution</div><div class="task6sol" style="display: none">Hide solution</div></button>
+<div class="task6sol" style="display: none; background-color: rgba(0,114,189, 0.2); padding: 3pt;">
+    <p>
+        Below, simulations for a range of inputs are shown. 
+        Below \(P=0.4\), there is a stable steady state. 
+        For \(P\) between \(0.4\) and \(1.2\), there is a gamma frequency periodic orbit (and, although you don't see it, an unstable steady state. There is always at least one unstable steady state at the centre of a stable periodic orbit).
+        The sudden transition in behaviour at \(P=0.4\) is an example of a <b>bifurcation</b>. Bifurcations will be covered in more detail in the 2nd and 3rd tutorials.
+        The generation of gamma oscillations given an input are common in cortical neuronal networks.
+        At \(P=1.2\), there is another bifurcation, and above this value there is a stable steady state and no oscillations.
+    </p>
+    <div style="width: 95%; max-width: 1000px;">
+        <img src="./images/worksheet1_task6_sol1.png" width="100%">
+        <img src="./images/worksheet1_task6_sol2.png" width="100%">
+        <img src="./images/worksheet1_task6_sol3.png" width="100%">
+        <img src="./images/worksheet1_task6_sol4.png" width="100%">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<p>
+    <span style="font-weight: bold">Task 7)</span> Set the input current to 0.5 in the simulator below. 
+    You should see a gamma frequency (~55 Hz) oscillation. 
+    In Editor 3, set \(c_{EI}=0\) and simulate. 
+    Does the system still oscillate? 
+    Now return \(c_{EI}\) to its original value and do the same for \(c_{IE}=0\). 
+    Can you think of an explanation for your results, from what was covered in the slides? 
+    Remember to return your values to their original values for the next tasks. 
+</p>
+
+<button onclick="$('.task7sol').toggle();"><div class="task7sol">Show solution</div><div class="task7sol" style="display: none">Hide solution</div></button>
+<div class="task7sol" style="display: none; background-color: rgba(0,114,189, 0.2); padding: 3pt;">
+    <p>
+        There are no oscillations and a stable steady state if either \(c_{EI}\) or \(c_{IE}=0\). 
+        This is because removing the input from one population to another essentially isolates that population, making it a 1d equation. 
+        For example, when \(c_{IE}=0\), the equation for the \(E\) population is identical to the equations for a single isolated population 
+        (and similar for \(c_{EI}=0\) and the \(I\) population). 1d equations cannot oscillate.
+    </p>
+</div>
+
+
+
+<div class="outputgrid" id="wilsoncowanODEgrid">
+    <div class="input_selector">
+        <div id="selectWCInput">
+            <span style="font-size:12pt; font-family:Arial, Helvetica, sans-serif; color: white;">Input current</span><br>
+            <input type="text" value="0" class="dial" data-min="-2" data-max="2" data-step="0.01" data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width="65%" id="dialWCInputCurrent">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+        </div>
+        
+        <div id="runWCButton">
+            <button onclick="SimulateWCModel()" style="height: 65pt; width: 65pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+        </div>
+
+        <div id="defaultWCButton">
+            <button id="WCODEinput_help" onclick="set_WCdefault_inputs()" style="height: 30pt; width: 65pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:12pt;color:rgb(118,208,237)">Defaults</button>
+        </div>
+
+        <div id="helpWCButton">
+            <button id="WCODEinput_help" style="height: 30pt; width: 65pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:18pt;color:rgb(118,208,237)">?</button>
+        </div>
+
+
+    </div>
+    <div class="output_monitor"></div>
+    <div id="WCODEoutput"></div>
+    <div class="time_monitor"></div>
+    <div id="WCODEoutput_time">
+        <textarea id="WCODEoutput_textarea" readonly="readonly"></textarea>
+    </div>
+</div>
+<script>document.getElementById("WCODEoutput_textarea").value='';</script>
+
+
+
+
+
+<script>
+
+
+    function default_button_wilsoncowanODE1() {
+        wilsoncowanODE1.toTextArea() ; // destroy code mirror
+        document.getElementById("codetext_q2_WilsonCowanODE").value=document.getElementById("codetext_q2_WilsonCowanODE").defaultValue ; // replace with default value
+        wilsoncowanODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q2_WilsonCowanODE"),{lineNumbers: true}); // build new code builder
+    }
+
+    function q2_wilsoncowan_solution_button() {
+        wilsoncowanODE1.toTextArea() ; // destory code mirror
+        document.getElementById("codetext_q2_WilsonCowanODE").value = document.getElementById("codetext_sol2_WilsonCowanODE").defaultValue ; // replace with original value
+        wilsoncowanODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q2_WilsonCowanODE"),{lineNumbers: true}); // build new code builder
+    }
+
+    function set_WCdefault_inputs() {
+        document.getElementById("dialWCInputCurrent").value=document.getElementById("dialWCInputCurrent").defaultValue;
+        $("input.dial").trigger('change');
+    }
+   
+</script>
+
+<script>set_WCdefault_inputs();</script>
+
+
+
+
+
+
+
+
+
+
+<!-- -----------------------------------------   PART 3   ----------------------------------------------------- -->
+<div style="height: 50pt"></div>
+<h2>Part 3: Stochastic differential equations (SDEs)</h2>
+
+<div>
+    <p>
+        In nature, systems often have inherent or extrinsic sources of noise. 
+        A noisy ODE is known as a stochastic differential equation (SDE). 
+        The stochastic Euler (or Euler-Maruyama) solver is a slight modification to the Euler solver, 
+        which simulates SDEs where the noise has a normal/Gaussian distribution. 
+        The stochastic Euler algorithm is identical to the Euler algorithm described above, except that the line
+        <span class="inlinecode">x[i+1]=x[i]+h*f(x[i])</span>
+        has an additional term to include the noise. 
+        Specifically, this line is rewritten as 
+        <span class="inlinecode">x[i+1]=x[i]+h*f(x[i])+sqrt(h)*stdnoise*randn</span>. 
+        Here, <span class="inlinecode">stdnoise</span> is the standard deviation of noise and <span class="inlinecode">randn</span> 
+        is a number drawn from the Normal distribution with unit standard deviation (which isn't included by default so must be custom written in javascript).
+        The function <span class="inlinecode">sqrt</span> (or, in javascript, <span class="inlinecode">Math.sqrt</span>) calculates the square root.
+    </p>
+    <p>
+        For the following tasks, we have implemented the stochastic Euler solver and you will perform some stochastic simulations of the Wilson-Cowan model.
+        Note that we use the "solution" code in Editor 3 above to simulate the Wilson-Cowan model.
+    </p>
+
+    <p>
+        <span style="font-weight: bold">Task 8)</span> Simulate the stochastic Wilson-Cowan system by clicking the Run (<i class="fa fa-caret-right"></i>) button on the simulator below using the default settings of zero noise and input current of 0.39. 
+        You should get an identical output to simulations in the above deterministic Wilson-Cowan simulator with input current of 0.39.
+        Is this a steady state, or a periodic orbit?
+    </p>
+
+    <button onclick="$('.task8sol').toggle();"><div class="task8sol">Show solution</div><div class="task8sol" style="display: none">Hide solution</div></button>
+    <div class="task8sol" style="display: none; background-color: rgba(0,114,189, 0.2); padding: 3pt;">
+        <p>
+            The plot should look identical to the first plot in the solution to task 6. 
+            It is a stable steady state.
+        </p>
+    </div>
+
+    <p>
+        <span style="font-weight: bold">Task 9)</span> Set excitatory noise to 0.01 and simulate again. What do you notice? What happens as you decrease the input current? Why do you think you see these results?
+    </p>
+
+
+    <button onclick="$('.task9sol').toggle();"><div class="task9sol">Show solution</div><div class="task9sol" style="display: none">Hide solution</div></button>
+    <div class="task9sol" style="display: none; background-color: rgba(0,114,189, 0.2); padding: 3pt;">
+        <p>
+            The simulated noisy dynamics should appear something like the following:
+        </p>
+        <div style="width: 95%; max-width: 1000px;">
+            <img src="./images/worksheet1_task9_sol.png" width="100%">
+        </div>
+        <p>
+            There are noise induced gamma frequency oscillations, even though the deterministic system is in a stable steady state. 
+            Near to a bifurcation, you often see this type of 'resonance'. 
+            As you decrease the input, the noise induced gama oscillations disappear, since the system is 'further' from oscillating, and typically the steady state is more strongly attracting.
+        </p>
+    </div>
+
+
+</div>
+
+<div class="outputgrid" id="wilsoncowanSDEgrid">
+    <div class="input_selector">
+        <div id="selectSWCInput">
+            <span style="font-size:12pt; font-family:Arial, Helvetica, sans-serif; color: white;">Input current</span><br>
+            <input type="text" value="0.39" class="dial" data-min="-2" data-max="2" data-step="0.01" data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width="65%" id="dialSWCInputCurrent">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+        </div>
+
+        <div id="selectSWCNoise">
+            <span style="font-size:12pt; font-family:Arial, Helvetica, sans-serif; color: white;">Excitatory noise</span><br>
+            <input type="text" value="0" class="dial" data-min="0" data-max="0.02" data-step="0.001" data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width="65%" id="dialSWCNoise">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+        </div>
+        
+        <div id="runSWCButton">
+            <button onclick="SimulateSWCModel()" style="height: 65pt; width: 65pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+        </div>
+
+        <div id="defaultSWCButton">
+            <button id="WCSDEinput_help" onclick="set_SWCdefault_inputs()" style="height: 30pt; width: 65pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:12pt;color:rgb(118,208,237)">Defaults</button>
+        </div>
+
+        <div id="helpSWCButton">
+            <button id="WCSDEinput_help" style="height: 30pt; width: 65pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:18pt;color:rgb(118,208,237)">?</button>
+        </div>
+
+
+    </div>
+    <div class="output_monitor"></div>
+    <div id="WCSDEoutput"></div>
+    <div class="time_monitor"></div>
+    <div id="WCSDEoutput_time">
+        <textarea id="WCSDEoutput_textarea" readonly="readonly"></textarea>
+    </div>
+</div>
+<script>document.getElementById("WCSDEoutput_textarea").value='';</script>
+
+<script>
+
+    function set_SWCdefault_inputs() {
+        document.getElementById("dialSWCInputCurrent").value=document.getElementById("dialSWCInputCurrent").defaultValue;
+        document.getElementById("dialSWCNoise").value=document.getElementById("dialSWCNoise").defaultValue;
+        $("input.dial").trigger('change');
+    }
+   
+</script>
+
+<script>set_SWCdefault_inputs();</script>
+
+
+
+
+
+
+<!-------------------------- HELP MODALS --------------------------------------->
+
+<div id="eulerODE_help-modal" class="modal">
+    <div class="help-modal-content">
+        <button id="eulerODE_help-cancel" class="cancelbutton" style="float: right;">X</button>
+        <img src="./images/eulerODE_help.png" height=100% width=100%>
+    </div>
+</div>
+
+<div id="wilsoncowanODE_help-modal" class="modal">
+    <div class="help-modal-content">
+        <button id="wilsoncowanODE_help-cancel" class="cancelbutton" style="float: right;">X</button>
+        <img src="./images/wilsoncowanODE_help.png" height=100% width=100%>
+    </div>
+</div>
+
+<div id="wilsoncowanSDE_help-modal" class="modal">
+    <div class="help-modal-content">
+        <button id="wilsoncowanSDE_help-cancel" class="cancelbutton" style="float: right;">X</button>
+        <img src="./images/wilsoncowanSDE_help.png" height=100% width=100%>
+    </div>
+</div>
+
+
+
+<script>
+    var help1_modal = document.getElementById("eulerODE_help-modal"); //modal
+    var help1_btn = document.getElementById("helpButton"); //button 
+    var help1_cancel = document.getElementById("eulerODE_help-cancel"); //close
+    help1_btn.onclick = function() { // open modal
+        eulerODE1.toTextArea() ; // destroy code mirror
+        firingrateODE1.toTextArea() ; // destroy code mirror
+        wilsoncowanODE1.toTextArea() ; // destroy code mirror
+        help1_modal.style.display = "block";
+    }
+    help1_cancel.onclick = function() { // close
+        eulerODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q1_EulerODE"),{lineNumbers: true});
+        firingrateODE1 = CodeMirror.fromTextArea(document.getElementById("example_firingrate_ODE"),{lineNumbers: true, readOnly: true});
+        wilsoncowanODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q2_WilsonCowanODE"),{lineNumbers: true}); // build new code builder
+        help1_modal.style.display = "none";
+    }
+
+
+    var help2_modal = document.getElementById("wilsoncowanODE_help-modal"); //modal
+    var help2_btn = document.getElementById("helpWCButton"); //button 
+    var help2_cancel = document.getElementById("wilsoncowanODE_help-cancel"); //close
+    help2_btn.onclick = function() { // open modal
+        eulerODE1.toTextArea() ; // destroy code mirror
+        firingrateODE1.toTextArea() ; // destroy code mirror
+        wilsoncowanODE1.toTextArea() ; // destroy code mirror
+        help2_modal.style.display = "block";
+    }
+    help2_cancel.onclick = function() { // close
+        eulerODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q1_EulerODE"),{lineNumbers: true});
+        firingrateODE1 = CodeMirror.fromTextArea(document.getElementById("example_firingrate_ODE"),{lineNumbers: true, readOnly: true});
+        wilsoncowanODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q2_WilsonCowanODE"),{lineNumbers: true}); // build new code builder
+        help2_modal.style.display = "none";
+    }
+
+
+
+    var help3_modal = document.getElementById("wilsoncowanSDE_help-modal"); //modal
+    var help3_btn = document.getElementById("helpSWCButton"); //button 
+    var help3_cancel = document.getElementById("wilsoncowanSDE_help-cancel"); //close
+    help3_btn.onclick = function() { // open modal
+        eulerODE1.toTextArea() ; // destroy code mirror
+        firingrateODE1.toTextArea() ; // destroy code mirror
+        wilsoncowanODE1.toTextArea() ; // destroy code mirror
+        help3_modal.style.display = "block";
+    }
+    help3_cancel.onclick = function() { // close
+        eulerODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q1_EulerODE"),{lineNumbers: true});
+        firingrateODE1 = CodeMirror.fromTextArea(document.getElementById("example_firingrate_ODE"),{lineNumbers: true, readOnly: true});
+        wilsoncowanODE1 = CodeMirror.fromTextArea(document.getElementById("codetext_q2_WilsonCowanODE"),{lineNumbers: true}); // build new code builder
+        help3_modal.style.display = "none";
+    }
+
+
+
+
+</script>
+			
+			</div><!-- /.container -->
+			<!--<footer>
+	    		<ul>
+	        		<li><a href="mailto:taitl2@cardiff.ac.uk">email</a></li>
+	        		<li><a href="https://github.com/lukewtait">github.com/lukewtait</a></li>
+				</ul>
+			</footer>-->
+		</body>
+	</html>

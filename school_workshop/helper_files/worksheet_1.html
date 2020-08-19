@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Worksheet</title>
+    <link rel="stylesheet" type="text/css" href="./styles/workshop.css">
+    <link rel="stylesheet" type="text/css" href="./styles/titleheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" asynch></script> <!-- Use maths equations -->
+</head>
+
+<body>
+
+    <!--Header to page-->
+    <div class="titlediv">
+            <h1 class="titlewords">Outline of Dynamical Systems</h1>
+            <h2 class="subtitlewords">Worksheet</h2>
+            <div class="menudiv">
+                <button class="menubtn" onclick="location.href='../workshop.html'"><i class="fa fa-home"></i> Home</button>
+                <div class="dropdown">
+                    <button class="menubtn" onclick="menudropFunction()"><i class="fa fa-bars"></i> Menu</button>
+                    <div id="menuDropdown" class="dropdown-content">
+                        <a href="./introduction_to_dynamical_systems.html">Overview of dynamical systems</a>
+                        <a href="./bifurcations_in_neuronal_dynamics.html">The dynamic brain</a>
+                        <a href="./population_dynamics.html">Dynamics of the zombie apocalypse</a>
+                        <a href="../../index.html">Site home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!--Javascript to open menu function-->
+        <script>
+            function menudropFunction() {
+                document.getElementById("menuDropdown").classList.toggle("show");
+            }
+    
+            // Close the dropdown menu if the user clicks outside of it
+            window.onclick = function(event) {
+            if (!event.target.matches('.menubtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+            }
+        </script>
+
+    <h3>Question 1</h3>
+    <p>
+        For each of the following plots of \(\dot x = f(x)\), copy the graph onto a sheet of paper and:
+    </p>
+    <p>(i) Find the steady states,</p>
+    <p>(ii) Mark the direction of the flow along the \(x\) axis between steady states,</p>
+    <p>(iii) Determine whether each steady state is stable or unstable.</p>
+    <img src="images/worksheet_1_q1.png">
+
+    <!-- 3 figures of 1D flows -->
+
+    <h3>Question 2</h3>
+    <p>
+        For each of the following equations, find the steady states, and classify them as stable or unstable.(Hint: recall that steady states are at \(\dot x = 0\)).
+    </p>
+    <p>(a) \(\dot x = 3x-9 \)</p>
+    <p>(b) \(\dot x = 4x^2-16 \)</p>
+    <p>(c) \(\dot x = x^8+10 \)</p>
+    <p>(d) \(\dot x = x-x^3 \)</p>
+    <p>(e) \(\dot x = x^2+4x-12 \)</p>
+    <p>(f) \(\dot x = \sin(x) \)</p>
+
+    <h3>Question 3: Gravity and terminal velocity</h3>
+    <p>
+        Consider a skydiver falling to the ground. 
+        The skydiver's velocity \(v\) can be written as \(m\dot v = mg-kv^2\), where \(m\) is the mass of the skydiver, \(g\) is acceleration due to gravity, and \(k>0\) is a constant related to air resistance.
+        In physics lessons, you have probably learned that the skydiver will accelerate to a certain <em>terminal velocity</em> and then stop accelerating (i.e. continue to fall at a constant speed).
+        In this question, we will approach this equation from a dynamical systems point of view, to study properties of terminal velocity.  
+    </p>
+    <p> (a) Considering the velocity of the skydiver as a dynamical system, how would we describe terminal velocity from a dynamical systems perspective? Calculate terminal velocity in terms of \(m\), \(g\), and \(k\). </p>
+    <p> (b) Plot the dynamical system, and think about what happens to the skydiver if his velocity is above or below terminal velocity.</p> 
+    <p> (c) What happens to terminal velocity as \(k\) is changed? Plot the dynamical system for large and small \(k\).</p>
+    <p> (d) Using the results from above, what affect do you think having a parachute open or closed has on the dynamical system? Do any parameters (\(m\), \(g\), or \(k\)) change?</p>
+
+    <h3>When you are finished...</h3>
+    <p>You can click <a href="worksheet_1_solutions.html" target="_blank">here</a> to get solutions and check your answers.</p>
+
+</body>
+</html>

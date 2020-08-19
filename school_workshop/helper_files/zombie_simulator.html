@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Zombie apocalypse simulator</title>
+    <script src='http://use.edgefonts.net/creepster.js'></script>
+    <link rel="stylesheet" type="text/css" href="./styles/zombie.css">
+    <link rel="stylesheet" type="text/css" href="./styles/titleheader_zombie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="javascript_codes/zombie_dynamics_simulator.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" asynch></script>
+    <link rel="stylesheet" type="text/css" href="./styles/zombie_simulator_input.css">
+</head>
+
+<body>
+
+
+    <!--Header to page-->
+    <div class="titlediv">
+            <h1 class="titlewords">Population dynamics</h1>
+            <h2 class="subtitlewords">Zombie apocalypse simulator</h2>
+            <div class="menudiv">
+                <button class="menubtn" onclick="location.href='../workshop.html'"><i class="fa fa-home"></i> Home</button>
+                <div class="dropdown">
+                    <button class="menubtn" onclick="menudropFunction()"><i class="fa fa-bars"></i> Menu</button>
+                    <div id="menuDropdown" class="dropdown-content">
+                        <a href="./introduction_to_dynamical_systems.html">Overview of dynamical systems</a>
+                        <a href="./population_dynamics.html">Population dynamics</a>
+                        <a href="./saddle_node_bifurcation.html">Dynamical systems in neuroscience</a>
+                        <a href="../../index.html">Site home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!--Javascript to open menu function-->
+        <script>
+            function menudropFunction() {
+                document.getElementById("menuDropdown").classList.toggle("show");
+            }
+    
+            // Close the dropdown menu if the user clicks outside of it
+            window.onclick = function(event) {
+            if (!event.target.matches('.menubtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+            }
+        </script>
+
+
+
+
+
+
+
+    <!-- MAIN BODY -->
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" style="font-family: creepster; font-size: 32px">Model parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>\(X0\)</td>
+                    <td><input type="number" id="X0" min="0" max="1000" step="1" value="200"></td>
+                    <td>\(K\)</td>
+                    <td><input type="number" id="K" min="0" max="1000" step="1" value="250"></td>
+                </tr>
+                <tr>
+                    <td>\(Z0\)</td>
+                    <td><input type="number" id="Z0" min="0" max="1000" step="1" value="1"></td>
+                    <td>\(a\)</td>
+                    <td><input type="number" id="a" min="0" max="5" step="0.001" value = "0.2"></td>
+                </tr>
+                <tr>
+                    <td>\(r\)</td>
+                    <td><input type="number" id="r" min="-10" max="10" step="0.01" value="1"></td>
+                    <td>\(c\)</td>
+                    <td><input type="number" id="c" min="0" max="5" step="0.001" value = "0.1"></td>
+            </tbody>
+        </table>
+    </div>
+
+    <button onclick=simulateFunction()>Run experiment</button>
+    <script>
+        function simulateFunction() {
+            const X0 = Number(document.getElementById("X0").value);
+            const Z0 = Number(document.getElementById("Z0").value);
+            const r = Number(document.getElementById("r").value);
+            const K = Number(document.getElementById("K").value);
+            const a = Number(document.getElementById("a").value);
+            const c = Number(document.getElementById("c").value);
+            const validinputs=X0&&Z0&&r&&K&&a&&c;
+            /*
+            if (!validinputs) {
+                document.getElementById("simulated_voltage").innerHTML = "Warning: At least one input is not valid.";
+                document.getElementById("simulated_voltage").style.color = "red";
+                document.getElementById("simulated_voltage").style.textAlign = "center";
+            } else {
+                document.getElementById("simulated_voltage").innerHTML = [];
+            }
+            */
+           if (!validinputs) {
+               window.alert("Warning: At least one input is not valid");
+               return
+           }
+
+            runSimulator(X0,Z0,r,K,a,c);
+        }
+    </script>
+    <br>
+    <div id="human_population" style="width:600px;height:500px;float:left;margin:0;"></div>
+    <div id="zombie_population" style="width:600px;height:500px;float:left;margin:0;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>

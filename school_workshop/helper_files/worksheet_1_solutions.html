@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Worksheet solutions</title>
+    <link rel="stylesheet" type="text/css" href="./styles/workshop.css">
+    <link rel="stylesheet" type="text/css" href="./styles/titleheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" asynch></script> <!-- Use maths equations -->
+</head>
+
+<body>
+    <!--Header to page-->
+    <div class="titlediv">
+            <h1 class="titlewords">Outline of Dynamical Systems</h1>
+            <h2 class="subtitlewords">Worksheet solutions</h2>
+            <div class="menudiv">
+                <button class="menubtn" onclick="location.href='../workshop.html'"><i class="fa fa-home"></i> Home</button>
+                <div class="dropdown">
+                    <button class="menubtn" onclick="menudropFunction()"><i class="fa fa-bars"></i> Menu</button>
+                    <div id="menuDropdown" class="dropdown-content">
+                        <a href="./introduction_to_dynamical_systems.html">Overview of dynamical systems</a>
+                        <a href="./bifurcations_in_neuronal_dynamics.html">The dynamic brain</a>
+                        <a href="./population_dynamics.html">Dynamics of the zombie apocalypse</a>
+                        <a href="../../index.html">Site home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!--Javascript to open menu function-->
+        <script>
+            function menudropFunction() {
+                document.getElementById("menuDropdown").classList.toggle("show");
+            }
+    
+            // Close the dropdown menu if the user clicks outside of it
+            window.onclick = function(event) {
+            if (!event.target.matches('.menubtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+            }
+        </script>
+
+    <h3>Question 1</h3>
+    <img src="images/worksheet_1_q1_solutions.png">
+
+    <!-- 3 figures of 1D flows -->
+
+    <h3>Question 2</h3>
+    <p>
+        We can work out the steady states by calculating \(\dot x = 0\), and we can work out the stability by drawing it (plots below answers)
+    </p>
+    <p>(a) \(3x-9 = 0 \rightarrow \) steady state at \(x=3\)</p>
+    <p>(b) \(4x^2-16 = 0 \rightarrow \) steady states at \(x=\pm 2\).</p>
+    <p>(c) \(x^8+10 =0 \rightarrow x^8=-10 \). This has no solution, as \(x^8\) is always positive. No steady states (always goes to \(+ \infty\)).</p>
+    <p>(d) \(x-x^3 = 0 \rightarrow \) steady states at \(x=-1,0,1\). </p>
+    <p>(e) \(x^2+4x-12 = (x+6)(x-2) = 0 \rightarrow \) steady states at \(x=-6,2\).</p>
+    <p>(f) \(\sin(x) = 0 \rightarrow\) steady states are at  \(x = n \times 180^{\circ} \) where \(n = 0,\pm 1,\pm 2, \pm 3, \ldots\)</p>
+    <img src="images/worksheet_1_q2_solutions.png">
+
+    <h3>Question 3: Gravity and terminal velocity</h3>
+    <p> (a) Terminal velocity is when the velocity is constant, so \(\dot v = 0\). Therefore from a dynamical systems perspective, terminal velocity is a steady state. To calculate terminal velocity, we use \(\dot v = mg-kv^2 = 0 \rightarrow mg=kv^2 \rightarrow v=\pm \sqrt {mg\over k}\). Since \(v\) is positive at terminal velocity (the falling person isn't falling upwards!), we know the positive choice is terminal velocity.</p>
+    <p> (b) The plot of the dynamical system is below. If the skydiver's velocity is above terminal velocity, they slow down to terminal velocity. If it is below terminal velocity (or negative - they are going upwards) they will accelerate downwards to terminal velocity. If their velocity is very negative (more than negative terminal velocity), they are going upward so fast they will escape Earth's gravity!</p> 
+    <img src="images/worksheet_1_q4b_solution.png">
+    <p> (c) Since terminal velocity is proportional to \(1/\sqrt{k}\), if \(k\) gets larger terminal velocity gets smaller, and vice versa. The plot for large \(k\) is like the one in the previous question but narrower (so the steady states are closer to zero), whilst small \(k\) is wider.</p>
+    <p> (d) Opening the parachute decreases terminal velocity. Since \(m\) and \(g\) are mass and strength of gravity, they do not change when the parachute is opened. Therefore for terminal velocity to decrease, \(k\) must increase. This is because air resistance increases when the parachute is opened. </p>
+
+</body>
+</html>

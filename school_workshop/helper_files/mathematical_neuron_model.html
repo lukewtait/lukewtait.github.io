@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mathematical neuron</title>
+    <title>Patch clamp simulator</title>
+    <link rel="stylesheet" type="text/css" href="./styles/workshop.css">
+    <link rel="stylesheet" type="text/css" href="./styles/titleheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" asynch></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="javascript_codes/Hodgkin_Huxley_simulator.js"></script>
+    <script src="javascript_codes/QIF_simulator.js"></script>
+    <script src="javascript_codes/jquery.knob.min.js"></script>
+</head>
+
+<body>
+
+    <!--Header to page-->
+<div class="titlediv">
+        <h1 class="titlewords">The Dynamic Brain</h1>
+        <h2 class="subtitlewords">Bifurcations and Neuronal Dynamics</h2>
+        <div class="menudiv">
+            <button class="menubtn" onclick="location.href='../workshop.html'"><i class="fa fa-home"></i> Home</button>
+            <div class="dropdown">
+                <button class="menubtn" onclick="menudropFunction()"><i class="fa fa-bars"></i> Menu</button>
+                <div id="menuDropdown" class="dropdown-content">
+                    <a href="./introduction_to_dynamical_systems.html">Overview of dynamical systems</a>
+                    <a href="./bifurcations_in_neuronal_dynamics.html">The dynamic brain</a>
+                    <a href="./population_dynamics.html">Dynamics of the zombie apocalypse</a>
+                    <a href="../../index.html">Site home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Javascript to open menu function-->
+    <script>
+        function menudropFunction() {
+            document.getElementById("menuDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+        if (!event.target.matches('.menubtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+        }
+    </script>
+
+
+    <h3>Bifurcations and neuronal dynamics</h3> 
+    <p>
+        You should have now run your patch clamp experiments and made notes about properties of the neuron. 
+        One of the key things you should have noticed is that there was a sudden change in dynamics as you increased \(I\),
+        from the neuron being at rest to the neuron firing spikes called <strong>action potentials</strong> (APs).
+    </p>
+    <p>
+        In dynamical systems terms, we call a sudden change in dynamics as we change a model parameter a <strong>bifurcation</strong>. 
+        In the case of the neuron, below a certain value of \(I\) there existed a stable steady state, i.e. the voltage of the neuron was reasonably constant.
+        Above this value of \(I\), the steady state disappeared and the neuron was no longer at rest, i.e. the neuron was spiking. 
+        This is an example of a bifurcation in neuroscience. 
+    </p>
+    <p>
+        In this section, you will use a certain type of bifurcation called a <strong>saddle node bifurcation</strong> to build a mathematical model of the neuron. 
+        First, we will go over the saddle node bifurcation, then we will change the equations so that we accurately model the neurons we just recorded in the experiment. 
+        Work through this page at your own pace, but please feel free to discuss the concepts with other members of the workshop or ask me questions!
+    </p>
+    <p>
+        <em>Definition:</em> A <strong>bifurcation</strong> is a sudden change in dynamics (for example, changes in stability of steady states, or steady states appearing/disappearing) when a parameter (a value in the equations) in the dynamical system changes. 
+    </p>
+
+
+    <h3>The saddle node bifurcation</h3>
+    <p>
+        Neurons can be modelled by a bifurcation known as the <strong>saddle node bifurcation</strong>. 
+        Consider the dynamical system 
+    </p>
+    <p>
+        \(\dot v = v^2+\alpha\).
+    </p>
+    <p>
+        Analyse this system for different values of \(\alpha\). 
+        Do you see a bifurcation, i.e. a sudden change in the steady states as \(\alpha\) is varied?
+        Once you've analysed the system, click the "more info" button below to check your analysis and learn more about the saddle node bifurcation.
+    </p>
+    <button onclick="$('.SNvideo').toggle();" style="padding: 5pt; background-color: rgb(0,114,189); color: white; border: 2pt; border-radius: 2pt; font-size: 10pt;"><div class="SNvideo"">More info</div><div class="SNvideo" style="display: none;">Hide info</div></button>
+    <div class="SNvideo" style="display: none;">
+    <p>
+        The video below shows what happens as \(\alpha\) is varied. 
+        If \(\alpha < 0\), there are two steady states at \(v = \pm \sqrt{-\alpha}\).
+        The steady state at \(v = -\sqrt{-\alpha}\) is stable, whilst the positive steady state is unstable. 
+    </p>
+    <p>
+        If \(\alpha = 0\), we have one steady state at \(v=0\).
+        This steady state has interesting properties, since it is stable from the left, but unstable from the right.
+        This type of steady state is known as a <strong>saddle</strong>, hence the name saddle node bifurcation. 
+    </p>
+    <p>
+        Finally, if \(\alpha > 0\), there exists no steady states. 
+        This property of a stable and an unstable steady state colliding and disappearing is known as a saddle node bifurcation. 
+        Watch it happen on the video below: 
+    </p>
+    <div style="width: 500px; overflow: hidden; display:block; height: 500px">
+        <video src="./images/plotSNbif.mp4" height="500" width="502" style="margin-right: 220px;" controls>Video not supported</video>
+    </div> 
+    <p>
+        The rest of this workshop will focus on how the saddle node bifurcation can be used to describe the activity of the brain. 
+    </p>
+    </div>
+
+    <h3>Modelling the neuron at rest</h3>
+    <p>
+        Consider the equations for a saddle node bifurcation. 
+        We can interpret \(v\) as the voltage of the neuron, and \(\alpha\) being related to the current you put into the neuron.
+        To begin with, we will think about the neuron at rest, so \(\alpha=0\).
+        Then there is a saddle steady state at \(v=0\). 
+        However, we know in the neuron that the steady state is not at \(v=0\) when no current is injected. 
+        In fact, the first piece of data you were asked to collect was the resting voltage of the neuron - this is equivalent to a stable steady state when no current is injected.
+        We will therefore rewrite the above equation as
+    </p>
+    <p>
+        \(\dot v = v^2 = (v-0)(v-0)\).
+    </p>
+    <p>
+        Remember, because the neuron is at rest we have set \(\alpha=0\).
+        Changing one of the zeros to the resting voltage (\(r\)) to ensure this is a steady state, we get
+    </p>
+    <p>
+        \(\dot v = (v-r)(v-0)\).
+    </p>
+    <p>
+        This is shown in the diagram below. We can clearly see that \(v=r\) is a stable steady state, so this matches the data.
+        Input the value for resting voltage below, and we can start to fit this in the model:
+    </p>
+    <div class="neuron_model_input_container">
+        \(r\) = <input type="number" id="r"> [mV]
+    </div>
+    <img src="images/neuron_model_1.png">
+
+
+    <h3>Dealing with the second steady state</h3>
+    <p>
+        There is still an unstable steady state at \(v=0\) in this model, which does not really reflect anything to do with the neuron. 
+        After all, \(v=0\) isn't a threshold below which the neuron goes to steady state and above which the neuron fires.
+        However, this description is exactly the case for AP threshold. 
+        So we can interpret our second (unstable) steady state as the AP threshold (\(\theta\)) of the model, and set it as such by writing:
+    </p>
+    <p>
+        \(\dot v = (v-r)(v-\theta)\).
+    </p>
+    <p>
+        This model is shown below.
+        You were asked to find the value of AP threshold in stage 3 of the experiment. 
+        Input this value below:
+    </p>
+    <div class="neuron_model_input_container">
+        \(\theta\) = <input type="number" id="thr"> [mV]
+    </div>
+    <img src="images/neuron_model_2.png">
+
+    <h3>Initiating an action potential</h3>
+    <p>
+        Now that we have the resting state dynamics sorted (where input \(\alpha=0\)) we need to think about the case where the neuron is not at rest. 
+        In stage 2 of the experiment, we asked to record the value of \(I\) for which the bifurcation occurred. Let us denote this value \(I^*\).
+        To set the model to ensure the model neuron starts firing at this value, we must first bring back our input:
+    </p>
+    <p>
+        \(\dot v = (v-r)(v-\theta)+\alpha\).
+    </p>
+    <p>
+        Now, if we write \(\alpha=RI\), where
+    </p>
+    <p>
+        \(R={1\over 4I^*}(\theta-r)^2\), 
+    </p>
+    <p>
+        it can be shown that the bifurcation in the model will occur if \(I=I^*\). 
+        In electrophysiology, the constant \(R\) is known as the <em>membrane resistance</em>.
+        The full proof of this equation can be shown by pressing the button below (if you are interested).
+    </p>
+    <button onclick="$('.RIproof').toggle();" style="padding: 5pt; background-color: rgb(0,114,189); color: white; border: 2pt; border-radius: 2pt; font-size: 10pt;"><div class="RIproof">Show proof</div><div class="RIproof" style="display: none">Hide proof</div></button>
+
+    <div class="RIproof" style="display: none; background-color: rgba(0,114,189, 0.2); padding: 3pt;">
+    <p>
+        To find steady states of our model, we have
+    </p>
+    <p>
+        \((v-r)(v-\theta)+\alpha=0\).
+    </p>
+    <p>
+        Expanding this, we get
+    </p>
+    <p>
+        \(v^2-(r+\theta)v+(r\theta+\alpha)=v^2+Bv+C=0\), 
+    </p>
+    <p>
+        where
+    </p>
+    <p>
+        \(B=-(r+\theta), \qquad C = (r\theta+\alpha)\).
+    </p>
+    <p>
+        To find the steady states, we can then use the quadratic formula: 
+    </p>
+    <p>
+        \(v={1\over 2}(-B \pm \sqrt{B^2-4C})\).
+    </p>
+    <p>
+        From this, we can see that there are two steady states if \(B^2 > 4C\), one steady state if \(B^2=4C\), and no steady states if \(B^2 < 4C\). 
+        Therefore we can say that the bifurcation occurs at \(B^2=4C\), or:
+    </p>
+    <p>
+        \((-(r+\theta))^2=4(r\theta+\alpha)\).
+    </p>
+    <p>
+        This can be rearranged to say that the bifurcation value of \(\alpha\) is at 
+    </p>
+    <p>
+        \(\alpha^* = {1\over 4}(\theta-r)^2\).
+    </p>
+    <p>
+        Now, we have an issue. If the injected current \(I\) was equivalent to the input to the model \(\alpha\), then we would know that \(\alpha^*=I^*\). 
+        Using your values of \(I^*\), \(\theta\), and \(r\), you can prove that this isn't true. 
+        This is because in reality, different neurons are affected different amounts by an injected current.
+        Therefore we should write \(\alpha=RI\), essentially saying that the strength of the change a current has on the neuron (\(\alpha\)) is equal to the current injected (\(I\)) multiplied by the level to which a current influences that particular neuron \(R\). 
+        In electrophysiology, the value \(R\) is known as the <em>membrane resistance</em>.
+    </p>
+    <p>
+        Knowing that \(\alpha^*=RI^*\), we can then find a solution for \(R\):
+    </p>
+    <p>
+        \(R={1\over 4I^*}(\theta-r)^2\).
+    </p>
+    </div>
+
+    
+    <p>
+        This model is shown below.
+        You were asked to find the value of \(I\) for which the bifurcation occurred in stage 2 of the experiment. 
+        Input this value below:  
+    </p>
+    <div class="neuron_model_input_container">
+        \(I^*\) = <input type="number" id="Ibif"> [\(\mu\)A]
+    </div>
+    <img src="images/neuron_model_3.png">
+
+    <!-- INSERT FIGURE -->
+
+    <h3>Multiple spikes and the problem of infinity</h3>
+    <p>
+        We now have a model of a neuron with realistic membrane potential, action potential threshold, and bifurcation from steady state to non-steady state.  
+        However, if \(I\) is high enough that the system is in the "spiking" regime, the model tends to infinity, whilst we saw the real neuron repeatedly fired action potentials. 
+        Hence, the current model accurately recreates resting dynamics, but does not capture firing dynamics. In this section and the next, we will focus on making the model replicate spiking dynamics. 
+    </p>
+    <p>
+        When the voltage of the neuron is greater than AP threshold, the neuron fires an action potential and the voltage increases to an AP peak. 
+        In stage 4 of the experiment, we asked you to record this AP peak (\(v_p\)). 
+        Then, the neuron rapidly resets to a minimum, known as the "AHP".
+        In stage 5 of the experiment, we asked you to record this AHP voltage (\(v_{ahp}\)). 
+        In our model, we will wait until the voltage increases up to this AP peak, and then when it does immediately reset it to the AHP voltage. 
+        Once it has been reset to the AHP voltage, it will try to increase to infinity again, and once again we reset it once it reaches AP peak. 
+        This way, we get regular spiking dynamics.
+    </p>
+    <p>
+        Insert your values for AP peak and AHP voltage below:
+    </p>
+    <div class="neuron_model_input_container">
+        \(v_p\) = <input type="number" id="vpeak"> [mV]
+    </div>
+    <div class="neuron_model_input_container">
+        \(v_{ahp}\) = <input type="number" id="vreset"> [mV] 
+    </div>
+    <p>(Note: You can get weird results for \(v_{ahp}>-60\) mV, I recommend setting this to \(-60\).)</p>
+    <img src="images/neuron_model_4.png">
+
+    <h3>The F-I curve and time scaling</h3>
+    <p>
+        Finally, if we were to simulate the model right now, you'll find it fires far faster than the real neuron for any value of \(I > I^*\).
+        We can control the rate at which the neuron fires by adding a "time constant" (\(\tau\)) to the equations, such that the full set of equations reads:
+    </p>
+    <p>
+        \( \tau \dot v = (v-r)(v-\theta) + RI, \qquad \text{if } v\geq v_p, \text{ then } v \rightarrow v_{ahp}\)
+    </p>
+    <p>
+        To understand this, we can think back to the car analogy, where \(x\) was the position of the car and \(\dot x\) was it's speed. 
+        If we had the simple dynamical system \(\tau \dot x = 10\), then using \(\tau\) we could control the speed of the car. 
+        For high \(\tau\) we have low speed, e.g. if \(\tau=10\), then \(\dot x = 1\). 
+        But for low \(\tau\) we have high speed, e.g. if \(\tau=2\), then \(\dot x = 5\).
+        The same can be said for our neuron model; increasing \(\tau\) will slow down the firing rate of the neuron. 
+    </p>
+    <p>
+        So how do we choose \(\tau\) in our model? 
+    </p>
+    <p>
+        We can use something called the F-I curve, which stands for frequency-current curve. 
+        On the \(x\) axis, we plot the injected current \(I\). 
+        On the \(y\) axis, we plot the frequency of APs. 
+        We then choose a value of \(\tau\) such that the F-I curve of the model most closely matches the data.
+    </p>
+    <p>
+        In stage 6 of the experiment, you were asked to inject a range of currents and calculate the frequency of spiking of the neuron. 
+        This information can be used to plot the F-I curve of the experimental neuron. 
+        In the boxes below, input your data, separated by commas (e.g. if you used currents 1, 2, and 3 \(\mu\)A type 1,2,3 in the "Current" box. If their frequencies were 5, 6, and 7 Hz, type 5,6,7 in the "Frequency" box). 
+    </p>
+    <div class="neuron_model_input_container" style="width:250pt;">
+        Current = <input type="text" id="currentIn"> [\(\mu\)A]
+    </div>
+    <div class="neuron_model_input_container" style="width:250pt;">
+        Frequency = <input type="text" id="frequencyOut"> [Hz] 
+    </div>
+    <p>
+        Now, don't worry, you don't have to do the same for the model neuron!
+        An advantage to a simple model like this is that you can get exact equations for the F-I curve of the model.
+        These means we can plot the F-I curve of the model without having to simulate it many times and calculating the spiking frequency. 
+    </p>
+    <p>
+        Try varying the value of \(\tau\) below, and choose a value that makes the simulated and experimental curves look similar. 
+    </p>
+    <div class="neuron_model_input_container">
+        \(\tau\) = <input type="number" id="tau"> [ms]
+    </div>
+    <button onclick="FIcurve()" style="padding: 5pt; background-color: rgb(0,114,189); color: white; border: 2pt; border-radius: 2pt; font-size: 10pt; margin-top: 5pt;">Plot F-I curve</button>
+    <script>
+        function FIcurve() {
+            let Iexp = document.getElementById("currentIn").value;
+            Iexp = Iexp.split(",").map(Number);
+            let Fexp = document.getElementById("frequencyOut").value;
+            Fexp = Fexp.split(",").map(Number);
+
+            if (Iexp.includes(NaN) || Fexp.includes(NaN)) {
+                window.alert("Experimental current and frequency inputs should be numbers separated by commas.")
+                return
+            }
+
+            if (Iexp.length != Fexp.length) {
+                window.alert("Experimental current and frequency inputs should have the same amount of data.")
+                return
+            }
+
+            let trace_exp = {
+                x: Iexp,
+                y: Fexp,
+                mode: 'lines+markers',
+                name: 'experimental'
+                };
+
+            // Initialize all variables
+            const npoints=1001;
+            let Isim=Array(npoints);
+            let Fsim=Array(npoints);
+
+            // Get variables
+            const r = Number(document.getElementById("r").value);
+            const th = Number(document.getElementById("thr").value);
+            const Ibif = Number(document.getElementById("Ibif").value);
+            const R=Math.pow((th-r),2)/(4*Ibif);
+            const vpeak = Number(document.getElementById("vpeak").value);
+            const vreset = Number(document.getElementById("vreset").value);
+            const tau = Number(document.getElementById("tau").value);
+            let M;
+
+            const validinputs=r&&th&&Ibif&&vpeak&&vreset&&tau;
+           if (!validinputs) {
+               window.alert("Warning: At least one input is not valid");
+               return
+           }
+
+            // Loop over values
+            let i;
+            for (i=0; i<npoints; i++) {
+                Isim[i]=-5+0.01*i;
+                if( Isim[i] > Ibif) {
+                    M = 4*R*Isim[i] - Math.pow((r-th),2);
+                    M = Math.sqrt(M);
+                    M = (2*tau/M)*(Math.atan((-r+2*vpeak-th)/M)-Math.atan((-r+2*vreset-th)/M));
+                    Fsim[i]=1000/M;
+                } else {
+                    Fsim[i] = 0;
+                }   
+            }
+        
+            let trace_sim = {
+                x: Isim,
+                y: Fsim,
+                mode: 'lines',
+                name: 'model'
+            };
+
+            var layout = { 
+                xaxis: {
+                    showline: true,
+                    showticklabels: true,
+                    linewidth: 2,
+                    tickfont: {
+                        family: 'Arial',
+                        size: 12
+                    },
+                    title: 'Frequency [Hz]',
+                    zeroline: false
+                },
+                yaxis: {
+                    showline: true,
+                    showticklabels: true,
+                    linewidth: 2,
+                    tickfont: {
+                        family: 'Arial',
+                        size: 12
+                    },
+                    title: 'Current [uA]',
+                    zeroline: false
+                }
+            }
+
+            trace=[trace_exp,trace_sim];
+            Plotly.newPlot(document.getElementById("FIcurveplot"), trace,layout)
+        }
+    </script>
+    <br>
+    <div id="FIcurveplot" style="width:600px;height:500px;"></div>
+    <!--
+    <script>
+        Plotly.newPlot(document.getElementById("FIcurveplot"),[{x:[],y:[]}]) ;
+    </script>
+    --> 
+
+    <h3>Test out your new model!</h3>
+    <p>
+        Now, let's try the model! Choose an input current, and click "Run". 
+        On the left, you'll see a patch clamp experiment, and on the right you'll see your simulated model. 
+        Does it look good to you?
+    </p>
+
+    <div id="Patch_clamp_experiment_container" style="display:inline;">
+        <div id="Current_selector" style="float:left; background-image: linear-gradient(rgb(100,100,100),rgb(50,50,50)); border-radius: 5px; text-align: center; height: 250pt; width: 150pt;">
+            <div style="display:inline-block;">
+                <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Input current [\(\mu\)A]</span><br>
+                <input type="text" value="0" class="dial" data-min="-5" data-max="5" data-step=0.1 data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width=150 id="inputCurrent" style="float:left;">
+                <script>
+                    $(function() {
+                        $(".dial").knob();
+                    });
+                </script>
+            </div>
+            <br>
+            <div style="height: 60pt; float:left;margin-left:10pt">
+                <button onclick=simulateFunction() style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+            </div>
+            <div style="height: 60pt; float:right;margin-right:10pt">
+                <button onclick="window.open('./patch_clamp_help.html','_blank')" style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:48px;color:rgb(118,208,237)">?</button>
+            </div>
+        </div> 
+    </div>
+
+    <div style="width:860pt;height:250pt;display:inline-block;background-image: linear-gradient(rgb(100,100,100),rgb(50,50,50)); border-radius: 5px;margin-left:10pt">
+        <div style="width: 425pt; height:25pt; display:inline-block; text-align: center; vertical-align: middle; font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Experiment</div>
+        <div style="width: 425pt; height:25pt; display:inline-block; text-align: center; vertical-align: middle; font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Model</div>
+        <br>
+        <div id="patch_clamp_voltage" style="width:400pt;height:200pt;margin-left:25pt;background-color:white; display: inline-block;"></div>
+        <div id="simulated_voltage" style="width:400pt;height:200pt;margin-left:10pt;background-color:white; display:inline-block;"></div>
+    </div>
+    
+    <div style="width:450pt; height:250pt;display:inline-block;background-image: linear-gradient(rgb(100,100,100),rgb(50,50,50)); border-radius: 5px;margin-left: 365pt">
+        <div id="patch_clamp_current" style="width:400pt;height:200pt;margin-top:25pt;margin-left:25pt;background-color:white;"></div>
+    </div>
+
+
+
+    <!--
+    <input type="text" value="0" class="dial" data-min="-5" data-max="5" data-step=0.1 data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round id="inputCurrent">
+    <script>
+        $(function() {
+            $(".dial").knob();
+        });
+    </script>
+    -->
+
+    <!--<button onclick=runSimulator()>Run experiment</button>-->
+    <script>
+        function simulateFunction() {
+            const I = Number(document.getElementById("inputCurrent").value);
+            const r = Number(document.getElementById("r").value);
+            const th = Number(document.getElementById("thr").value);
+            const Ibif = Number(document.getElementById("Ibif").value);
+            const vpeak = Number(document.getElementById("vpeak").value);
+            const vreset = Number(document.getElementById("vreset").value);
+            const tau = Number(document.getElementById("tau").value);
+            const validinputs=r&&th&&Ibif&&vpeak&&vreset&&tau;
+            /*
+            if (!validinputs) {
+                document.getElementById("simulated_voltage").innerHTML = "Warning: At least one input is not valid.";
+                document.getElementById("simulated_voltage").style.color = "red";
+                document.getElementById("simulated_voltage").style.textAlign = "center";
+            } else {
+                document.getElementById("simulated_voltage").innerHTML = [];
+            }
+            */
+           if (!validinputs) {
+               window.alert("Warning: At least one input is not valid");
+               return
+           }
+
+            runQIF(I,r,th,Ibif,vpeak,vreset,tau);
+            runSimulator(I);
+        }
+    </script>
+    <!--
+    <br>
+    <div id="patch_clamp_voltage" style="width:600px;height:500px;float:left;"></div>
+    <div id="simulated_voltage" style="width:600px;height:500px;float:left;"></div>
+    <script>
+        Plotly.newPlot(document.getElementById("patch_clamp_voltage"),[{x:[],y:[]}]) ;
+    </script> 
+    <script>
+        Plotly.newPlot(document.getElementById("simulated_voltage"),[{x:[],y:[]}]) ;
+    </script> 
+    -->
+
+</body>
+
+</html>

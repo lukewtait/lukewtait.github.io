@@ -1,0 +1,75 @@
+.titlediv {
+    background-image: url("./style_images/Title_background_zombie.png");
+    background-position: center top;
+}
+
+.titlewords{
+    text-align: center;
+    color: white;
+    text-shadow: 2px 0 black, 0 2px black, -2px 0 black, 0 -2px black;
+    font-style: italic ; 
+    font-family: creepster;
+    font-size: 60px;
+    margin:10px;
+}
+.subtitlewords{
+    text-align: center;
+    color: white;
+    text-shadow: 2px 0 black, 0 2px black, -2px 0 black, 0 -2px black;
+    font-style: italic ; 
+    font-family: creepster;
+    font-size: 40px;
+    margin:10px;
+}
+
+.menudiv {
+    margin:auto;
+    text-align: right;
+}
+
+.menubtn {
+    background-color: red;
+    border: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: creepster;
+}
+  
+  /* Darker background on mouse-over */
+.menubtn:hover {
+background-color: white;
+color: red;
+}
+
+.dropdown {
+    position: relative;
+    float:right;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: red;
+    min-width: 230px;
+    overflow: auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    right:0;
+}
+
+.dropdown-content a {
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: white;
+    color: rgb(0,113.985,188.955);
+}
+
+.show {display:block;}

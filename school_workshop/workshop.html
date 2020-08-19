@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <!--Written by Luke Tait 07/02/2019-->
+<head>
+    <title>Workshop_16032019</title>
+    <link rel="stylesheet" type="text/css" href="./helper_files/styles/workshop.css">
+    <link rel="stylesheet" type="text/css" href="./helper_files/styles/titleheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='http://use.edgefonts.net/creepster.js'></script>
+</head>
+<body>
+
+    <!--Header to page-->
+    <div class="titlediv">
+        <h1 class="titlewords">Introduction to Dynamical Systems</h1>
+        <h2 class="subtitlewords">and Applications in Biology</h2>
+        <div class="menudiv">
+            <button class="menubtn" onclick="location.href='./workshop.html'"><i class="fa fa-home"></i> Home</button>
+            <div class="dropdown">
+                <button class="menubtn" onclick="menudropFunction()"><i class="fa fa-bars"></i> Menu</button>
+                <div id="menuDropdown" class="dropdown-content">
+                    <a href="./helper_files/introduction_to_dynamical_systems.html">Overview of dynamical systems</a>
+                    <a href="./helper_files/bifurcations_in_neuronal_dynamics.html">The dynamic brain</a>
+                    <a href="./helper_files/population_dynamics.html">Dynamics of the zombie apocalypse</a>
+                    <a href="../index.html">Site home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Javascript to open menu function-->
+    <script>
+        function menudropFunction() {
+            document.getElementById("menuDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+        if (!event.target.matches('.menubtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+        }
+    </script>
+
+
+    <!-- MAIN SECTION OF THE PAGE -->
+    <h3>Aims of the workshop</h3>
+    <p>
+        This workshop aims to introduce you to a field of applied maths known as dynamical systems.
+        By the end of the session, you should be able to:
+    </p>
+    <ul>
+        <li>Define a dynamical system,</li>
+        <li>Analyse a one dimensional dynamical system,</li>
+        <li>Define a bifurcation,</li>
+        <li>Apply the concepts of dynamical systems and bifurcations to problems in biology such as population dynamics and neuroscience.</li>
+    </ul>
+
+    <h3>Outline of the workshop</h3>
+    <p>
+        Below is an outline of the workshop. Some pages review the information in the slides, 
+        whilst others contain questions, tasks, and chances to perform simulated biology experiments. 
+    </p>
+    <ol>
+        <li><a href="./helper_files/introduction_to_dynamical_systems.html">Outline of dynamical systems</a>: In this section, you will learn the definition of a dynamical system, and learn about the concept of steady states and how to find them. Finally, a short worksheet will allow you to consolidate this information.</li> 
+        <li><a href="./helper_files/bifurcations_in_neuronal_dynamics.html">The dynamic brain</a>: In this section, you will learn the definition of a bifurcation. You will run a (simulated) neuroscience experiment, looking for bifurcations in the activity of a neuron and collecting data. You will use this data and your knowledge of bifurcations to build a mathematical model of a neuron and simualte some brain activity.</li>
+        <li><a href="./helper_files/population_dynamics.html">Dynamics of the zombie apocalypse</a>: This section will introduce you to population dynamics. Population dynamics uses dynamical systems to study how populations of living beings grows or dies. You will use your new knowledge of dynamical systems and population dynamics to simulate a <span style="color: red; font-family: creepster;">zombie apocalypse</span> as a group.
+    </ol>
+
+    <p>
+    To begin, Luke will give a short presentation introducing you to dynamical systems. 
+    It will largely cover the content on the first page of the <a href="./helper_files/introduction_to_dynamical_systems.html">outline of dynamical systems</a> section, 
+    so feel free to click that link and read along!
+    </p>
+
+    <!--Example image-->
+    <!--Get images by going to google drive, get sharable link, pasting-->
+    <!--Make sure to change ".com/open?" in link to ".com/uc?"-->
+    <!--<img src="https://drive.google.com/uc?id=1vQ7UmPhhfJLGcNaO5uVzKY3MRpXwAAHb">-->
+
+</body>
+</html>

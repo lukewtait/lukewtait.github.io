@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zombie project</title>
+    <script src='http://use.edgefonts.net/creepster.js'></script>
+    <link rel="stylesheet" type="text/css" href="./styles/zombie.css">
+    <link rel="stylesheet" type="text/css" href="./styles/titleheader_zombie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" asynch></script>
+</head>
+<body>
+    <!--Header to page-->
+    <div class="titlediv">
+            <h1 class="titlewords">Population dynamics</h1>
+            <h2 class="subtitlewords">Modelling the zombie apocalypse</h2>
+            <div class="menudiv">
+                <button class="menubtn" onclick="location.href='../workshop.html'"><i class="fa fa-home"></i> Home</button>
+                <div class="dropdown">
+                    <button class="menubtn" onclick="menudropFunction()"><i class="fa fa-bars"></i> Menu</button>
+                    <div id="menuDropdown" class="dropdown-content">
+                        <a href="./introduction_to_dynamical_systems.html">Overview of dynamical systems</a>
+                        <a href="./population_dynamics.html">Population dynamics</a>
+                        <a href="./saddle_node_bifurcation.html">Dynamical systems in neuroscience</a>
+                        <a href="../../index.html">Site home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!--Javascript to open menu function-->
+        <script>
+            function menudropFunction() {
+                document.getElementById("menuDropdown").classList.toggle("show");
+            }
+    
+            // Close the dropdown menu if the user clicks outside of it
+            window.onclick = function(event) {
+            if (!event.target.matches('.menubtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+            }
+        </script>
+
+
+    <h3>Instructions</h3>
+    <p>
+        Your teacher will split you into small groups of 3 or 4, and as a group it is your job to design dynamical systems that describe a zombie apocalypse.
+        Your dynamical systems must follow the rules of the zombie apocalypse described below. 
+        These equations will be more complicated than you have been working on before, since not only do you need to model a population of humans, you will also need to model a population of zombies and make them interact with the humans.
+        You should then analyse your dynamical system. 
+        Later, you will have the opportunity to simulate your zombie apocalypse and check your results. 
+        You should follow these steps: 
+    </p>
+    <ol>
+        <li>Work together to write out the equations that describe the zombie apocalypse following the rules in the next section. This is a group project, so make sure to have lots of discussions about the best way to do this.</li>
+        <li>Check your equations with Luke. There are many ways to do step 1, so Luke can tell you if you are along the right lines before you go onto the following steps.</li>
+        <li>Show that there are steady states if either the humans or the zombies are completely eradicated by the other population.</li>
+        <li>From the previous question we know that one outcome of the zombie apocalypse is one population survives and another is eradicated. Is it also possible for humans and zombies to coexist?</li>
+        <li>When all of these steps are complete, visit the <a href="zombie_simulator.html" target="_blank">zombie apocalypse simulator</a> to test your results. Change parameters of the model - do the resulting dynamics change how you would expect?</li>
+        <li><strong>Extra:</strong> Now imagine you have an extra term in your zombie equation equal to \(-qZ\) (e.g. if your equation for \(\dot Z\) before was \(\dot Z = 1\), it becomes \(\dot Z = 1-qZ\)). How does this extra term change the rules of the zombie apocalypse? Repeat steps 3 and 4 for this modified model. Are there differences to the outcomes? Visit the <a href="modified_zombie_simulator.html" target="_blank">modified zombie apocalypse simulator</a> and see if there are any interesting dynamics because of this new term. If so, can you try to explain why they might occur in terms of zombies and humans?</li>
+    </ol>
+
+    <h3>Rules of the Apocalypse</h3>
+    <p>
+        There are lots of different types of zombie outbreak. 
+        Sometimes zombies are raised from the dead, sometimes they bite or scratch, sometimes it is a virus transferred through the water or spores in the air. 
+        Therefore we need to outline some rules of the apocalypse that should govern your equations.
+        These rules are outlined below, and you should <strong>use them to decide on your equations</strong>, as they contain all the information you need.
+    </p>
+    <ol>
+        <li>At any given time, the number of people in the healthy population is \(X\), whilst the number of zombies is \(Z\).</li>
+        <li>In the absence of of zombies, the size of the healthy population \(X\) follows the logistic model (see question 5c on Worksheet 1), with growth rate \(r\) and carrying capacity \(K>0\). Remember, the parameter \(r\) (growth rate) captures both natural births and deaths, so these don't need to be included separately.</li>
+        <li>Zombies don't give birth and do not die of natural causes (the only way to kill a zombie is to destroy the brain!). Because zombies don't need food or space, they have no carrying capacity.</li>
+        <li>A healthy person becomes a zombie only when they are bitten. Natural deaths do not become zombies. The number of healthy people bitten depends on a rate parameter \(a\), the number of zombies and the number of humans.</li>
+        <li>A zombie only dies when its brain is destroyed. The number of zombies who's brains get destroyed depends on a rate parameter \(c\), the number of zombies and the number of humans.</li>
+        <li>The model doesn't account for how the first few zombies came to be. At the known outbreak of the zombie apocalypse, there are \(Z_0\) zombies and \(X_0\) humans.</li>
+    </ol>
+
+    <h3>Key parameters of the model and their valid ranges</h3>
+    <ul>
+        <li>\(X_0\): Number of healthy humans at the time of zombie outbreak. Range: \(\geq 0\)</li>
+        <li>\(Z_0\): Number of zombies at the time of zombie outbreak. Range: \(\geq 0\)</li>
+        <li>\(r\): Growth rate of human population, defined as rate of natural births minus rate of natural deaths. Range: Any value.</li>
+        <li>\(K\): Carrying capacity of human population, defined as the optimum number of humans. Range: \(> 0\)</li>
+        <li>\(a\): Rate parameter for zombies biting humans. Range: \(\geq 0\)</li>
+        <li>\(c\): Rate parameter for humans destroying zombies. Range: \(\geq 0\)</li>
+    </ul>
+</body>
+
+</html>

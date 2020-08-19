@@ -1,0 +1,37 @@
+h3 {
+    color: rgb(0,114,189);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+p, ul, ol {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: blue;
+}
+
+video {
+    background-color: transparent !important;
+}
+
+.neuron_model_input_container{
+    background-color: rgb(0,114,189);
+    padding: 5pt;
+    color: white;
+    width: 200pt;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt; 
+}

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Luke Tait | Brain Modelling</title>
+			<!-- link to main stylesheet -->
+            <link rel="stylesheet" type="text/css" href="./css/main.css">
+            <!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
+            <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		</head>
+		<body>
+            <!-- navigation bar on left -->
+			<div class="nav" id="mainnav">
+                <!-- profile picture + name-->
+                <img src="images/profilepic.jpg" atl="Avatar" class="avatar">
+                <h1>Luke Tait</h1>
+
+                <!-- links to pages -->
+	    		<ul>
+	        		<li><a href="./index.html">Home</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
+                    <li><a href="./publications.html">Publications</a></li>
+	        		<li><a href="./cv.html">CV</a></li>
+	        		<!--<li><a href="./blog">Blog</a></li>-->
+                </ul>
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+
+
+            <!-- mobile navigation bar -->
+
+            <div class="nav" id="mobnavmenu">
+                <!-- links to pages -->
+	    		<ul>
+	        		<li><a href="./index.html">Home</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
+                    <li><a href="./publications.html">Publications</a></li>
+	        		<li><a href="./cv.html">CV</a></li>
+	        		<!--<li><a href="./blog">Blog</a></li>-->
+                </ul>
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+            <div class="mnav">
+                <!-- profile picture + name-->
+                <i class="fa fa-bars" style="display: inline;" onclick="dispNavBar()" id="mainburger"></i>
+                <!--<h1 style="display: inline;">Luke Tait</h1>-->
+
+                <script>
+                    function dispNavBar() {
+                        var x = document.getElementById("mobnavmenu");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                </script>
+               
+            </div>
+
+            <script>
+                $("body").click(
+                    function(e)
+                    {
+                        var mobnavmenu = document.getElementById("mobnavmenu");
+                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "researchbutton"))
+                        {
+                        $("#mobnavmenu").hide();
+                        }
+                    }
+                );
+            </script>
+            
+
+
+
+			<div class="container">
+			
+			<!-- SIMULATOR -->
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" asynch></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="javascript_codes/Izhikevich_model.js"></script>
+<script src="javascript_codes/entorhinal_gamma.js"></script>
+<script src="javascript_codes/JR_simulator.js"></script>
+<script src="javascript_codes/hopf_simulator.js"></script>
+<script src="./javascript_codes/jquery.knob.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/simulator.css">
+
+
+<div>
+    <h1>Brain simulator</h1>
+    <p>
+        This page contains some toy examples of simulations of the brain at different scales, 
+        from single neurons to the whole brain. 
+        The purpose of this page is to show examples of the types of simulations I perform in my research in action, 
+        but it should be noted that these simulations are toy examples and simulation speed has been 
+        prioritised over quality and accuracy; these simulations are not intended for research purposes. 
+        On the right there is an icon showing the neural scale. 
+        This icon is intended to inform you what you are simulating - from single neurons to many regions of the brain interacting. 
+        For more information, the icon corresponds to the descriptions on the <a href="research.html">research</a> page.
+        Additionally, each simulation will have a button containing a question mark. 
+        Clicking on this button will give information explaining what you see on the screen, 
+        the different options available,
+        the biological experiment being simulated,
+        and technical details of the simulation (including references). 
+    </p>
+</div>
+
+
+<div class="simulator_grid">
+
+
+
+<!-- PATCH CLAMP SIMULATOR -->
+<div class="patch_clamp_simulator"> <!-- Grid for patch clamp simulator -->
+
+    <div class="patch_clamp_description">
+        <h2>Patch clamp</h2>
+    </div>
+
+    <!-- SELECT CURRENT -->
+    <div class="current_selector"> 
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Input current [\(\mu\)A]</span><br>
+        <input type="text" value="0" class="dial" data-min="-100" data-max="100" data-step=0.1 data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width=150 id="inputCurrent" style="float:left;">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+
+            <br>
+            <div style="height: 60pt; float:left;margin-left:10pt">
+                <button onclick=simulateFunction() style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+            </div>
+            <div style="height: 60pt; float:right;margin-right:10pt">
+                <button id="neuronsim_help-button" style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:48px;color:rgb(118,208,237)">?</button>
+            </div>
+    </div>
+
+    <!-- OUTPUT THE CURRENT -->
+    <div class="output_current_monitor"></div>
+    <div id="output_current"></div>
+
+    <!-- SELECT NEURON TYPE -->
+    <script>
+        Irange=100;
+        C=100; 
+        k=0.7;
+        vr=-60; 
+        vp=-40;
+        a=0.03;
+        b=-2;
+        vpeak=35;
+        c=-50;
+        d=100;
+    </script>
+    <div class="neuron_selector">
+        <form id="selectneuronform">
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Select neuron type:</span><br>
+        <input type="radio" name="neurontype" value="RS" onClick="makeParameters()" checked="checked">Regular Spiking<br>
+        <input type="radio" name="neurontype" value="IB" onClick="makeParameters()">Intrinsically Bursting<br>
+        <input type="radio" name="neurontype" value="CH" onClick="makeParameters()">Chattering<br>  
+        <input type="radio" name="neurontype" value="FS" onClick="makeParameters()">Fast Spiking<br>
+        <input type="radio" name="neurontype" value="LTS" onClick="makeParameters()">Low Threshold Spiking<br>
+        <input type="radio" name="neurontype" value="TC" onClick="makeParameters()">Thalamocortical Relay<br> 
+        <input type="radio" name="neurontype" value="ECSC" onClick="makeParameters()">Entorhinal Stellate<br> 
+        </form>
+    </div>
+
+    <!-- OUTPUT THE VOLTAGE -->
+    <div class="simulated_voltage_monitor"></div>
+    <div id="simulated_voltage"></div>
+<!--</div>-->
+
+    <div id="neuronsim_help-modal" class="modal">
+        <div class="help-modal-content">
+            <button id="neuronsim_help-cancel" class="cancelbutton" style="float: right;">X</button>
+            <img src="./images/neuron_sim_help.png" height=100% width=100%>
+        </div>
+    </div>
+
+    <script>
+        function makeParameters() {
+            
+            var form = document.getElementById("selectneuronform");
+            var data = new FormData(form);
+            
+            for (const entry of data){
+                neurontype=entry[1];
+                console.log(neurontype)
+            };
+
+            switch (neurontype) {
+                case "RS":
+                     Irange=100;
+                     C=100; 
+                     k=0.7;
+                     vr=-60; 
+                     vp=-40;
+                     a=0.03;
+                     b=-2;
+                     vpeak=35;
+                     c=-50;
+                     d=100;
+                    break
+                case "IB":
+                     Irange=600;
+                     C=150; 
+                     k=1.2;
+                     vr=-75; 
+                     vp=-45;
+                     a=0.01;
+                     b=5;
+                     vpeak=50;
+                     c=-56;
+                     d=130;
+                    break
+                case "CH":
+                     Irange=600;
+                     C=50; 
+                     k=1.5;
+                     vr=-60; 
+                     vp=-40;
+                     a=0.03;
+                     b=1;
+                     vpeak=25;
+                     c=-40;
+                     d=150;
+                    break
+                case "FS":
+                     Irange=30;
+                     C=1; 
+                     k=0.04;
+                     vr=-82.6556;//(-5-sqrt(5^2-4*0.04*140))/(2*0.04); 
+                     vp=-42.3444;//(-5+sqrt(5^2-4*0.04*140))/(2*0.04);
+                     a=0.1;
+                     b=0.2;
+                     vpeak=30;
+                     c=-65;
+                     d=2;
+                    break
+                case "LTS":
+                     Irange=30;
+                     C=1; 
+                     k=0.04;
+                     vr=-82.6556;//(-5-sqrt(5^2-4*0.04*140))/(2*0.04); 
+                     vp=-42.3444;//(-5+sqrt(5^2-4*0.04*140))/(2*0.04);
+                     a=0.02;
+                     b=0.25;
+                     vpeak=30;
+                     c=-65;
+                     d=2;
+                    break
+                case "TC":
+                     Irange=30;
+                     C=1; 
+                     k=0.04;
+                     vr=-82.6556;//(-5-sqrt(5^2-4*0.04*140))/(2*0.04); 
+                     vp=-42.3444;//(-5+sqrt(5^2-4*0.04*140))/(2*0.04);
+                     a=0.02;
+                     b=0.25;
+                     vpeak=30;
+                     c=-65;
+                     d=0.05;
+                    break
+                case "ECSC":
+                     Irange=200;
+                     C=160; 
+                     k=0.75;
+                     vr=-60; 
+                     vp=-45;
+                     a=0.025;
+                     b=15;
+                     vpeak=30;
+                     c=-50;
+                     d=100;
+                    break
+            }
+
+            $('#inputCurrent').trigger('configure', {
+                max: Irange,
+                min: -Irange
+            });
+          
+        }
+        function simulateFunction() {
+            
+            console.log(C)
+            const I=Number(document.getElementById("inputCurrent").value);
+            const validinputs=C&&k&&vr&&vp&&a&&b&&vpeak&&c&&d;
+            /*
+            if (!validinputs) {
+                document.getElementById("simulated_voltage").innerHTML = "Warning: At least one input is not valid.";
+                document.getElementById("simulated_voltage").style.color = "red";
+                document.getElementById("simulated_voltage").style.textAlign = "center";
+            } else {
+                document.getElementById("simulated_voltage").innerHTML = [];
+            }
+            */
+        if (!validinputs) {
+            window.alert("Warning: At least one input is not valid");
+            return
+        }
+
+            runIzhikevichModel(I,C,k,vr,vp,a,b,vpeak,c,d);
+        }
+    </script>
+
+
+
+
+
+
+<!---------- ENTORHINAL CORTEX SIMULATOR ----------------->
+
+
+    <div class="entorhinal_gamma_description">
+        <h2>Entorhinal theta-gamma</h2>
+    </div>
+    <!-- SELECT DV LOCATION -->
+    <div class="DV_selector"> 
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Electrode location</span><br>
+        <input type="range" value="0" class="slider" min="0" max="1" step=0.1 id="dvaxis">
+        <div style="width:75%; margin:auto; margin-top:-15px; color:white;">
+            <p style="float:left">Dorsal</p>
+            <p style="float:right">Ventral</p>
+        </div>
+
+        <br>
+        <div style="height: 60pt; float:left;margin-left:10pt;margin-top:50pt;">
+            <button onclick=simulateECFunction() style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+        </div>
+        <div style="height: 60pt; float:right;margin-right:10pt;margin-top:50pt;">
+            <button id="networksim_help-button" style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:48px;color:rgb(118,208,237)">?</button>
+        </div>
+    </div>
+
+    <div id="networksim_help-modal" class="modal">
+        <div class="help-modal-content">
+            <button id="networksim_help-cancel" class="cancelbutton" style="float: right;">X</button>
+            <img src="./images/network_sim_help.png" height=100% width=100%>
+        </div>
+    </div>
+
+    <!-- SELECT THETA -->
+    <div class="theta_selector"> 
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white; margin:auto;">Theta selection</span><br>
+        <form id="selectthetaform">
+        <input type="checkbox" name="thetatype" value="thetaon" onClick="makeECSelection()" checked="checked">Input medial septal theta<br>
+        </form>
+    </div>
+
+    <!-- SELECT GENOTYPE -->
+    <!--
+    <div class="genotype_selector"> 
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Genotype selection</span><br>
+        <form id="selectgenoform">
+            <input type="radio" name="genotype" value="WT" onClick="makeECSelection()" checked="checked">WT (healthy)<br>
+            <input type="radio" name="genotype" value="rTg4510" onClick="makeECSelection()">rTg4510 (dementia)<br>
+        </form>
+    </div>
+    -->
+
+    <script>
+        istheta = true;
+        istg = false;
+    </script>
+
+    <script>
+    function makeECSelection() {
+                
+        var form = document.getElementById("selectthetaform");
+        var data = new FormData(form);
+        
+        istheta = false;
+        for (const entry of data){
+            istheta=true;
+        };
+        console.log(istheta)
+
+
+        var form = document.getElementById("selectgenoform");
+        var data = new FormData(form);
+        
+        for (const entry of data){
+            genotype=entry[1];
+            console.log(genotype)
+        };
+
+        switch (genotype) {
+            case "WT":
+                istg = false;
+                break
+            case "rTg4510":
+                istg=true;
+        }
+    
+    }
+    </script>
+
+    <!-- OUTPUT THE RASTER PLOT -->
+    <div class="output_raster_monitor"></div>
+    <div id="output_raster"></div>
+
+    <!-- OUTPUT THE LFP -->
+    <div class="simulated_lfp_monitor"></div>
+    <div id="simulated_lfp"></div>
+
+    <script>function simulateECFunction() {
+            
+        const dvloc=Number(document.getElementById("dvaxis").value);
+        runEntorhinalModel(dvloc,istheta,istg);
+
+    }</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------- CORTICAL COLUMN SIMULATOR ----------------->
+
+
+<div class="JR_description">
+    <h2>Neural mass</h2>
+</div>
+
+
+<!-- SELECT STIMULUS -->
+<div class="stim_select_run"> 
+
+    <div class="stim_selector">
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Select stimulus</span><br>
+        <form id="selectstimform">
+        <input type="radio" name="stimtype" value="RS" onClick="makeRSStim(true)" checked="checked">Resting state<br>
+        <input type="radio" name="stimtype" value="VEP" onClick="makeVEPStim()">Visual flash<br>
+        <input type="radio" name="stimtype" value="Custom" onClick="makeCustomStim()">Custom<br>  
+        </form>
+    </div>
+
+    <div class="stimbutton_container">
+        <div id="stimbuttons">
+            <span style="font-size:10pt; font-family:Arial, Helvetica, sans-serif; color: white; grid-area:1/1/2/3; text-align:center;">Add stimulus</span>
+            <button id="constant-button">Constant</button>
+            <button id="noise-button">Noise</button>
+            <button id="flash-button">Visual Flash</button>
+            <button id="step-button">Step</button>
+            <button id="osc-button">Oscillation</button>
+            <button id="ramp-button">Ramp</button>
+        </div>
+    </div>
+
+
+    <!-- Make the custom buttons work -->
+    <div id="constant-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add constant stimulus</h2>
+            Constant input current: <input type="number" value="220" id="constant-val"> pulses per second<br>
+            <button id="constant-submit" class="submitbutton">Submit</button>
+            <button id="constant-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div id="noise-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add noise to stimulus</h2>
+            Noise amplitude: <input type="number" value="33" id="noise-val"> pulses per second<br>
+            <button id="noise-submit" class="submitbutton">Submit</button>
+            <button id="noise-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div id="flash-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add visual flash to stimulus</h2>
+            Flash brightness: <input type="number" value="1" step=0.1 id="flash-brightness"><br>
+            Onset time: <input type="number" value="500" id="flash-time"> ms<br>
+            <button id="flash-submit" class="submitbutton">Submit</button>
+            <button id="flash-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div id="step-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add step to stimulus</h2>
+            Amplitude: <input type="number" value="50" id="step-val"> pulses per second<br>
+            On time: <input type="number" value="500" id="step-ontime"> ms<br>
+            Off time: <input type="number" value="1500" id="step-offtime"> ms<br>
+            <button id="step-submit" class="submitbutton">Submit</button>
+            <button id="step-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div id="osc-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add oscillaton to stimulus</h2>
+            Amplitude: <input type="number" value="50" id="osc-val"><br>
+            Frequency: <input type="number" value="10" id="osc-freq"> Hz<br>
+            <button id="osc-submit" class="submitbutton">Submit</button>
+            <button id="osc-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div id="ramp-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add ramp to stimulus</h2>
+            Gradient: <input type="number" value="50" id="ramp-val"> pulses per second per second<br>
+            <button id="ramp-submit" class="submitbutton">Submit</button>
+            <button id="ramp-cancel" class="cancelbutton">Cancel</button>
+        </div>
+    </div>
+
+    <div class="JRconn_container">
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Synaptic density</span><br>
+        <input type="text" value="125" class="dial" data-min=0 data-max=1350 data-step=1 data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width=150 data-height=150 id="JRconnectivity">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+    </div>
+
+    <div style="height: 60pt; float:left;margin-left:10pt">
+        <button onclick=simulateJRFunction() style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; z-index: 1; margin-bottom: 500pt;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+    </div>
+    <div style="height: 60pt; float:right;margin-right:10pt">
+        <button id="jrsim_help-button" style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:48px;color:rgb(118,208,237)">?</button>
+    </div>
+</div>
+
+<div id="jrsim_help-modal" class="modal">
+    <div class="help-modal-content">
+        <button id="jrsim_help-cancel" class="cancelbutton" style="float: right;">X</button>
+        <img src="./images/jr_sim_help.png" height=100% width=100%>
+    </div>
+</div>
+
+
+<!-- OUTPUT THE CURRENT -->
+<div class="output_stim_monitor"></div>
+<div id="output_stim"></div>
+
+<!-- OUTPUT THE VOLTAGE -->
+<div class="simulated_NMM_monitor"></div>
+<div id="simulated_NMM"></div>
+<!--</div>-->
+
+<!-- DEFAULT STIM -->
+<script>makeRSStim(false)</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------- CORTICAL COLUMN SIMULATOR ----------------->
+
+<div class="FC_description">
+    <h2>Functional connectivity</h2>
+</div>
+
+<!-- SELECT COUPLING TYPE -->
+<div class="coupling_select_run"> 
+
+    <div class="Glconn_container">
+        <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Connection strength</span><br>
+        <input type="text" value="5" class="dial" data-min=0 data-max=50 data-step=1 data-angleArc="270" data-angleOffset="225" data-cursor=1 data-linecap=round data-skin="tron" data-thickness=0.2 data-width=150 id="Glconnectivity">
+            <script>
+                $(function() {
+                    $(".dial").knob();
+                });
+            </script>
+    </div>
+
+    <div style="height: 60pt; float:left;margin-left:10pt">
+        <button onclick=simulateOscFunction() style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; z-index: 1;"><i class="fa fa-caret-right" style="font-size:48px;color:rgb(118,208,237)"></i></button>
+    </div>
+    <div style="height: 60pt; float:right;margin-right:10pt">
+        <button id="brainsim_help-button" style="height:60pt; width:60pt; background-color: rgb(75,75,75); border: 2px solid white; border-radius:5px; text-align: center; font-size:48px;color:rgb(118,208,237)">?</button>
+    </div>
+</div>
+
+
+<div class="coupling_selector">
+    <span style="font-size:14pt; font-family:Arial, Helvetica, sans-serif; color: white;">Select coupling type</span><br>
+    <form id="selectFCform">
+    <div><input type="radio" name="FCtype" value="Dif" checked="checked">Diffusive</div>
+    <div><input type="radio" name="FCtype" value="Add">Additive</div>
+    <div><input type="radio" name="FCtype" value="Pha">Phase</div>
+    <div><input type="radio" name="FCtype" value="Amp">Amplitude</div>
+    </form>
+</div>
+
+<div id="brainsim_help-modal" class="modal">
+    <div class="help-modal-content">
+        <button id="brainsim_help-cancel" class="cancelbutton" style="float: right;">X</button>
+        <img src="./images/brain_sim_help.png" height=100% width=100%>
+    </div>
+</div>
+
+<!-- OUTPUT THE CURRENT -->
+<div class="simulated_FCtime_monitor"></div>
+<div id="simulated_FCtime"></div>
+
+<!-- OUTPUT THE VOLTAGE -->
+<div class="simulated_FC_monitor"></div>
+<div id="simulated_FC">
+</div>
+<!--</div>-->
+
+<script src="javascript_codes/modal_buttons.js"></script>
+
+
+<!--- SCALE --->
+<div class="scale_description">
+    <h2>Neural Scale</h2>
+    <p>(See <a href="brainnetworks.html">brain networks</a>)</p>
+</div>
+
+<div id="patch_clamp_pic" class="scale_pic" >
+    <img src="images/neuron.png">
+</div>
+
+<div id="neural_network_pic" class="scale_pic" >
+    <img src="images/neuralnetwork.png">
+</div>
+
+<div id="neural_mass_pic" class="scale_pic" >
+    <img src="images/neuralmassmodel.png">
+</div>
+
+<div id="whole_brain_pic" class="scale_pic" >
+    <img src="images/brainnetwork.png">
+</div>
+
+
+<div id="sim_footer">
+    <footer>
+        All figures on this page have been modified from the following publications under the CC-BY licence: <br>
+        Tait et al. (2018) J Theor Biol 449: 23-34; Tait et al. (2019) Clin Neurophysiol 130(9):1581-1595; Tait (2019) Doctoral Thesis; Booth et al. (2016) J Neurosci 36(2):312-324 
+    </footer>
+</div>
+
+
+<!------------------------------------------------------>
+</div> <!-- SIMULATOR GRID -->
+
+
+
+			
+			</div><!-- /.container -->
+			<!--<footer>
+	    		<ul>
+	        		<li><a href="mailto:taitl2@cardiff.ac.uk">email</a></li>
+	        		<li><a href="https://github.com/lukewtait">github.com/lukewtait</a></li>
+				</ul>
+			</footer>-->
+		</body>
+	</html>

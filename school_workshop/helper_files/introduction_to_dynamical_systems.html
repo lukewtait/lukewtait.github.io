@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intro to dynamics</title>
+    <link rel="stylesheet" type="text/css" href="./styles/workshop.css">
+    <link rel="stylesheet" type="text/css" href="./styles/titleheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" asynch></script>
+</head>
+<body>
+
+        <!--Header to page-->
+        <div class="titlediv">
+                <h1 class="titlewords">Outline of Dynamical Systems</h1>
+                <h2 class="subtitlewords">What are dynamical systems?</h2>
+                <div class="menudiv">
+                    <button class="menubtn" onclick="location.href='../workshop.html'"><i class="fa fa-home"></i> Home</button>
+                    <div class="dropdown">
+                        <button class="menubtn" onclick="menudropFunction()"><i class="fa fa-bars"></i> Menu</button>
+                        <div id="menuDropdown" class="dropdown-content">
+                            <a href="./introduction_to_dynamical_systems.html">Overview of dynamical systems</a>
+                            <a href="./bifurcations_in_neuronal_dynamics.html">The dynamic brain</a>
+                            <a href="./population_dynamics.html">Dynamics of the zombie apocalypse</a>
+                            <a href="../../index.html">Site home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!--Javascript to open menu function-->
+            <script>
+                function menudropFunction() {
+                    document.getElementById("menuDropdown").classList.toggle("show");
+                }
+        
+                // Close the dropdown menu if the user clicks outside of it
+                window.onclick = function(event) {
+                if (!event.target.matches('.menubtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+                }
+            </script>
+
+
+    <h3>What are dynamical systems?</h3>
+    <p>
+        A <strong>dynamical system</strong> is a mathematical way to describe something that evolves over time.
+        Consider the figure below of a car on a road. 
+        We can describe the position of the car by the variable \(x\), which tells us how far along the road the car has travelled. 
+        Since the car is free to move along the road, <em>the position of the car evolves over time</em>. 
+        This means the car is an example of a dynamical system.
+    </p>
+    <p>
+        If we were to describe the motion of the car, we would usually say how fast the car is going.
+        It is often natural to describe a dynamical system by its rate of change - in this case the speed of the car. 
+        Mathematically, we denote this value as \(dx \over dt\), which how much \(x\) changes (\(dx\)) with a change in time (\(dt\)).
+        We often use the short-hand notation \(\dot x\), which is equivalent to \(dx \over dt\).
+    </p>
+    <img src="images/intro2ds_1_car.jpg">
+    <p>
+        For a car going at constant speed \(v\), we can write \(\dot x = v\). 
+        Generally speaking, however, \(\dot x\) depends on \(x\).
+        For example, in the figure below, the car is now moving along a hilly road. 
+        When the car is going steeply uphill, it travels at low speed, but when it is going steeply downhill, it travels fast. 
+        Mathematically, we write this relationship as \(\dot x=f(x)\), where \(f(x)\) is a mathematical <em>function</em> (or equation) that relates \(\dot x\) to \(x\).
+        We can plot \(\dot x\) against \(x\) to help visualise this relationship more clearly, as shown in the figure below. 
+    </p>
+    <img src="images/intro2ds_2_hillycar.jpg">
+    <p>
+        The car doesn't always have to be moving forward along the track (\(\dot x > 0\)). It can also reverse (\(\dot x < 0\)) or come to a stop (\(\dot x = 0\)). 
+        When \(\dot x = 0\), we call this a <strong>steady state</strong>.
+    </p>
+    <img src="images/intro2ds_3_steadystatecar.jpg">
+
+    <h3>Analysing plots of \(\dot x=f(x)\)</h3>
+    <p>
+        Plotting \(\dot x\) vs \(x\) can be extremely useful for understanding what the dynamical system will do. 
+        Consider the dynamical system \(\dot x=f(x)\) plotted in the figure below. 
+        This plot tells us all of the possible information we could need to understand what the system will do.
+    </p> 
+    <p>
+        We know that when \(\dot x>0\), \(x\) is increasing. This means we are moving right along the \(x\) axis. 
+        Hence we can annotate the plot with arrows pointing right anywhere that \(\dot x>0\) (shown in red on the figure below).
+        Furthermore, we know that when \(\dot x < 0\), \(x\) is decreasing. This means we are moving left along the \(x\) axis.
+        Hence we can annotate the plot with arrows pointing left anywhere that \(\dot x>0\) (also shown in red on the figure below).
+        Finally, we have a steady state anywhere that \(\dot x = 0\). Steady states are marked by circles on the figure below. 
+    </p>
+    <img src="images/intro2ds_4_xdotvsx.jpg">
+    <p>
+        You have probably noticed that some circles are filled in the figure, whilst others are not. Can you figure out why this is?
+        Consider what would happen if the system is at the green star. Since \(\dot x\) is negative, \(x\) decreases towards the filled black dot to the left. 
+        Now consider the same for the blue star. Since \(\dot x\) is positive, \(x\) increases towards the filled black dot to the right.
+        No matter how close we start to this steady state, as long as we are not exactly on the steady state we move away from it. 
+        This type of steady state is known as an <strong>unstable</strong> steady state. 
+    </p>
+    <p>
+        On the other hand, when the system starts in the vicinity of a steady state marked by a black dot (e.g. the orange or purple stars), it will move towards the steady state. 
+        This type of steady state is known as a <strong>stable</strong> steady state.
+    </p>
+    <p>
+        By marking the steady states using knowledge of when \(\dot x = 0\) and drawing left or right arrows using knowledge of the sign of \(x\), we can predict what it is that the system might do. 
+        Here, we know that what the system does depends on where the system starts along the \(x\) axis, known as the <strong>initial conditions</strong>.
+        There are five possible outcomes in this system:
+    </p>
+    <ol>
+        <li>If the initial conditions are near the white or green stars (or exactly at the stable steady state on the left), the system moves to the stable steady state on the left and stops.</li>
+        <li>If the initial conditions are exactly on the unstable steady state on the left, the system stays there.</li>
+        <li>If the initial conditions are near the blue, orange, or purple stars (or exactly at the stable steady state on the right), the system moves to the stable steady state on the right and stops.</li>
+        <li>If the initial conditions are exactly on the unstable steady state on the right, the system stays there.</li>
+        <li>If the initial conditions are near the black star, the system increases forever.</li>
+    </ol>
+
+    <h3>Summary</h3>
+    <ul>
+        <li>In general, in a 1-dimensional dynamical system such as the ones shown here, there are two types of dynamics. Either the system will increase/decrease forever, or will come to a stop at a steady state.</li>
+        <li>Plotting \(\dot x\) vs \(x\) is a simple way to analyse possible outcomes of the system. </li>
+        <li>The outcome of the system often depends on initial conditions.</li>
+    </ul>
+
+    <p><a href="worksheet_1.html">Click to continue to a worksheet on dynamical systems</a></p>
+</body>
+</html>
