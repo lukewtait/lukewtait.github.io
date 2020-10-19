@@ -94,7 +94,7 @@ a {
     /*text-align: center;*/
 }
 
-.nav a, #researchbutton, #sessionsbutton {
+.nav a, #blogbutton, #sessionsbutton {
     padding: 6px 6px 6px 6px;
     text-decoration: none;
     font-size: 25px;
@@ -103,7 +103,7 @@ a {
 }
 
   
-.nav a:hover, #researchbutton:hover, #sessionsbutton:hover  {
+.nav a:hover, #blogbutton:hover, #sessionsbutton:hover  {
     color: #f1f1f1;
 }
 
