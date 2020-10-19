@@ -22,9 +22,24 @@
                     <li><a href="./research.html">Research</a></li>
                     <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
                     <li><a href="./publications.html">Publications</a></li>
-	        		<li><a href="./cv.html">CV</a></li>
-	        		<!--<li><a href="./blog">Blog</a></li>-->
+                    <li><a href="./cv.html">CV</a></li>
+                    <li id="blogbutton" onclick="dispBlogLinks()">Blog <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="bloglinks">
+                        <a href="./blogOct2020.html">October 2020</a>
+                    </div>
                 </ul>
+
+                <!-- javascript to open and close blog links-->
+                <script>
+                    function dispBlogLinks() {
+                        var x = document.getElementById("bloglinks");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                    </script>
 
                 <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
                 -->
@@ -94,8 +109,23 @@
                     <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
                     <li><a href="./publications.html">Publications</a></li>
 	        		<li><a href="./cv.html">CV</a></li>
-	        		<!--<li><a href="./blog">Blog</a></li>-->
+	        		<li id="blogbutton" onclick="dispBlogLinks_mob()">Blog <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="bloglinks_mob">
+                        <a href="./blogOct2020.html">October 2020</a>
+                    </div>
                 </ul>
+
+                <!-- javascript to open and close blog links-->
+                <script>
+                    function dispBlogLinks_mob() {
+                        var x = document.getElementById("bloglinks_mob");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                    </script>
 
                 <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
                 -->
@@ -176,7 +206,7 @@
                     function(e)
                     {
                         var mobnavmenu = document.getElementById("mobnavmenu");
-                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "researchbutton"))
+                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "blogbutton"))
                         {
                         $("#mobnavmenu").hide();
                         }

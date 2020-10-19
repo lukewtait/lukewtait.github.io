@@ -22,9 +22,24 @@
                     <li><a href="./research.html">Research</a></li>
                     <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
                     <li><a href="./publications.html">Publications</a></li>
-	        		<li><a href="./cv.html">CV</a></li>
-	        		<!--<li><a href="./blog">Blog</a></li>-->
+                    <li><a href="./cv.html">CV</a></li>
+                    <li id="blogbutton" onclick="dispBlogLinks()">Blog <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="bloglinks">
+                        <a href="./blogOct2020.html">October 2020</a>
+                    </div>
                 </ul>
+
+                <!-- javascript to open and close blog links-->
+                <script>
+                    function dispBlogLinks() {
+                        var x = document.getElementById("bloglinks");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                    </script>
 
                 <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
                 -->
@@ -94,8 +109,23 @@
                     <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
                     <li><a href="./publications.html">Publications</a></li>
 	        		<li><a href="./cv.html">CV</a></li>
-	        		<!--<li><a href="./blog">Blog</a></li>-->
+	        		<li id="blogbutton" onclick="dispBlogLinks_mob()">Blog <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="bloglinks_mob">
+                        <a href="./blogOct2020.html">October 2020</a>
+                    </div>
                 </ul>
+
+                <!-- javascript to open and close blog links-->
+                <script>
+                    function dispBlogLinks_mob() {
+                        var x = document.getElementById("bloglinks_mob");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                    </script>
 
                 <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
                 -->
@@ -176,7 +206,7 @@
                     function(e)
                     {
                         var mobnavmenu = document.getElementById("mobnavmenu");
-                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "researchbutton"))
+                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "blogbutton"))
                         {
                         $("#mobnavmenu").hide();
                         }
@@ -203,7 +233,7 @@
     <h2>Functional neuroimaging of the human brain</h2>
     <p>
         Most of my research revolves around studying the functional dynamics of the brain.
-        When a mass of neurons within a region of the brain synchronously become active, they create electric and magentic fields around the head. 
+        When a mass of neurons within a region of the brain synchronously become active, they generate electric and magentic fields around the head. 
         MEG/EEG place sensors outside the head (MEG) or on the scalp (EEG) and record these magnetic/electric fields. 
         I am interested in using mathematical techniques to estimate the brain activity that generated these fields, called <em>source reconstruction</em>.
     </p>
@@ -294,7 +324,7 @@
     </p>
     <p>
         My recent research has involved using microstate analysis to study dynamic functional connectivity from EEG and MEG.
-        In resting state EEG, four EEG microstates have repeatably been identified, known as the canonical microstates. 
+        In resting state EEG, four EEG microstates have repeatedly been identified, known as the canonical microstates. 
         We have found that the canonical state related to working memory and attention are altered in Alzheimer's disease, and using a new measure of transition complexity we found that transitioning between states is slower and less complex (<a href="https://doi.org/10.1101/833244">Tait et al. (2019)</a>).
         My current research aims to understand the mechanisms of how and why these resting microstates are generated in the brain during healthy cognition, and why they change in neurodegenerative disorders. 
     </p>
@@ -329,7 +359,7 @@
     </p>
     <p>
         Of course, there is a major disavantage to a simulated brain - it isn't a real brain! 
-        In reality we can never build a perfect model of the brain, so we can never no for certain whether our simulated experiments match what we would observe in a real brain. 
+        In reality we can never build a perfect model of the brain, so we can never know for certain whether our simulated experiments match what we would observe in a real brain. 
         Therefore model validation against experiments is crucial.  
     </p>
     <p>

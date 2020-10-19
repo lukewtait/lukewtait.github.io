@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Luke Tait | Blog</title>
+			<!-- link to main stylesheet -->
+            <link rel="stylesheet" type="text/css" href="./css/main.css">
+            <!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
+            <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		</head>
+		<body>
+            <!-- navigation bar on left -->
+			<div class="nav" id="mainnav">
+                <!-- profile picture + name-->
+                <img src="images/profilepic.jpg" atl="Avatar" class="avatar">
+                <h1>Luke Tait</h1>
+
+                <!-- links to pages -->
+	    		<ul>
+	        		<li><a href="./index.html">Home</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
+                    <li><a href="./publications.html">Publications</a></li>
+                    <li><a href="./cv.html">CV</a></li>
+                    <li id="blogbutton" onclick="dispBlogLinks()">Blog <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="bloglinks">
+                        <a href="./blogOct2020.html">October 2020</a>
+                    </div>
+                </ul>
+
+                <!-- javascript to open and close blog links-->
+                <script>
+                    function dispBlogLinks() {
+                        var x = document.getElementById("bloglinks");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                    </script>
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+
+
+            <!-- mobile navigation bar -->
+
+            <div class="nav" id="mobnavmenu">
+                <!-- links to pages -->
+	    		<ul>
+	        		<li><a href="./index.html">Home</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
+                    <li><a href="./publications.html">Publications</a></li>
+	        		<li><a href="./cv.html">CV</a></li>
+	        		<li id="blogbutton" onclick="dispBlogLinks_mob()">Blog <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="bloglinks_mob">
+                        <a href="./blogOct2020.html">October 2020</a>
+                    </div>
+                </ul>
+
+                <!-- javascript to open and close blog links-->
+                <script>
+                    function dispBlogLinks_mob() {
+                        var x = document.getElementById("bloglinks_mob");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                    </script>
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+            <div class="mnav">
+                <!-- profile picture + name-->
+                <i class="fa fa-bars" style="display: inline;" onclick="dispNavBar()" id="mainburger"></i>
+                <!--<h1 style="display: inline;">Luke Tait</h1>-->
+
+                <script>
+                    function dispNavBar() {
+                        var x = document.getElementById("mobnavmenu");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                </script>
+               
+            </div>
+
+            <script>
+                $("body").click(
+                    function(e)
+                    {
+                        var mobnavmenu = document.getElementById("mobnavmenu");
+                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "blogbutton"))
+                        {
+                        $("#mobnavmenu").hide();
+                        }
+                    }
+                );
+            </script>
+            
+
+
+
+			<div class="container">
+			
+			<div class="rescontainer">
+
+    <h1>Brain-waves and brain states: Can recording brain activity and machine learning help diagnose Alzheimer's disease?</h1>
+    <p>
+        Welcome to my blog! 
+        For my first post, I’m going to write about some research myself and colleagues <a href="https://doi.org/10.1038/s41598-020-74790-7">recently published in <em>Nature Scientific Reports</em></a>. 
+        In particular, I will attempt to give an accessible and brief summary of the key results, giving fewer technical details and more background than the published paper. 
+        In the study, entitled <em>“EEG microstate complexity for aiding early diagnosis of Alzheimer’s disease”</em>, we use a method called <em>electroencephalography</em> (or EEG for short) to record brain activity of people in the early stages of Alzheimer’s disease, and use machine learning to test whether these could be useful for aiding early diagnosis. 
+    </p>
+
+    <h2>What is Alzheimer's disease?</h2>
+    <p>
+        Alzheimer’s disease is a disease of the brain in which neurons (brain cells) die at a much faster rate than is seen in healthy aging. 
+        This causes a deterioration in cognitive function which worsens over time; typically in Alzheimer’s disease poor memory is one of the earliest symptoms, but over time other symptoms occur such as language difficulties, mood changes, hallucinations, and eventually difficulty eating and moving, finally resulting in death. 
+        There is currently no cure for Alzheimer’s disease, but treatments – if administered early – can help slow progression. 
+        It is therefore important to (A) understand better the causes of Alzheimer’s disease if we wish to develop new treatments, and (B) make an early diagnosis of Alzheimer’s if treatments are to be their most effective. 
+        These questions are the focus of much of my research, and particularly the study discussed here. 
+    </p>
+    <div class="figure">
+        <img src="images/blogOct20_AD.jpg">
+        <p>
+            <b>Brain atrophy in Alzheimer's disease.</b>
+            Brain cells die in Alzheimer's disease much faster than in healthy aging, causing the brain to shrink or <em>atrophy</em>.
+            Credit: Alzheimer's Disease Education and Referral Center, Public Domain, via Wikimedia Commons.
+        </p>
+    </div>
+    <p>
+        At present, the current clinical work-up to diagnose Alzheimer’s disease doesn’t involve measuring brain activity, yet it is known that changes to brain activity occur much earlier in Alzheimer’s disease than symptoms. 
+        This is why, in this project, we asked “Can recording brain activity help diagnose early stage Alzheimer’s disease?”.  
+    </p>
+
+    <h2>Recording brain activity in Alzheimer's disease with EEG</h2>
+    <p>
+        My collaborators and co-authors in this study at Universities in Bristol and Bath recorded resting (i.e. the participants were simply asked to relax) brain activity from people who had just been diagnosed with Alzheimer’s disease (and healthy people of the same age to act as controls). 
+        To do so, they used a technique called EEG. 
+        The brain is made up of 86 billion brain cells called neurons, which act like computer chips and can be ‘on’ or ‘off’. 
+        When these neurons turn ‘on’, they fire electrical signals to all other neurons to which they are wired up. 
+        These electrical signals conduct through the head, and EEG measures these electric fields by placing sensors on the head. 
+        Interestingly, these sensors typically record the electrical field rising and falling in a wave-like fashion as groups of neurons activate and inactivate together; 
+        these oscillations are known as ‘brain-waves’ or ‘neural oscillations’. 
+    </p>
+    <div class="figure">
+        <img src="images/blogOct20_eeg.png">
+        <p>
+            <b>Brain waves and brain states in EEG.</b>
+            (A) In EEG, sensors (green) are placed on the scalp. 
+            Electrical activity in the brain conducts to these sensors. 
+            (B) Brain waves recorded by EEG. 
+            Each horizontal trace is the voltage recorded at an EEG sensor, and the x-axis shows time. 
+            Credit: <a href="https://commons.wikimedia.org/wiki/File:Human_EEG_with_prominent_alpha-rhythm.png">Andrii Cherninskyi</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons. 
+            (C) Brain microstates have four main shapes for the electric field. 
+            At any given time point, the shape of the electric field on the scalp is likely to look like one of these four plots. 
+        </p>
+    </div>
+    <p>
+        Another interesting phenomena in the resting EEG is that the shape of the electric field that is recorded appears to stay the same for approximately 50-100 milliseconds (1/20th to 1/10th of a second), before very quickly changing to another shape. 
+        In particular, four shapes of the field are seen to repeat. 
+        This is believed to be certain groups of areas of the brain (known as resting-state networks) turning on and off – each shape of electric field relates to a specific resting-state network being active. 
+        In EEG, we call these 50-100 millisecond periods in which a group of brain regions remain active ‘microstates’. 
+        Since microstates they are believed to be the different functions in the brain activating and inactivating, they have been nicknamed “atoms of thought” and “building blocks of consciousness”. 
+    </p>
+
+    <h2>Brain waves and brain states for diagnosing Alzheimer's disease</h2>
+    <p>
+        Our key results from studying the EEG were that brain activity is slower and less complex in Alzheimer’s disease. 
+        <a href="https://doi.org/10.1016/j.clinph.2019.05.027">Brain waves slowed down</a>, meaning fewer waves per second were recorded. 
+        Similarly, microstates lasted longer, meaning transitions between microstates was slower. 
+        We also used a measure of how ‘complex’ microstate sequences were, and believe we were the first to try this on microstate sequences (although it has been used in other areas - see <a href="https://pudding.cool/2017/05/song-repetition/">"Are Pop Lyrics Getting More Repetitive?" by Colin Morris</a> to see it applied to song lyrics, including animations of how the algorithm works). 
+        Microstate sequences were more repetitive in people with Alzheimer’s disease, and this was independent of the fact the brain activity slowed down. 
+    </p>
+    <p>
+        Given that brain activity was slower and less complex in Alzheimer’s disease, could this be used to aid with early diagnosis? 
+        To test this, we turned to machine learning. 
+        We trained our computer to separate healthy people from people with Alzheimer’s disease given only a value of ‘slowing’ and a value of ‘complexity’ (calculated from the EEG) for each participant. 
+        We found the computer could correctly tell if a participant had Alzheimer's disease 85.1% of the time.
+        We even tested this on a whole new set of participants, with EEG recorded by collaborators from the San Marino State Hospital, and found that the computer could guess correctly 81.3% of the time. 
+        Finally, we tested this on eleven people who had received a diagnosis of ‘mild cognitive impairment’ at the time of EEG recording – 
+        meaning they had some mild symptoms that might be due to Alzheimer’s disease, but it was too early for the Doctors to be able to make a diagnosis. 
+        We then compared our computer’s prediction of whether the participants had Alzheimer’s disease or not against their Doctors’ opinions four years later – 
+        and found that our computer agreed with the Doctor in ten out of eleven cases. 
+    </p>
+    <div class="figure">
+        <img src="images/blogOct20_predict.png">
+        <p>
+            <b>Using EEG and machine learning to diagnose Alzheimer's disease. </b>
+            For a given participant, we calculate the amount of slowing and the microstate complexity from the EEG. 
+            The computer uses these values to make a prediction of whether the person is healthy or has Alzheimer’s disease. 
+            In the figure, a grey background means the computer would predict healthy, while red means the computer predicts Alzheimer’s. 
+            Each individual is represented by a dot, with colours representing their diagnosis from a Doctor. 
+            The computer is correct if a red dot is on the red background or a black dot is on the grey background, and wrong otherwise. 
+        </p>
+    </div>
+    <p>
+        So, can recording brain activity and machine learning help diagnose Alzheimer’s disease?
+        Our results are hopeful and very positive, but there is a long way to go before giving a definitive ‘yes’. 
+        Our study used a total of 74 participants and (barring the eleven mild cognitive impairment patients) a standard clinical workup was already able to give a diagnosis. 
+        To really test whether this technique will be useful in the clinic, we need more participants at earlier stages of the disease. 
+        But as a preliminary study, the results are very exciting, and definitely merit this work. 
+        In fact, we now have collaborators in San Marino State Hospital collecting new data and a PhD student at Reading University dedicated to improving upon our techniques. 
+        So keep your eyes open for future work!
+    </p>
+
+    <h2>Additional media related to this study: </h2>
+    <ul>
+        <li><a href="https://www.youtube.com/watch?v=fm667Azsy2A&t=0s">Presentation at Alzheimer's Assocation International Conference 2020</a>, by Luke Tait</li>
+        <li><a href="https://translate.google.com/translate?sl=it&tl=en&u=http%3A%2F%2Fwww.libertas.sm%2Fnotizie%2F2020%2F07%2F31%2Funo-studio-di-san-marino-sullalzheimer-approda-allestero.html%3Ffbclid%3DIwAR1h5obhchPhH7aazT22yKnODQnqUuSH-0Lf1n5z6YtzMDhqZ-DFcCwZB6k">Report in San Marino News (libertas.sm)</a>, with Edoardo Barvas</li>
+        <li><a href="https://www.youtube.com/watch?v=Jy2pvxHc3e4">TEDx Talk San Marino</a>, by Francesco Tamagnini</li>
+    </ul>
+
+    
+</div>
+
+
+<footer>
+</footer>
+			
+			</div><!-- /.container -->
+			<!--<footer>
+	    		<ul>
+	        		<li><a href="mailto:taitl2@cardiff.ac.uk">email</a></li>
+	        		<li><a href="https://github.com/lukewtait">github.com/lukewtait</a></li>
+				</ul>
+			</footer>-->
+		</body>
+	</html>
