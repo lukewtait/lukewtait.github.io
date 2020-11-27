@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Luke Tait | Blog</title>
+			<!-- link to main stylesheet -->
+            <link rel="stylesheet" type="text/css" href="./css/main.css">
+            <!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
+            <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		</head>
+		<body>
+            <!-- navigation bar on left -->
+			<div class="nav" id="mainnav">
+                <!-- profile picture + name-->
+                <img src="images/profilepic.jpg" atl="Avatar" class="avatar">
+                <h1>Luke Tait</h1>
+
+                <!-- links to pages -->
+	    		<ul>
+	        		<li><a href="./index.html">Home</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
+                    <li><a href="./publications.html">Publications</a></li>
+                    <li><a href="./cv.html">CV</a></li>
+                    <li id="blogbutton" onclick="dispBlogLinks()">Blog <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="bloglinks">
+                        <a href="./blogOct2020.html">October 2020</a>
+                        <a href="./blogNov2020.html">November 2020</a>
+                    </div>
+                </ul>
+
+                <!-- javascript to open and close blog links-->
+                <script>
+                    function dispBlogLinks() {
+                        var x = document.getElementById("bloglinks");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                    </script>
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+
+
+            <!-- mobile navigation bar -->
+
+            <div class="nav" id="mobnavmenu">
+                <!-- links to pages -->
+	    		<ul>
+	        		<li><a href="./index.html">Home</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./outputs.html">Outputs, Tools, and Workshops</a></li>
+                    <li><a href="./publications.html">Publications</a></li>
+	        		<li><a href="./cv.html">CV</a></li>
+	        		<li id="blogbutton" onclick="dispBlogLinks_mob()">Blog <i class="fa fa-caret-down"></i></li>
+                    <div class="reslink" id="bloglinks_mob">
+                        <a href="./blogOct2020.html">October 2020</a>
+                    </div>
+                </ul>
+
+                <!-- javascript to open and close blog links-->
+                <script>
+                    function dispBlogLinks_mob() {
+                        var x = document.getElementById("bloglinks_mob");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                    </script>
+
+                <!--<a class="twitter-timeline" data-width="220" data-height="300" data-theme="dark" href="https://twitter.com/LukeWTait?ref_src=twsrc%5Etfw">Tweets by LukeWTait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                -->
+
+                <!-- social media links -->
+                <ul style="text-align: center;">
+                    <li class="socmedicons">
+                        <a target="_blank" href="mailto:taitl2@cardiff.ac.uk">
+                            <i class="fa fa-envelope-o"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.researchgate.net/profile/Luke_Tait">
+                            <i class="ai ai-researchgate"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a  target="_blank" href="https://scholar.google.com/citations?user=dZlZ5AUAAAAJ&hl=en">
+                            <i class="ai ai-google-scholar"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://github.com/lukewtait">
+                            <i class="fa fa-github"></i>
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <br>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://www.cardiff.ac.uk/people/view/1532593-tait-luke">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/cardifficon.png' width=40px height=40px onmouseover="this.src='images/cardifficon_white.png';" onmouseout="this.src='images/cardifficon.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                    <li class="socmedicons">
+                        <a target="_blank" href="https://ccbrain.org/">
+                            <!--<div id="cardifficon">A</div>-->
+                            <img src='images/ccbrainlogo.png' width=40px height=40px onmouseover="this.src='images/ccbrainlogo_white.png';" onmouseout="this.src='images/ccbrainlogo.png';" />
+                            <!--<img src="cardifficon.png" width=50px height=50px>-->
+                            <!--<span class="screen-reader-text">email</span>-->
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div style="font-size: 7pt; float: left;">
+                    <a style="font-size: 7pt; padding: 0px 0px 0px 0px; float: left;" href="http://creativecommons.org/licenses/by-nc/4.0/">Content licence CC-BY-NC 4.0</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0; margin-left:auto;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a>
+                </div>
+               
+            </div>
+
+            <div class="mnav">
+                <!-- profile picture + name-->
+                <i class="fa fa-bars" style="display: inline;" onclick="dispNavBar()" id="mainburger"></i>
+                <!--<h1 style="display: inline;">Luke Tait</h1>-->
+
+                <script>
+                    function dispNavBar() {
+                        var x = document.getElementById("mobnavmenu");
+                        if (x.style.display === "block") {
+                        x.style.display = "none";
+                        } else {
+                        x.style.display = "block";
+                        }
+                    }
+                </script>
+               
+            </div>
+
+            <script>
+                $("body").click(
+                    function(e)
+                    {
+                        var mobnavmenu = document.getElementById("mobnavmenu");
+                        if ((e.target.id !== "mobnavmenu") && (e.target.id !== "mainburger") && (e.target.id !== "blogbutton"))
+                        {
+                        $("#mobnavmenu").hide();
+                        }
+                    }
+                );
+            </script>
+            
+
+
+
+			<div class="container">
+			
+			<div class="rescontainer">
+
+    <h1>ccBrain goes to a Virtual Conference</h1>
+    <p>
+        Welcome back to my blog! 
+        <a href="blogOct2020.html">Last month</a>, I wrote about a paper we had just published. 
+        This month, I will go in a slightly different direction and write about some of the work our lab, <a href="https://ccbrain.org">the Cognition and Computational Brain (ccBrain) Lab</a> led by Jiaxiang Zhang, presented at the <a href="https://neuromatch.io/about">Neuromatch 3.0 conference.</a> 
+        I'll discuss the presentations from our lab, and give my personal thoughts on what was interesting about each talk. 
+        I've also spoken with each of the presenters and asked them a couple of questions about the work, and their answers are given below my own summaries. 
+        But first, before I discuss our research, I will talk a little bit about the conference as a whole. 
+    </p>
+
+    <h2>The Neuromatch 3.0 Conference</h2>
+    <p>
+        The concept behind the conference was an inexpensive and inclusive neuroscience conference. 
+        The event was entirely virtual, using Zoom and Youtube to host the meetings, for two main reasons. 
+        Firstly, the COVID-19 pandemic has led to many in-person scientific conferences being cancelled. 
+        However, COVID wasn't the only justification for a virtual conference. 
+        To quote the 'About' page for the Neuromatch conference page: 
+    </p>
+    <p style="text-align: center">
+        <em>
+            "[Conferences] can have prohibitive costs (financial, time away from home, carbon footprint) and they are often viewed as exclusive by scientists and trainees on the outside of existing poweful social networks... 
+            The Neuromatch vision is to foster inclusive global interactions for learning, mentorship, networking, and professional development in neuroscience through online community interactions and events"
+        </em>
+    </p>
+    <p>
+        Neuromatch had already run two smaller virtual conferences and an online summer school earlier in 2020, but Neuromatch 3.0 was the first event I managed to attend. 
+        So how did it all work in practice? 
+        Neuromatch didn't have the 'style' of the Alzheimer's Association Internation Conference 2020 (another virtual conference I spoke at earlier this year);
+        no virtual foyer with simulated attendees milling about presumably networking, and no virtual doorways guiding you to the different exhibition halls and poster sessions etc (see the screenshot below). 
+        However, Neuromatch was streamlined and easy to access, with (almost) all presentations streamed live on both Zoom and Youtube, no additional software was required and anyone could attend. 
+        Other virtual conferences I have attended (including AAIC 2020) have uploaded pre-recorded talks, but at Neuromatch all talks were live streamed with questions at the end, allowing for similar levels of interaction you might expect when attending a conference in person.
+        Neuromatch also had a very useful system in which relevant talks (based on your profile when registering) were recommended. 
+        There was an enormous number of available talks from all areas of neuroscience, so this system allowed a busy attendee to find those most relevant to their research.  
+    </p>
+    <div class="figure">
+        <img src="images/blogNov20_AAIC_2020_foyer.png">
+        <p>
+            <b>Neuromatch didn't have the style of other big conferences like AAIC, but it was simple and accessible.</b>
+            (Right) The Alzheimer's Association International Conference 2020, another virtual event, had a virtual foyer complete with virtual attendees and exhibition halls.  
+            (Left) In contrast, Neuromatch's 'no fuss' design - streaming via Youtube (shown) or Zoom - made the event accessible to all.  
+        </p>
+    </div>
+
+    <p>
+        Neuromatch also had another exciting angle - the 'Mind Matching' sessions. 
+        Attendees could opt to upload abstracts from their recent work, and Neuromatch would use an algorithm to match you with researchers with similar interests who had also opted into the scheme. 
+        You are then free to call and chat with your matches at a convenient time. 
+        At the time of writing, I have met with two of my matches and had really interesting discussions with both. I found this was an excellent approach to networking at a virtual conference, which is one thing that is largely missing compared to in-person conferences.  
+        I also think this is a fantastic opportunity to network in an inexpensive (registration was only 25 USD) and environmentally friendly manner, particularly in the times of COVID when networking can be difficult. 
+    </p>
+    <p>
+        Below, I am going to give an overview of the three talks presented by the ccBrain Lab at Neuromatch 3.0. 
+    </p>
+
+    <h2>Within and Across Domain Effects of Choice-Induced Bias - Wojciech Zajkowski</h2>
+    <p>
+        Wojciech is a PhD student in the ccBrain lab who gave a talk entitled "Within and Across Domain Effects of Choice-Induced Bias". <a href="https://youtu.be/NwXx0qxZyDI?t=26579">(Link to talk on Youtube)</a>. 
+        Wojciech's talk focused on bias in making decisions, particularly "within-" and "across-domain" biases. 
+        To understand what this means, Wojciech gave a great example. Consider a debate - if you agree with the policies of a particular candidate, an example of a within domain bias might be that you are biased towards thinking they gave better arguments and won the debate. 
+        An example of cross-domain bias would be a bias towards something that is less relevant to their policies, such as believing they are better dressed than other candidates.
+    </p>
+    <p>
+        Wojciech performed a task in which participants were shown two pictures of food and asked to either select their preferred food (preference-domain) or the largest food (perceptual-domain). 
+        By showing the participant two food items and ask them to choose one based on a domain, and later asking the participant to rate the same foods within a domain, he quantified how choices in a domain affected rating in the same (within-domain bias) or the other (across-domain bias) domain.  
+    </p>
+    <div class="figure">
+        <img src="images/blogNov20_WojciechBias.png">
+        <p>
+            <b>Experiment to assess within- and across- domain bias.</b>
+            (Left) Explanation of within- and across-domain biases.  Within-domain biases are how preference choices bias preferences, or how perceptual choices bias perception. 
+            Across-domain biases are how preference choices bias perception, or perception choices bias preference.
+            (Right) Screenshot from the video of Wojciech explaining the task. 
+        </p>
+    </div>
+    <p>
+        There were two key points I found really interesting from their work. 
+        Firstly, they repeated the test on a small sample in the lab, and subsequently for a much larger sample online. In both cohorts, they found that there was a large within-domain bias and a small (but non-zero) across-domain bias. 
+        I find this particularly interesting because it suggests that decision making experiments don't need to have the limitations of a lab such as recruiting only local participants. 
+        Online testing allows for much larger and more varied cohorts of participants, so the validation of this technique from this study is definitely interesting. 
+        Dominik (the next talk I will discuss) also used online testing in his work, as have others in the lab, and for more information on the lab's experience with online testing see <a href="https://ccbrain.org/science/Onlinetesting/">their blog post on the subject</a>.
+        The second key point I found interesting came from a computational model of these experiments. 
+        Without going into details of the model here, Wojciech found that only including within-domain bias in the model could explain the data just as well as a model including across-domain biases, and that within-domain biases were long term while across-domain biases were very quickly forgotten. 
+        While this modelling was phenomenological cognitive modelling - i.e. it didn't try to explain the brain activity that made these decisions (like Dominik's talk I discuss below) - I found it interesting because it suggests that within-domain and across-domain biases are generated via a different mechanism and are not just the same phenomenon with different strengths (as might be interpreted from just the data). 
+        In the discussion after this talk, Wojciech mentioned future work will including use of MEG/EEG to try to understand this from a mechanistic perspective, which should be really fascinating work!
+    </p>
+    <div class="figure">
+        <img src="images/blogNov20_WojciechBias2.png">
+        <p>
+            <b>Two interesting results from Wojciech's talk.</b>
+            (Left) Results were very consistent when the experiment was performed on participants in the lab, and participants performing the tasks online using their computers at home. 
+            (Right) Wojciech's model of decision bias explained the data just as well when only within-domain terms were included as when both within- and across-domain terms were included.
+        </p>
+    </div>
+    <p>
+        I asked Wojciech two questions about the talk, and below are his responses. 
+    </p>
+    <h4>What is the main take away from this talk?</h4>
+    <p>
+        People can be influenced by their choices not only when the choices are relevant, but also when they are not. 
+        Imagine a voting example: a hypothetical voter is motivated to vote for candidate A over candidate B due to his charisma.
+        The act of choice (vote) can further widen the gap in perceived charisma in favour of the chosen candidate.  
+        This is a classic case of choice-induced bias, where the affected beliefs are causally associated with the domain of choice 
+        (<em>I find candidate A more charismatic, therefore I vote for him, which leads me to find him even more charismatic</em>). 
+        Additionally, the vote could potentially affect how one views the candidates in unrelated domains, such as proposed policies 
+        (<em>I like candidate A’s policies more, therefore I vote for him ,which leads me to view his policies more favourably</em>). 
+        We refer to these as a within-domain, and across-domain effects, respectively.  We find clear evidence for both, a within, as well as an across-domain effects. 
+        It seems however  that within-domain effects are long-lasting, while across effects are short lived.
+    </p>
+    <h4>Where will this project go next?</h4>
+    <p>
+        I plan to follow-up this research in 2 main directions. 
+        First, it would be interesting to find neural signatures of both types of mechanisms: 
+        an ephemeral consistency effect, affecting all post-decisional processing (within and across-domains) equally, 
+        and a long-lived value-update specific to within-domain evaluations. 
+        Secondly, I aim at improving the experimental design and comparing the current generative model with a Bayesian update model, 
+        where not only item means can be affected by choices, but also their uncertainties. 
+        Such effect would be consistent with the value-updating mechanism, where the more I choose or reject one item, the more certain of its value I become. 
+        In contrast, across-domain choices should not affect estimation uncertainty.
+    </p>
+
+    <h2>Integration of Information in the Perceptual Decision Making Task - Dominik Krzemi&#324;ski</h2>
+    <p>
+        Dominik is also a PhD student in the lab, who gave a talk entitled "Integration of Information in the Perceptual Decision Making Task". <a href="https://youtu.be/ZSpg-nhXjw0?t=12376">(Link to talk on Youtube)</a>.
+        While Wojciech's talk (above) focused on two domains of decision making, perceptual and value-based decision making, Dominik focused on how we make perceptual decisions when there are multiple sources of information. 
+        In a classic perceptual decision making experiment, the participant is shown a video of a series of dots moving randomly with a certain percentage of the dots (called the "coherence") moving in the same direction (typically left or right), and the participant must decide which direction the coherent dots are moving.
+        Dominik's work extended this to study two axes of random dots in an "X" shape (see the figure below). In this set up, information can come from two sources - the dots moving along each axis (or branch of the "X"). 
+        Dominik tested multiple set ups, including different levels of difficulty (coherence), the angle between the axes, and whether information was given in both axes or just one axis (with the other containing only random dots). 
+    </p>
+    <div class="figure">
+        <img src="images/blogNov20_DominikDots.png">
+        <p>
+            <b>Random dot motion for testing perceptual making.</b>
+            (Left) The classical random dot motion experiment, in which participants are asked to decide whether the coherent dots are moving left or right. Credit: <a href="https://doi.org/10.3389/fpsyg.2012.00263">Zhang (2012) Front. Psychology 3:263</a> under the CC-BY licence. 
+            (Right) Dominik describing a version of the task with two sources of information, in which dots move along the arms of the "X" shape and participants must decide if they are moving towards red or blue. 
+        </p>
+    </div>
+    <p>
+        Unsurprisingly, but important to verify nontheless (particularly when the experiment is conducted online as opposed to in a lab), when the task was easier the participants performed better. 
+        More interestingly, the accuracy of the response (fraction of times the participant correctly guessed the direction of the dots) was higher for information in one axis than when it was split between the two. 
+        Similarly, the reaction time (time taken to make a decision) was quicker for one axis. Higher accuracy with lower reaction time indicates better performance. 
+        To use the example Dominik gave in his presentation, a participant will perform better having 15% coherence in one axes than 10% in one axis and 5% in the other, even though the total information on the screen is the same. 
+        Even more interestingly, the accuracy of the response <em>didn't</em> depend on the angle between the axes. 
+        This is counter to what you might expect (and to Dominik's original hypothesis), as a low angle between axes means all coherent dots have more horizontal movement and less vertical movement, and therefore the direction of the dots is more consistent between the two axes. 
+        This would suggest that the task might be easier the lower the angle between the axes. 
+        They then changed the experiment, such that the two axes had dots going in <em>different</em> directions and the participant had to choose the direction with highest coherence (or the direction of overall movement). 
+        As in the previous experiment, accuracy was higher for a single axis than two axes. 
+        But unlike the previous experiment, reaction time was higher for a single axis. Dominik explained this as a speed/accuracy trade-off, explaining the higher accuracy by taking more time to make a decision. 
+    </p>
+    <p>
+        However, the final slide of this presentation was the one that piqued my personal interest the most. 
+        As my research background is in modelling brain dynamics, I was really interested in the approach Dominik is taking to model these results. 
+        Unlike Wojciech, who used a cognitive model and did not try to explain the brain activity generating the decisions, Dominik is using a biophysical model to explain his data in terms of the firing rates of neurons in the brain. 
+        Dominik has developed an extension of the Wong-Wang model, which was originally used for the classic random dot motion task with only one axis. 
+        For more information on this model in non-mathematical terminology, Dominik and I co-organized a seminar and computer practical which is <a href="https://github.com/lukewtait/intro_to_modelling">freely available online</a>. 
+        In the Wong-Wang model, there are two competing populations of neurons corresponding to the two directions in which the dots can move, and when a decision is made one population of neurons will fire many action potentials (signals), while the other population will be quiescent.
+        Dominik's extension to the model contains four populations, essentially containing one "Wong-Wang" type model for each axis. 
+        While he didn't get chance to talk in detail about this model during the presentation due to time constraints, Dominik recently presented this work in more detail at the ccBrain Lab meeting, and I found it really interesting. 
+        Different methods of implementing the integration information across the two axes (or Wong-Wang-type pairs of left/right populations) were tried, including how strongly information affects each pair of populations and how the four populations are coupled. 
+        By comparing the simulated data generated by these different layouts to the real data presented in his talk, Dominik's extended Wong-Wang model has the potential to give deep insight into how neurons in the brain integrate information from different sources. 
+    </p>
+    <div class="figure">
+        <img src="images/blogNov20_DominikWongWang.png">
+        <p>
+            <b>Computational models of perceptual decision making.</b>
+            (Left) The Wong-Wang model consists of two populations of competing neurons. Credit: <a href="https://doi.org/10.1523/JNEUROSCI.3733-05.2006 ">Wong and Wang (2006) J Neurosci 26(4):1314-1328</a>, copyright (2006) Society for Neuroscience. 
+            (Right) Dominik has presented an extended version of the Wong-Wang model, which essentially involves having one Wong-Wang model per information source. He tested the input strengths and strengths of connections between input sources to try and explain how information is integrated between sources. 
+        </p>
+    </div>
+    <p>
+        I asked Dominik the following questions about the talk, and below are his responses. 
+    </p>
+    <h4>What is the main take away from this talk?</h4>
+    <p>
+        The experimental data from the perceptual decision-making task suggests that people tend to combine the information from multiple information sources in non-optimal way. 
+        The correlation between the sources does not seem to play a significant role.
+    </p>
+    <h4>Where will this project go next?</h4>
+    <p>
+        Recently, we used Hierarchical Drift Diffusion model with varying drift-rate and decision threshold to model all condition of this task. 
+        We observed the significant difference in posterior distribution parameters between pairs of conditions (congruent and incongruent subtask). 
+        The parameters indicate existence of two overlapping effects: varying difficulty of the task and speed-accuracy trade-off. 
+        We want to reduce the 4 neuronal pool W&W model to a simpler, only 2-node system by introducing attention mechanism and adjusting baseline current to incorporate both these cognitive phenomena.
+    </p>
+
+    <h2>Towards optimal source reconstruction of resting MEG of the human brain: performance, precision, and parcellation - Luke Tait</h2>
+    <p>
+        Finally, I also presented some work entitled "Towards optimal source reconstruction of resting MEG of the human brain: performance, precision, and parcellation". <a href="https://youtu.be/M1TpiYsRvt0?t=103">(Link to talk on Youtube)</a>.
+        Unlike the previous two talks, my presentation didn't focus on how decisions are made in the brain. 
+        Instead, I focused on methods to image brain activity. 
+        When neurons in the brain are active, they produce electric and magnetic fields which conduct through the head. 
+        Electro- and magneto-encephalography (EEG/MEG) place sensors on the scalp or outside of the head to record these electric and magnetic fields respectively. 
+        A method called "source reconstruction" is required to then estimate the original brain activity that generated these signals. 
+        Unfortunately, because there are billions of neurons in the brain and at most around 300 sensors in your typical MEG system (and even fewer for EEG), it is impossible to exactly reconstruct the sources. 
+        Because of this, there are many mathematical approaches to make an estimate of the brain activity, and at present it is unclear which is the best to use. 
+    </p>
+    <p>
+        In this presentation, I spoke about some work we have been doing comparing different source reconstruction methods, to see which perform best for a given dataset. 
+        We took a number of approaches.
+        Firstly, we looked at a property called "temporal variance explained" - essentially asking whether times of high or low activity in the source estimate can capture times of high or low activity in the original MEG data. 
+        We also considered the problem of background signals that weren't due to brain activity (known as "noise"), and how much these incorrectly influence the source estimate. 
+        We calculated the temporal variance explained in empty-room recordings, where there was no real brain activity; if a method had high temporal variance explained in empty room recordings, this means the signal is incorrectly attributing noise to the brain activity. 
+        We also artificially added noise to the MEG data and tested how much the estimated brain data changed; if the brain activity changes a lot, then the noise has strong influence on the signal. 
+        Finally, we looked at the theoretical "resolution" properties, such as "how far away is activity misplaced in the solution?" and "how blurred is the solution?". 
+    </p>
+    <div class="figure">
+        <img src="images/blogNov20_LukeSourceReconstruction.png">
+        <p>
+            <b>Comparing methods of source reconstruction.</b>
+            (Left) The aim of source reconstruction is to estimate the brain activity that generated the signals recorded by MEG or EEG. 
+            (Right) I describe the different metrics used to compare different methods of source reconstruction. 
+        </p>
+    </div>
+    <p>
+        Unfortunately, we didn't find one single 'one-size-fits-all' algorithm that performed better than all the others in all cases. 
+        Each algorithm had strengths and weaknesses, so the choice of method a researcher uses should depend on the study design. 
+        What we did provide, however, was a summary of these strengths and weaknesses and recommendations for how and when to use these algorithms. 
+        The results we presented can therefore act as a guide to selecting the best estimate of brain activity for your data. 
+    </p>
+    <div class="figure">
+        <img src="images/blogNov20_LukeTable.png">
+        <p>
+            <b>No single algorithm was "one-size-fits-all".</b>
+            (Left) However, I presented a comparison of the different algorithms with recommendations for when they should be used. 
+            The aim was to provide guidance for designing the best methodology for a particular study and dataset.
+            (Right) A personal highlight of the conference was having my presentation highlighted by a researcher on twitter. 
+        </p>
+    </div>
+    Finally, I'll answer the same questions as Dominik and Wojciech above. 
+    <h4>What is the main take away from this talk?</h4>
+    <p>
+        MEG data is a way to record brain activity, but a method called "source reconstruction" is required to estimate where in the brain the signals originated from. 
+        There are lots of ways to source reconstruct MEG data, and each have their own strengths and weaknesses. 
+        The choice of method to use should therefore depend on the study design, and we have given a guide to selecting the best method for your study. 
+    </p>
+    <h4>Where will this project go next?</h4>
+    <p>
+        Our next steps are to apply these source reconstruction techniques to understand different patterns of brain activation and how they relate to cognition, using a method called microstate analysis. 
+    </p>
+
+
+    
+</div>
+
+
+<footer>
+</footer>
+			
+			</div><!-- /.container -->
+			<!--<footer>
+	    		<ul>
+	        		<li><a href="mailto:taitl2@cardiff.ac.uk">email</a></li>
+	        		<li><a href="https://github.com/lukewtait">github.com/lukewtait</a></li>
+				</ul>
+			</footer>-->
+		</body>
+	</html>
