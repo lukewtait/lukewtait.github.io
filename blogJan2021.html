@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<title>Luke Tait</title>
+			<title>Luke Tait | Blog</title>
 			<!-- link to main stylesheet -->
             <link rel="stylesheet" type="text/css" href="./css/main.css">
             <!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
@@ -222,72 +222,85 @@
 
 			<div class="container">
 			
-			<link rel="stylesheet" type="text/css" href="./css/home.css">
+			<div class="rescontainer">
 
-<div class="homegrid">
+    <h1>Epilepsy in Alzheimer's disease: A whole-brain phenomenon?</h1>
 
+    <p>
+        This month in my blog, I'll write about a <a href="https://doi.org/10.1101/2021.01.19.427236">new preprint</a> we have posted online, trying to understand the causes of seizures in Alzheimer's disease. 
+        People with Alzheimer's disease are 6-10 times more likely to develop epilepsy than healthy people the same age, but the reasons for this are not yet fully understood. 
+        Treatment of seizures in people with Alzheimer's disease using anti-epileptic drugs is often unsuccessful, while seizures appear to speed up the rate of dementia symptoms in Alzheimer's disease. 
+        It's therefore extremely important to understand what causes seizures in Alzheimer's disease. 
+        And that is the aim of this piece of work!
+    </p>
+    <p>
+        To begin with, I'll briefly discuss what we currently (think) we know about what causes seizures in Alzheimer's disease. 
+        A leading hypothesis for is that the same molecules which build up in the brain and cause Alzheimer's disease also cause neurons (brain cells) to become more active, and this <em>"hyperexcitability"</em> (a word which essentially means over-activity of neurons, and is used a lot throughout this blog post!) leads to seizures. 
+        These molecules are known as amyloid-beta peptides and hyperphosphorylated tau proteins, or A&beta; and h-tau for short. 
+        There is much evidence for this in rodent models of Alzheimer's disease - for example, mice with genes that cause Alzheimer's disease in humans will develop A&beta; or h-tau, and these mice often have hyperexcitable neurons. These same mice also often develop seizures. 
+        In fact, there is also some evidence from rodents that excess activity of neurons can cause an even larger build up of A&beta; or h-tau, which in turn increase the activity of these neurons even further, causing a cascade into seizures. 
+    </p>
+    <p>
+        Here, we will call this hyperexcitability phenomenon a "local" mechanism, because it affects small groups of neurons near where the A&beta; or h-tau form, as opposed to wider areas across the whole brain (a "large-scale mechanism"). 
+        In people with epilepsy, there is much evidence that to fully understand seizures, you need to study both "local" dynamics <em>and</em> "large-scale" dynamics. 
+        In particular, at the large-scale, the way that areas of the brain are wired up to communicate (called a large-scale brain network) are extremely important for determining likelihood and type of seizure.
+        Interestingly, in <a href="https://doi.org/10.1016/j.clinph.2019.05.027">our 2019 paper</a> (and other papers from many other research labs), it has been shown that large-scale brain networks change in Alzheimer's disease. 
+        Since it is important to understand both the local and whole-brain causes of seizures in people with epilepsy, 
+        we thought it was likely that the same was true in Alzheimer's disease, and that changes in large-scale brain networks might also play a key role in the development of seizures in Alzheimer's disease.
+    </p>
 
-	<div class="profile"> <!-- profile -->
-		<h1>Profile</h1>
-		<p>	Hi, I'm Luke Tait. I am a mathematician and neuroscientist at the University of Birmingham. 
-			The focus of my research involves applying methods from mathematics and physics to brain imaging data, to better understand and diagnose neurological diseases such as Alzheimer's disease and epilepsy.
-			Particularly, I am interested in large scale functional connectivity (i.e. synchronous activity) between regions of the brain.
-			I graduated with a Masters degree in Mathematical Physics from the <a href="https://www.liverpool.ac.uk/mathematical-sciences/">University of Liverpool</a> in 2015, and subsequently did a PhD in Mathematics at the <a href="https://www.exeter.ac.uk/livingsystems/">University of Exeter Living Systems Institute</a>. 
-			I joined the <a href="https://www.cardiff.ac.uk/cardiff-university-brain-research-imaging-centre">Cardiff University Brain Research Imaging Centre</a> in July 2019 as a research associate in the <a href="https://ccbrain.org/">Cognition and Computational Brain Lab</a>.
-			Since February 2021 I have been working at the <a href="https://www.birmingham.ac.uk/research/systems-modelling-and-quantitative-biomedicine/index.aspx">Centre for Systems Modelling and Quantitative Biomedicine</a> at the University of Birmingham as a Research Fellow collaborating with <a href="https://www.neuronostics.com/">Neuronostics</a> to develop tools for aiding diagonsis of epilepsy.
-		</p>
-	</div>
+    <p>
+        The figure below shows our methods for testing this hypothesis. 
+    </p>
+  
+    <div class="figure">
+        <img src="images/blogJan2021_methods.jpg">
+    </div>
 
-	<div class="home_research"> <!-- research -->
-		<h1>Research and Outputs</h1>
-		<p>	
-			Select an image below to read about my research interests and a list of my publications. 
-		</p>
-	</div>
-
-	<a class="homefig" href="research.html">
-		<div class="homefigoverlay">
-			<img src="images/home_research.png">
-			<div class="overlay">
-				<div class="overlaytext">Research</div>
-			</div>
-		</div>
-	</a>
-
-	<a class="homefig" href="outputs.html">
-		<div class="homefigoverlay">
-			<img src="images/home_outputs2.png">
-			<div class="overlay">
-				<div class="overlaytext">Outputs, Tools, and Workshops</div>
-			</div>
-		</div>
-	</a>
-
-	<a class="homefig" href="publications.html">
-		<div class="homefigoverlay">
-			<img src="images/home_publications.png">
-			<div class="overlay">
-				<div class="overlaytext">Publications</div>
-			</div>
-		</div>
-	</a>
-
-	<a class="homefig" href="cv.html">
-		<div class="homefigoverlay">
-			<img src="images/home_cv.png">
-			<div class="overlay">
-				<div class="overlaytext">CV</div>
-			</div>
-		</div>
-	</a>
-
-
+    <p>
+        First, we start off with "EEG" recordings from healthy people and people with early stage Alzheimer's disease.
+        EEG is a method of recording the brain's activity. 
+        When brain cells become active, they send electrical signals to other brain cells. These electrical signals conduct onto the surface of the head. When enough cells are active together, this creates a measureable electrical field on the scalp.
+        EEG, which stands for electroencephalography (electro- meaning "electrical", enceophalo- meaning "head", -graphy meaning "recording"), records this electric field on the scalp.
+        Since EEG records the electric field on the surface of the head and not on the surface of the brain, our second step was to use a technique called "source reconstruction" to estimate the actual brain activity from the EEG. 
+        Next, we split (or <em>parcellated</em>) the brain into regions, giving us a measure of the brain activity for each region. 
+        Then, we get a large-scale brain network by estimating how much different regions of the brain communicate. To do this, we look at how synchronized the activity is between different regions.
+        Finally, we put the brain network into a simulation of a virtual brain. 
+        We start the simulation of the brain off with no seizures, and then gradually increase the excitability (how active the neurons are) to simulate the "local" mechanism discussed above (hyperexcitability because of A&beta; or h-tau).
+        We used a measure called <em>brain network ictogenicity</em>, or BNI, to get a single number which describes how easy it is for a simulated brain to have seizures.   
+    </p>
+    <p>
+        Importantly, the local mechanism was simulated in both the healthy people and the people with Alzheimer's disease. 
+        This means that if the brain network structure isn't important for generating seizures (and hyperexcitability is the full story for why people with Alzheimer's disease are more likely to have seizures), 
+        then there should be no difference in the likelihood of seizures between simulations of the brains of people with Alzheimer's disease and simulations of the brains of healthy people. 
+        However, we found the simulated brains of people with Alzheimer's disease were significantly more likely to develop seizures than the simulated brains of the healthy people. 
+        This suggests that, like in epilepsy in people without Alzheimer's disease, it is important to consider both the local and the large-scale when trying to understand epilepsy in people with Alzheimer's disease. 
+    </p>
+    <p>
+        We noticed a few other interesting observations in our simulated brains. 
+        The areas of the brain that were most important for generating seizures in Alzheimer's simulations closely corresponded to those that typically have the most A&beta; at early stages of the disease. 
+        This supports the hypothesis that A&beta; plays an important part in seizure generation. 
+        Additionally, the simulations suggested people with Alzheimer's disease were more likely to have <em>generalized</em> seizures (i.e. seizures affecting the whole brain, not just a small area). 
+        We did some reading after this observation, and found that clinical studies have shown the prevalence of generalized seizures is higher in people with Alzheimer's disease than people with epilepsy but no Alzheimer's disease. 
+        This suggests that our large-scale network mechanism is important for understanding why seizures might be more likely to be generalized in Alzheimer's disease. 
+    </p>
+    <p>
+        Overall, our results have suggested a new avenue for understanding epilepsy in Alzheimer's disease - large-scale brain networks. 
+        In the future, we hope to build on this work by comparing people with Alzheimer's disease who do and do not have epilepsy, to try and understand why some people develop seizures and some don't. 
+        We also hope to combine our brain simulations with different types of brain scans to make a detailed study of how A&beta; influences the likelihood of seizures. 
+    </p>
+    
 
 </div>
 
+
 <footer>
-All figures on this page have been modified from the following publications: <br>
-Tait et al. (2020) bioRxiv 2020.01.12.903302; Tait et al. (2019) bioRxiv 833244; Tait et al. (2019) Clin Neurophysiol 130(9):1581-1595; Tait (2019) Doctoral Thesis
+    <p style="max-width:1000pt">
+        To read the full preprint, <a href="https://doi.org/10.1101/2021.01.19.427236">visit bioRxiv preprint server</a>. 
+        For increased readability, I did not include citations to statements made throughout this blog post, but a full list of relevant references are given in the preprint.
+        Figures were reused from the preprint under the CC-BY-NC licence. 
+        Finally, I should include a quick disclaimer here: this work is currently only a preprint, meaning it hasn't been peer reviewed yet, but is currently under submission for peer review.
+    </p>
 </footer>
 			
 			</div><!-- /.container -->
