@@ -8,6 +8,8 @@
     grid-column-gap: 5px;
     grid-template-rows: auto; /* could also do e.g. 100px 500px 500px*/
     grid-row-gap: 5px;
+    max-width: 1000pt;
+    text-align: justify;
 }
 
 .profile {

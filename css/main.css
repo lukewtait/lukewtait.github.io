@@ -158,3 +158,9 @@ footer {
 .figure p {
     font-size: 9pt;
 }
+
+.rescontainer {
+    width: 100%;
+    max-width: 1000pt;
+    text-align: justify;
+}
